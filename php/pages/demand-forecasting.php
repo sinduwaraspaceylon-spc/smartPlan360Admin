@@ -175,7 +175,7 @@
     <div id="productDisplaySection" class="products-display-section" style="display: none;">
         <div class="section-header">
             
-            <!-- Filter Section -->
+            <!-- Filter Section Header -->
                 <div class="filter-section">
                     <div class="form-row">
                         <div class="form-group">
