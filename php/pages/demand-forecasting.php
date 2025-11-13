@@ -107,16 +107,152 @@
         <div class="section-header">
             <h3 id="report-title">Demand Plan</h3>
             
-            <!-- Filter Toggle Button (Inside Container) -->
-            <button class="filter-toggle-btn-inline" id="filterToggleBtnInline">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
-                </svg>
-                <span>Filters</span>
-            </button>
+            <!-- Create new demand button -->
+        <button class="download-btn" id="createNewDemandBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Create Demand
+        </button>
+        </div>
+        <!-- flip card section -->
+        <div class="flip-card-holder" id="flipCard">
+        <div class="flip-card-front">
+            <h1>Final Demand</h1>
+        </div>
+        
+        <div class="flip-card-back">
+            <button class="back-btn" onclick="flipCard()">✕</button>
+            
+            <div class="action-btn-holder">
+                <button class="action-btn active">Add Section</button>
+                <button class="action-btn">Edit Section</button>
+                <button class="action-btn">Delete Section</button>
+                <button class="action-btn">Export Data</button>
+            </div>
+            
+            <div class="multy-section-holder">
+                <div class="multy-form-header">
+                    <div class="form-title">
+                        <h2>Nursery Sections</h2>
+                        <span class="form-count">3 Sections</span>
+                    </div>
+                    <div class="demand-filter">
+                        <input type="search" class="filter-input" placeholder="Search sections...">
+                        <select class="filter-input">
+                            <option>All Departments</option>
+                            <option>Plant Care</option>
+                            <option>Seeds & Bulbs</option>
+                            <option>Tools & Equipment</option>
+                        </select>
+                        <select class="filter-input">
+                            <option>All Categories</option>
+                            <option>Indoor Plants</option>
+                            <option>Outdoor Plants</option>
+                            <option>Succulents</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="section-body">
+                    <div class="nursery-section">
+                        <div class="nursery-header">
+                            <h3 class="nursery-title">Indoor Plants Section</h3>
+                            <span class="nursery-badge">Active</span>
+                        </div>
+                        <div class="nursery-content">
+                            <div class="nursery-item">
+                                <label>Section Name</label>
+                                <input type="text" value="Indoor Plants" placeholder="Enter section name">
+                            </div>
+                            <div class="nursery-item">
+                                <label>Department</label>
+                                <select>
+                                    <option>Plant Care</option>
+                                    <option>Seeds & Bulbs</option>
+                                </select>
+                            </div>
+                            <div class="nursery-item">
+                                <label>Category</label>
+                                <select>
+                                    <option>Indoor Plants</option>
+                                    <option>Outdoor Plants</option>
+                                </select>
+                            </div>
+                            <div class="nursery-item">
+                                <label>Capacity</label>
+                                <input type="number" value="150" placeholder="Max plants">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nursery-section">
+                        <div class="nursery-header">
+                            <h3 class="nursery-title">Succulent Garden</h3>
+                            <span class="nursery-badge">Active</span>
+                        </div>
+                        <div class="nursery-content">
+                            <div class="nursery-item">
+                                <label>Section Name</label>
+                                <input type="text" value="Succulent Garden" placeholder="Enter section name">
+                            </div>
+                            <div class="nursery-item">
+                                <label>Department</label>
+                                <select>
+                                    <option>Plant Care</option>
+                                    <option>Seeds & Bulbs</option>
+                                </select>
+                            </div>
+                            <div class="nursery-item">
+                                <label>Category</label>
+                                <select>
+                                    <option>Succulents</option>
+                                    <option>Cacti</option>
+                                </select>
+                            </div>
+                            <div class="nursery-item">
+                                <label>Capacity</label>
+                                <input type="number" value="200" placeholder="Max plants">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nursery-section">
+                        <div class="nursery-header">
+                            <h3 class="nursery-title">Outdoor Garden Area</h3>
+                            <span class="nursery-badge">Active</span>
+                        </div>
+                        <div class="nursery-content">
+                            <div class="nursery-item">
+                                <label>Section Name</label>
+                                <input type="text" value="Outdoor Garden" placeholder="Enter section name">
+                            </div>
+                            <div class="nursery-item">
+                                <label>Department</label>
+                                <select>
+                                    <option>Tools & Equipment</option>
+                                    <option>Seeds & Bulbs</option>
+                                </select>
+                            </div>
+                            <div class="nursery-item">
+                                <label>Category</label>
+                                <select>
+                                    <option>Outdoor Plants</option>
+                                    <option>Trees</option>
+                                </select>
+                            </div>
+                            <div class="nursery-item">
+                                <label>Capacity</label>
+                                <input type="number" value="300" placeholder="Max plants">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+</div>
 
     <!-- filter templates -->
     <!-- forecast table filters -->
@@ -188,3 +324,17 @@
     </select>
   </div>
 </template>
+
+<script>
+        function flipCard() {
+            document.getElementById('flipCard').classList.toggle('flipped');
+        }
+
+        const actionBtns = document.querySelectorAll('.action-btn');
+        actionBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                actionBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
