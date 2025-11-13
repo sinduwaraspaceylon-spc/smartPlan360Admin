@@ -190,6 +190,6 @@
     
     <!-- still testing.. -->
     <script src="sidebar_test/sidebar_handler.js"></script>
-    <script src="js/optimize.js"></script>
+    <!-- <script src="js/optimize.js"></script> -->
 </body>
 </html>
