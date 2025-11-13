@@ -1,13 +1,25 @@
-
-
-/* Demand card  */
-.demand-card-container {
-    perspective: 2000px;
-    min-height: 550px;
-    margin-top: 24px;
+:root {
+  --accent-color: #08061ecc;
+  --background-color: #f5f6fa;
+  --white: #ffffff;
+  --body-components: #02093d;
+  --succsess-color: #28a745;
+  --error-color: #dc3545;
+  --content-section-margin: 20px 0;
 }
 
-.demand-card {
+/* Demand card  */
+.section-holder-1 {
+    margin: 0 auto;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-holder-2 {
     position: relative;
     width: 100%;
     height: 100%;
@@ -16,24 +28,24 @@
     min-height: auto;
 }
 
-.demand-card.flipped {
+.section-holder-2.flipped {
     transform: rotateY(180deg);
 }
 
-.demand-card-face {
+.section-holder-2-face {
     position: relative;
     width: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 
-.demand-card-front {
+.section-holder-2-front {
     z-index: 2;
     padding: 25px;
     position: relative;
 }
 
-.demand-card-back {
+.section-holder-2-back {
     transform: rotateY(180deg);
     padding: 25px;
     background: #fafbfc;
@@ -728,7 +740,7 @@
         padding: 20px;
     }
 
-    .demand-card-back {
+    .section-holder-2-back {
         padding: 24px;
     }
 

@@ -117,8 +117,8 @@
         </button>
     </div>
     
-    <div class="demand-card-container">
-        <div class="demand-card" id="demandCard">
+    <div class="section-holder-1">
+        <div class="section-holder-2" id="demandCard">
             <!-- Front side - Demand Report -->
             <div class="demand-card-face demand-card-front">
                 <div class="table-holder" id="forecast-report-section">

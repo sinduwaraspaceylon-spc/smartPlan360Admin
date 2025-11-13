@@ -6,6 +6,7 @@
     <title id="page-title">Dashboard - Spa Ceylon Smart 360 Admin</title>
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/admin_style.css">
+    <link rel="stylesheet" href="css/test2.css">
     
     <!-- CDN Link -->
      <?php include "components/CDN.php"?>
@@ -45,11 +46,81 @@
                   <i class="fas fa-calendar-alt"></i> Production Planning
                 </a>
               </li>
-              <li>
-                <a href="#" class="nav-link" data-page="product-development" data-title="Product Development">
-                  <i class="fa-solid fa-list-ol"></i> Product Development
-                </a>
-              </li>
+              <!-- product developmet sub menu -->
+               <li class="has-submenu">
+  <a href="#" class="nav-link" data-page="product-development" data-title="Product Development">
+    <i class="fa-solid fa-list-ol"></i> Product Development
+  </a>
+  
+  <!-- First Level Submenu -->
+  <ul class="submenu">
+    <li>
+      <a href="#" data-page="master-data" data-title="Master Data">
+        Master Data
+      </a>
+    </li>
+    
+    <li class="has-submenu">
+      <a href="#" data-page="primary" data-title="Primary">
+        Primary <i class="fa-solid fa-chevron-right submenu-arrow"></i>
+      </a>
+      
+      <!-- Second Level Submenu for Primary -->
+      <ul class="submenu submenu-nested">
+        <li>
+          <a href="#" data-page="packing" data-title="Packing">
+            Packing
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="closure" data-title="Closure">
+            Closure
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="insert" data-title="Insert">
+            Insert
+          </a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="has-submenu">
+      <a href="#" data-page="secondary" data-title="Secondary">
+        Secondary <i class="fa-solid fa-chevron-right submenu-arrow"></i>
+      </a>
+      
+      <!-- Second Level Submenu for Secondary -->
+      <ul class="submenu submenu-nested">
+        <li>
+          <a href="#" data-page="box" data-title="Box">
+            Box
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="hang-tag" data-title="Hang Tag">
+            Hang Tag
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="soap-wrapper" data-title="Soap Wrapper">
+            Soap Wrapper
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="parchment" data-title="Parchment">
+            Parchment
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="bags" data-title="Bags">
+            Bags
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
             </ul>
           </div>
 
