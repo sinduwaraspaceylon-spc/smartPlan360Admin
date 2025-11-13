@@ -37,7 +37,7 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link" data-page="demand-forecasting" data-title="Dermand Forecasting">
+                <a href="#" class="nav-link" data-page="demand-forecasting" data-title="Demand Forecasting">
                   <i class="fas fa-chart-line"></i>Demand Forecasting
                 </a>
               </li>
