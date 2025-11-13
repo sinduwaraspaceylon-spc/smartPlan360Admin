@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shared Filter Sidebar Demo</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+}
+
+.page-section-holder {
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-toggle-btn-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.filter-toggle-btn-inline:hover { background: #0056b3; }
+
+/* Sidebar styling */
+.filter-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+.filter-sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.filter-sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+  z-index: 11;
+  transition: right 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.filter-sidebar.active {
+  right: 0;
+}
+
+.filter-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+.filter-sidebar-content {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+.filter-sidebar-actions {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.filter-group {
+  margin-bottom: 1rem;
+}
+.filter-select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.filter-apply-btn, .filter-reset-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.filter-apply-btn { background: #007bff; color: white; }
+.filter-reset-btn { background: #ccc; }
+</style>
+
+</head>
+
+<body>
+
+<!-- Forecast Section -->
+
+<div class="page-section-holder" id="forecast-report">
+  <div class="section-header">
+    <h3>Forecast Report 2025</h3>
+    <button class="filter-toggle-btn-inline" id="forecastFilterBtn">Filters</button>
+  </div>
+  <div id="forecast-content">[ Forecast data here ]</div>
+</div>
+
+<!-- Demand Section -->
+
+<div class="page-section-holder" id="demand-report">
+  <div class="section-header">
+    <h3>Demand Report 2025</h3>
+    <button class="filter-toggle-btn-inline" id="demandFilterBtn">Filters</button>
+  </div>
+  <div id="demand-content">[ Demand data here ]</div>
+</div>
+
+<!-- Shared Filter Sidebar -->
+
+<aside class="filter-sidebar" id="mainFilterSidebar">
+  <div class="filter-sidebar-header">
+    <h2 id="filterSidebarTitle">Filter by</h2>
+    <button class="filter-close-btn" id="filterCloseBtn">✕</button>
+  </div>
+
+  <div class="filter-sidebar-content" id="filterSidebarContent">
+    <!-- JS will insert filters -->
+  </div>
+
+  <div class="filter-sidebar-actions">
+    <button class="filter-apply-btn" id="filterApplyBtn">Apply</button>
+    <button class="filter-reset-btn" id="filterResetBtn">Reset</button>
+  </div>
+</aside>
+
+<!-- Overlay -->
+
+<div class="filter-sidebar-overlay" id="filterSidebarOverlay"></div>
+
+<!-- Templates -->
+
+<template id="forecastFiltersTemplate">
+  <div class="filter-group">
+    <label for="yearFilter">Year</label>
+    <select id="yearFilter" class="filter-select">
+      <option value="">All Years</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="periodFilter">Time Period</label>
+    <select id="periodFilter" class="filter-select">
+      <option value="6">6 Months</option>
+      <option value="12">12 Months</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="statusFilter">Status</label>
+    <select id="statusFilter" class="filter-select">
+      <option value="">All Status</option>
+      <option value="exceeded">Exceeded</option>
+      <option value="on track">On Track</option>
+      <option value="below target">Below Target</option>
+      <option value="critical">Critical</option>
+    </select>
+  </div>
+</template>
+
+<template id="demandFiltersTemplate">
+  <div class="filter-group">
+    <label for="demandRankFilter">Rank</label>
+    <select id="demandRankFilter" class="filter-select">
+      <option value="">All</option>
+      <option value="top">Top</option>
+      <option value="low">Low</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="yearFilter">Year</label>
+    <select id="yearFilter" class="filter-select">
+      <option value="">All Years</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="monthFilter">Month</label>
+    <select id="monthFilter" class="filter-select">
+      <option value="">All Months</option>
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+  </div>
+</template>
+<script src="sidebar_handler.js"></script>
+</body>
+</html>

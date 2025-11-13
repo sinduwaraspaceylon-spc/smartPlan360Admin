@@ -1,0 +1,710 @@
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Universal Selector */
+:root {
+  --accent-color: #08061ecc;
+  --background-color: #f5f6fa;
+  --white: #ffffff;
+  --body-components: #02093d;
+  --succsess-color: #28a745;
+  --error-color: #dc3545;
+  --content-section-margin: 20px 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body Selector */
+body {
+  font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+}
+.blinking-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #2bff6e;
+  border-radius: 50%;
+  margin-left: 6px;
+  animation: blink 1.5s infinite;
+}
+
+#salesChart {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 300px;
+  display: block;
+}
+
+#salesBarChart {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 350px;
+  display: block;
+}
+
+#departmentChart {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 380px;
+  display: block;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  margin: 40px 0 40px 0;
+}
+
+.dashboard-card {
+  background: var(--body-components);
+  color: var(--white);
+  padding: 8px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.dashboard-card i {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.dashboard-card h3 {
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.dashboard-card .value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.dashboard-card .label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* forcast table */
+forecast-table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.forecast-table thead {
+  background: linear-gradient(135deg, var(--body-components) 0%, #04127a 100%);
+  color: white;
+}
+.forecast-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.forecast-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.forecast-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s;
+}
+
+.forecast-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-excellent {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-good {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.status-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-critical {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+/* Download Button */
+.download-button-container {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.download-btn {
+  background: #04127a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+.download-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Page Section Holder */
+.page-section-holder {
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-section-holder h3 {
+  margin: 0 0 25px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-align: center;
+  letter-spacing: 0.5px;
+  padding-bottom: 8px;
+}
+
+/* Header container for h3 and filter button */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.section-header h3 {
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+/* Inline Filter Button */
+.filter-toggle-btn-inline {
+  background: #04127a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.filter-toggle-btn-inline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.filter-toggle-btn-inline svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+}
+
+/* Filter Sidebar Overlay */
+.filter-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1998;
+}
+
+.filter-sidebar-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 350px;
+  height: 100vh;
+  background: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1999;
+  overflow-y: auto;
+}
+
+.filter-sidebar.show {
+  right: 0;
+}
+
+.filter-sidebar-header {
+  padding: 25px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #08061ecc;
+  color: white;
+}
+
+.filter-sidebar-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.filter-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.filter-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.filter-close-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+}
+
+.filter-sidebar-content {
+  padding: 25px;
+}
+
+.filter-group {
+  margin-bottom: 30px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.filter-sidebar-actions{
+  padding: 25px;
+}
+
+.filter-apply-btn {
+  width: 100%;
+  padding: 12px;
+  background: #04127a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 20px;
+}
+
+.filter-apply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.filter-reset-btn {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.filter-reset-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+/* Active filter indicator */
+.filter-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ef4444;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-toggle-btn.has-filters {
+  position: relative;
+}
+
+/* Department sales pie chart filter */
+.year-dropdown {
+  background: #04127a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  appearance: none;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.year-dropdown option {
+  background: white;
+  color: #04127a;
+}
+
+.chart-TypeDropdown {
+  background: #04127a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  appearance: none;
+  padding-right: 40px;
+}
+.chart-TypeDropdown option {
+  background: white;
+  color: #04127a;
+}
+
+/* Back to Top Button Styles */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--body-components) 0%, #764ba2 100%);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Show button when active */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover effect */
+.back-to-top:hover {
+  background: linear-gradient(135deg, #764ba2 0%, var(--body-components) 100%);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Active/Click effect */
+.back-to-top:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.5);
+}
+
+/* Icon styling */
+.back-to-top i {
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover i {
+  transform: translateY(-3px);
+}
+
+/* blinking indicator */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .chart-container {
+    padding: 15px;
+  }
+
+  .yearly-sales-holder {
+    padding: 25px;
+  }
+
+  .yearly-sales-holder h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 10px;
+  }
+
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .yearly-sales-holder {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .yearly-sales-holder h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  #salesChart {
+    max-height: 350px;
+  }
+  .forecast-table {
+    font-size: 12px;
+  }
+
+  .forecast-table th,
+  .forecast-table td {
+    padding: 10px 8px;
+  }
+  .filter-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+
+  .page-section-holder {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yearly-sales-holder {
+    padding: 8px;
+  }
+
+  .yearly-sales-holder h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  #salesChart {
+    max-height: 280px;
+  }
+}
+
+/* Option Buttons */
+/* Option Buttons Section */
+.option-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+}
+
+/* Option Button Base Style */
+.option-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.option-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.option-btn:active {
+    transform: translateY(0);
+}
+
+.option-btn svg {
+    transition: transform 0.3s ease;
+}
+
+/* Pick Button - Green */
+.pick-btn {
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+
+.pick-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pick-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* Edit Button - Blue */
+.edit-btn {
+    border-color: #2196F3;
+    color: #2196F3;
+}
+
+.edit-btn:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+.edit-btn:hover svg {
+    transform: rotate(15deg);
+}
+
+/* Delete Button - Red */
+.delete-btn {
+    border-color: #f44336;
+    color: #f44336;
+}
+
+.delete-btn:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .option-buttons {
+        flex-direction: column;
+    }
+    
+    .option-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --accent-color: #08061ecc;
+  --background-color: #f5f6fa;
+  --white: #ffffff;
+  --body-components: #02093d;
+  --content-section-margin: 20px 0;
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .background {
+            font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--body-components) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .form-container {
+            padding: 50px 40px;
+        }
+
+        .form-container.hidden {
+            display: none;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--body-components);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        .input-group input:focus + i {
+            color: var(--body-components);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(100deg, var(--body-components) 0%, var(--accent-color) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .divider span {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0 15px;
+            color: #999;
+            font-size: 13px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .switch-form {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .switch-form a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .switch-form a:hover {
+            color: #764ba2;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 14px;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+.form-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    text-align: center;
+}
+
+.form-message.error {
+    color: #a94442;
+    background: #f8d7da;
+    border: 1px solid #f5c2c7;
+}
+
+.form-message.success {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+/* gmail varification tick */
+.email-status {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+
+.form-message {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+}
+
+.form-message.success {
+    color: green;
+}
+
+.form-message.error {
+    color: red;
+}
+
+/* Forget Password */
+.message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: #2d3561;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 8px;
+        }
+
+        button[type="submit"]:hover {
+            background: #1e2347;
+        }
+
+        .back-to-login {
+            text-align: center;
+            margin-top: 24px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .back-to-login a {
+            color: #6c7bd8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* reset password */
+         .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .password-hint {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 6px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: #2d3561;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 8px;
+        }
+
+        button[type="submit"]:hover {
+            background: #1e2347;
+        }
+
+        .back-to-login {
+            text-align: center;
+            margin-top: 24px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .back-to-login a {
+            color: #6c7bd8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container {
+            animation: fadeIn 0.5s ease;
+        }

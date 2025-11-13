@@ -1,0 +1,46 @@
+<canvas id="grossSalesChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById("grossSalesChart").getContext("2d");
+
+  const grossSalesChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], // Months
+      datasets: [
+        {
+          label: "Outlet Sales",
+          data: [120000, 150000, 130000, 160000, 170000, 180000],
+          backgroundColor: "rgba(75, 192, 192, 0.6)",
+        },
+        {
+          label: "Online Sales",
+          data: [50000, 60000, 55000, 70000, 75000, 80000],
+          backgroundColor: "rgba(153, 102, 255, 0.6)",
+        },
+        {
+          label: "Export Sales",
+          data: [30000, 35000, 32000, 40000, 42000, 45000],
+          backgroundColor: "rgba(255, 159, 64, 0.6)",
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: "top" },
+        title: {
+          display: true,
+          text: "Gross Sales Breakdown by Source",
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { text: "Sales (Rs)", display: true },
+        },
+      },
+    },
+  });
+</script>
