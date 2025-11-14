@@ -1,11 +1,17 @@
 // Global flag to prevent multiple initializations
 let demandFiltersInitialized = false;
 
-// Flip function (Add / Cancel Button)
+// Flip function (Create Demand / Cancel Button)
 function toggleDemandForm() {
     const card = document.getElementById('flipCard');
     const btn = document.getElementById('createNewDemandBtn');
     const title = document.getElementById('report-title');
+
+    // Check if elements exist
+    if (!card || !btn || !title) {
+        console.error('Required elements not found', { card, btn, title });
+        return;
+    }
 
     card.classList.toggle('flipped');
 
@@ -27,6 +33,7 @@ function toggleDemandForm() {
             // Call your filter initialization function here if needed
             // initDemandFilters();
             demandFiltersInitialized = true;
+            console.log('Demand filters initialized');
         }
     } else {
         // Change button back to Create Demand
@@ -43,14 +50,32 @@ function toggleDemandForm() {
     }
 }
 
-// Add click event to the button
-document.getElementById('createNewDemandBtn').addEventListener('click', toggleDemandForm);
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFlipCard);
+} else {
+    initFlipCard();
+}
 
-// Also handle the back button (✕) on the card
-const backBtn = document.querySelector('.back-btn');
-if (backBtn) {
-    backBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleDemandForm();
-    });
+function initFlipCard() {
+    // Add click event to the Create Demand button
+    const createBtn = document.getElementById('createNewDemandBtn');
+    if (createBtn) {
+        createBtn.addEventListener('click', toggleDemandForm);
+        console.log('✓ Create Demand button listener attached');
+    } else {
+        console.error('✗ createNewDemandBtn not found');
+    }
+
+    // Also handle the back button (✕) on the card
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleDemandForm();
+        });
+        console.log('✓ Back button listener attached');
+    } else {
+        console.error('✗ backBtn not found');
+    }
 }

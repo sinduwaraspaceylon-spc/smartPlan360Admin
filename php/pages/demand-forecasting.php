@@ -102,157 +102,70 @@
     </div>
   </div>
 
-    <!-- Demand plan section -->
-    <div class="page-section-holder" id="forcast-chart">
+  <div class="page-section-holder" id="forcast-chart">
         <div class="section-header">
             <h3 id="report-title">Demand Plan</h3>
             
             <!-- Create new demand button -->
-        <button class="download-btn" id="createNewDemandBtn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-            Create Demand
-        </button>
+            <button class="download-btn" id="createNewDemandBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Create Demand
+            </button>
         </div>
-        <!-- flip card section -->
+
+        <!-- Flip card section -->
         <div class="flip-card-holder" id="flipCard">
-        <div class="flip-card-front">
-            <h1>Final Demand</h1>
-        </div>
-        
-        <div class="flip-card-back">
-            <button class="back-btn" onclick="flipCard()">✕</button>
-            
-            <div class="action-btn-holder">
-                <button class="action-btn active">Add Section</button>
-                <button class="action-btn">Edit Section</button>
-                <button class="action-btn">Delete Section</button>
-                <button class="action-btn">Export Data</button>
+            <div class="flip-card-front">
+                <h1>Final Demand</h1>
             </div>
             
-            <div class="multy-section-holder">
-                <div class="multy-form-header">
-                    <div class="form-title">
-                        <h2>Nursery Sections</h2>
-                        <span class="form-count">3 Sections</span>
-                    </div>
-                    <div class="demand-filter">
-                        <input type="search" class="filter-input" placeholder="Search sections...">
-                        <select class="filter-input">
-                            <option>All Departments</option>
-                            <option>Plant Care</option>
-                            <option>Seeds & Bulbs</option>
-                            <option>Tools & Equipment</option>
-                        </select>
-                        <select class="filter-input">
-                            <option>All Categories</option>
-                            <option>Indoor Plants</option>
-                            <option>Outdoor Plants</option>
-                            <option>Succulents</option>
-                        </select>
-                    </div>
+            <div class="flip-card-back">
+                <button class="back-btn" id="backBtn">✕</button>
+                
+                <div class="action-btn-holder">
+                    <button class="action-btn active">
+                    <i class="fa-solid fa-plus"></i>Add</button>
+
+                    <button class="action-btn">
+                    <i class="fa-solid fa-gear"></i>Edit</button>
+
+                    <button class="action-btn">
+                    <i class="fa-solid fa-trash"></i>Delete</button>
                 </div>
                 
-                <div class="section-body">
-                    <div class="nursery-section">
-                        <div class="nursery-header">
-                            <h3 class="nursery-title">Indoor Plants Section</h3>
-                            <span class="nursery-badge">Active</span>
+                <div class="multy-section-holder">
+                    <!-- existing demand and add demand header is here -->
+                    <div class="multy-form-header">
+                        <div class="form-title">
+                            <h2>Existing Demands</h2>
                         </div>
-                        <div class="nursery-content">
-                            <div class="nursery-item">
-                                <label>Section Name</label>
-                                <input type="text" value="Indoor Plants" placeholder="Enter section name">
-                            </div>
-                            <div class="nursery-item">
-                                <label>Department</label>
-                                <select>
-                                    <option>Plant Care</option>
-                                    <option>Seeds & Bulbs</option>
-                                </select>
-                            </div>
-                            <div class="nursery-item">
-                                <label>Category</label>
-                                <select>
-                                    <option>Indoor Plants</option>
-                                    <option>Outdoor Plants</option>
-                                </select>
-                            </div>
-                            <div class="nursery-item">
-                                <label>Capacity</label>
-                                <input type="number" value="150" placeholder="Max plants">
-                            </div>
+                        <div class="demand-filter">
+                            <input type="search" class="filter-input" placeholder="Search sections...">
+                            <select class="filter-input">
+                                <option>All Departments</option>
+                                <option>Plant Care</option>
+                                <option>Seeds & Bulbs</option>
+                                <option>Tools & Equipment</option>
+                            </select>
+                            <select class="filter-input">
+                                <option>All Categories</option>
+                                <option>Indoor Plants</option>
+                                <option>Outdoor Plants</option>
+                                <option>Succulents</option>
+                            </select>
                         </div>
                     </div>
-
-                    <div class="nursery-section">
-                        <div class="nursery-header">
-                            <h3 class="nursery-title">Succulent Garden</h3>
-                            <span class="nursery-badge">Active</span>
-                        </div>
-                        <div class="nursery-content">
-                            <div class="nursery-item">
-                                <label>Section Name</label>
-                                <input type="text" value="Succulent Garden" placeholder="Enter section name">
-                            </div>
-                            <div class="nursery-item">
-                                <label>Department</label>
-                                <select>
-                                    <option>Plant Care</option>
-                                    <option>Seeds & Bulbs</option>
-                                </select>
-                            </div>
-                            <div class="nursery-item">
-                                <label>Category</label>
-                                <select>
-                                    <option>Succulents</option>
-                                    <option>Cacti</option>
-                                </select>
-                            </div>
-                            <div class="nursery-item">
-                                <label>Capacity</label>
-                                <input type="number" value="200" placeholder="Max plants">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="nursery-section">
-                        <div class="nursery-header">
-                            <h3 class="nursery-title">Outdoor Garden Area</h3>
-                            <span class="nursery-badge">Active</span>
-                        </div>
-                        <div class="nursery-content">
-                            <div class="nursery-item">
-                                <label>Section Name</label>
-                                <input type="text" value="Outdoor Garden" placeholder="Enter section name">
-                            </div>
-                            <div class="nursery-item">
-                                <label>Department</label>
-                                <select>
-                                    <option>Tools & Equipment</option>
-                                    <option>Seeds & Bulbs</option>
-                                </select>
-                            </div>
-                            <div class="nursery-item">
-                                <label>Category</label>
-                                <select>
-                                    <option>Outdoor Plants</option>
-                                    <option>Trees</option>
-                                </select>
-                            </div>
-                            <div class="nursery-item">
-                                <label>Capacity</label>
-                                <input type="number" value="300" placeholder="Max plants">
-                            </div>
-                        </div>
+                    <!-- both sections content displays here -->
+                    <div class="section-body">
+                    <!-- Section Content -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- filter templates -->
     <!-- forecast table filters -->
@@ -324,3 +237,87 @@
     </select>
   </div>
 </template>
+
+<script>
+    // Global flag to prevent multiple initializations
+let demandFiltersInitialized = false;
+
+// Flip function (Create Demand / Cancel Button)
+function toggleDemandForm() {
+    const card = document.getElementById('flipCard');
+    const btn = document.getElementById('createNewDemandBtn');
+    const title = document.getElementById('report-title');
+
+    // Check if elements exist
+    if (!card || !btn || !title) {
+        console.error('Required elements not found', { card, btn, title });
+        return;
+    }
+
+    card.classList.toggle('flipped');
+
+    if (card.classList.contains('flipped')) {
+        // Change button to Cancel
+        btn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            Cancel
+        `;
+        btn.classList.add('cancel');
+        btn.style.backgroundColor = '#dc3545';
+        title.textContent = 'Add Demand';
+
+        // Initialize filters when flipped to form (only once)
+        if (!demandFiltersInitialized) {
+            // Call your filter initialization function here if needed
+            // initDemandFilters();
+            demandFiltersInitialized = true;
+            console.log('Demand filters initialized');
+        }
+    } else {
+        // Change button back to Create Demand
+        btn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Create Demand
+        `;
+        btn.classList.remove('cancel');
+        btn.style.backgroundColor = '#04127a';
+        title.textContent = 'Demand Plan';
+    }
+}
+
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFlipCard);
+} else {
+    initFlipCard();
+}
+
+function initFlipCard() {
+    // Add click event to the Create Demand button
+    const createBtn = document.getElementById('createNewDemandBtn');
+    if (createBtn) {
+        createBtn.addEventListener('click', toggleDemandForm);
+        console.log('✓ Create Demand button listener attached');
+    } else {
+        console.error('✗ createNewDemandBtn not found');
+    }
+
+    // Also handle the back button (✕) on the card
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleDemandForm();
+        });
+        console.log('✓ Back button listener attached');
+    } else {
+        console.error('✗ backBtn not found');
+    }
+}
+</script>

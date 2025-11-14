@@ -261,12 +261,12 @@ async function loadContent(page, title) {
     }
 
     // demand form rorate option loader
-    if (
-      page === "demand-forecasting" &&
-      typeof toggleDemandForm === "function"
-    ) {
-      toggleDemandForm();
-    }
+    // if (
+    //   page === "demand-forecasting" &&
+    //   typeof toggleDemandForm === "function"
+    // ) {
+    //   toggleDemandForm();
+    // }
 
     // demand filter handler
     if (
