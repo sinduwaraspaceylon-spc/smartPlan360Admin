@@ -324,17 +324,3 @@
     </select>
   </div>
 </template>
-
-<script>
-        function flipCard() {
-            document.getElementById('flipCard').classList.toggle('flipped');
-        }
-
-        const actionBtns = document.querySelectorAll('.action-btn');
-        actionBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                actionBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
