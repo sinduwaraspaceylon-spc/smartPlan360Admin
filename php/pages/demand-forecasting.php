@@ -143,7 +143,7 @@
                             <h2>Existing Demands</h2>
                         </div>
                         <div class="demand-filter">
-                            <input type="search" class="filter-input" placeholder="Search sections...">
+                            <input type="search" class="filter-input" placeholder="Search product...">
                             <select class="filter-input">
                                 <option>All Departments</option>
                                 <option>Plant Care</option>
