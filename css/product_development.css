@@ -1,0 +1,231 @@
+:root {
+  --accent-color: #08061ecc;
+  --background-color: #f5f6fa;
+  --white: #ffffff;
+  --body-components: #02093d;
+  --succsess-color: #28a745;
+  --error-color: #dc3545;
+  --content-section-margin: 20px 0;
+}
+.sub-header {
+  background: var(--background-color);
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+#productSearch {
+  flex: 1;
+  padding: 6px 20px;
+  font-size: 16px;
+  border: 1px solid var(--body-components);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background: white;
+}
+
+#productSearch:focus {
+  border-color: #202124;
+}
+
+#productSearch::placeholder {
+  color: #999;
+  font-size: 15px;
+}
+
+.button-section {
+  display: flex;
+  gap: 12px;
+}
+
+.sub-header-btn {
+  padding: 8px 15px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.btn-submit {
+  background: var(--succsess-color);
+  color: white;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: white;
+  color: var(--succsess-color);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-clear {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-clear:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #dc3545;
+}
+
+.btn-check {
+  background: #f5f6fa;
+  color: #08061ecc;
+  border: 1px solid var(--body-components);
+}
+
+.btn-check i {
+  font-size: 20px;
+}
+
+.btn-check:hover {
+  background: #08061ecc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #f5f6fa;
+}
+
+.btn-copy {
+  background: #f5f6fa;
+  color: #08061ecc;
+  border: 1px solid var(--body-components);
+}
+
+.btn-copy i {
+  font-size: 20px;
+}
+
+.btn-copy:hover {
+  background: #08061ecc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #f5f6fa;
+}
+
+.btn-clear:active {
+  transform: translateY(0);
+}
+
+/* Form Section styles */
+.section-holder-1 {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.section-holder-1 .form-holder h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.3px;
+}
+
+.from-holder {
+  padding: 5px 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: var(--accent-color); */
+  transition: background 0.3s ease;
+}
+
+/* .from-holder:hover {
+  background: linear-gradient(135deg, #02093d 50%, #08061ecc 100%);
+} */
+
+.from-holder h3 {
+  color: var(--accent-color);
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.toggle-icon {
+  color: var(--accent-color);
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.form-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--background-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 12px 12px;
+}
+
+.form-content.expanded {
+  max-height: 1000px;
+}
+
+.form-content-inner {
+  padding: 30px;
+}
+
+.form-content-inner p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .sub-header {
+    padding: 15px 20px;
+    flex-direction: column;
+  }
+
+  #productSearch {
+    width: 100%;
+  }
+
+  .button-section {
+    width: 100%;
+  }
+
+  .sub-header-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-section {
+    flex-direction: column;
+  }
+
+  .sub-header-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
