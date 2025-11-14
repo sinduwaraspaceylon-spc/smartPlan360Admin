@@ -275,6 +275,105 @@
                 </div>
             </div>
         </div>
+>>>>>>> main
+    </div>
+
+     <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Insert Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Insert specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+
+     <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Insert Holder Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Insert Holder specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Insert Holder Platform Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Insert Holder Platform specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Insert Partition Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Insert Partition specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Lid Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Lid specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Base Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Base specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Platform Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Platform specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+    <div class="section-holder-1">
+        <div class="from-holder" onclick="toggleSection(this)">
+            <h3>Sleeve Specification</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="form-content">
+            <div class="form-content-inner">
+                <p>Sleeve specification form content goes here...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
         function toggleSection(header) {
             const content = header.nextElementSibling;
