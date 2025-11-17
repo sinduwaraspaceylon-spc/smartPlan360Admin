@@ -103,69 +103,119 @@
   </div>
 
   <div class="page-section-holder" id="forcast-chart">
-        <div class="section-header">
-            <h3 id="report-title">Demand Plan</h3>
-            
-            <!-- Create new demand button -->
-            <button class="download-btn" id="createNewDemandBtn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                Create Demand
-            </button>
-        </div>
-
-        <!-- Flip card section -->
-        <div class="flip-card-holder" id="flipCard">
-            <div class="flip-card-front">
-                <h1>Final Demand</h1>
-            </div>
-            
-            <div class="flip-card-back">
-                <button class="back-btn" id="backBtn">✕</button>
-                
-                <div class="action-btn-holder">
-                    <button class="action-btn active">
-                    <i class="fa-solid fa-plus"></i>Add</button>
-
-                    <button class="action-btn">
-                    <i class="fa-solid fa-gear"></i>Edit</button>
-
-                    <button class="action-btn">
-                    <i class="fa-solid fa-trash"></i>Delete</button>
-                </div>
-                
-                <div class="multy-section-holder">
-                    <!-- existing demand and add demand header is here -->
-                    <div class="multy-form-header">
-                        <div class="form-title">
-                            <h2>Existing Demands</h2>
-                        </div>
-                        <div class="demand-filter">
-                            <input type="search" class="filter-input" placeholder="Search product...">
-                            <select class="filter-input">
-                                <option>All Departments</option>
-                                <option>Plant Care</option>
-                                <option>Seeds & Bulbs</option>
-                                <option>Tools & Equipment</option>
-                            </select>
-                            <select class="filter-input">
-                                <option>All Categories</option>
-                                <option>Indoor Plants</option>
-                                <option>Outdoor Plants</option>
-                                <option>Succulents</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- both sections content displays here -->
-                    <div class="section-body">
-                    <!-- Section Content -->
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="section-header">
+        <h3 id="report-title">Demand Plan</h3>
+        
+        <!-- Create new demand button -->
+        <button class="download-btn" id="createNewDemandBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Create Demand
+        </button>
     </div>
+
+    <!-- Flip card section -->
+    <div class="flip-card-holder" id="flipCard">
+        <div class="flip-card-front">
+            <h1>Final Demand</h1>
+        </div>
+        
+        <div class="flip-card-back">
+            <button class="back-btn" id="backBtn">✕</button>
+            
+            <div class="action-btn-holder">
+                <button class="action-btn active">
+                    <i class="fa-solid fa-plus"></i>Add
+                </button>
+
+                <button class="action-btn">
+                    <i class="fa-solid fa-gear"></i>Edit
+                </button>
+
+                <button class="action-btn">
+                    <i class="fa-solid fa-trash"></i>Delete
+                </button>
+            </div>
+            
+            <div class="multy-section-holder">
+                <!-- existing demand and add demand header is here -->
+                <div class="multy-form-header">
+                    <div class="form-title">
+                        <h2>Existing Demands</h2>
+                    </div>
+                    <div class="demand-filter">
+                        <input type="search" class="filter-input" placeholder="Search product...">
+                        <select class="filter-input">
+                            <option>All Departments</option>
+                            <option>Plant Care</option>
+                            <option>Seeds & Bulbs</option>
+                            <option>Tools & Equipment</option>
+                        </select>
+                        <select class="filter-input">
+                            <option>All Categories</option>
+                            <option>Indoor Plants</option>
+                            <option>Outdoor Plants</option>
+                            <option>Succulents</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- both sections content displays here -->
+                <div class="section-body">
+                    <!-- Section Content -->
+                    <div class="container">
+                        <div class="tabs">
+                            <div class="tab active" data-tab="products">Products</div>
+                            <div class="tab" data-tab="departments">Departments</div>
+                            <div class="tab" data-tab="categories">Categories</div>
+                        </div>
+
+                        <div class="content">
+                            <div class="section products active" id="products">
+                                <div class="item-list">
+                                    <div class="item-card">
+                                        <div class="item-info">
+                                            <h4>Lavender</h4>
+                                            <p>Special lavender perfume</p>
+                                        </div>
+                                        <div class="item-action">
+                                            <span class="item-price">$1,299</span>
+                                            <button class="item-btn">View</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section departments" id="departments">
+                                <div class="item-list">
+                                    <div class="item-card">
+                                        <div class="item-icon">⚡</div>
+                                        <div class="item-info">
+                                            <h4>Electronics</h4>
+                                            <p>Latest gadgets and technology • 1,245 products</p>
+                                        </div>
+                                        <div class="item-action">
+                                            <span class="badge">15 Categories</span>
+                                            <button class="item-btn">Manage</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section categories" id="categories">
+                                <div class="item-list">
+                                    <!-- Category display here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Close section-body -->
+            </div> <!-- Close multy-section-holder -->
+        </div> <!-- Close flip-card-back -->
+    </div> <!-- Close flip-card-holder -->
+</div> <!-- Close page-section-holder -->
 
     <!-- filter templates -->
     <!-- forecast table filters -->
@@ -320,4 +370,19 @@ function initFlipCard() {
         console.error('✗ backBtn not found');
     }
 }
+
+const tabs = document.querySelectorAll('.tab');
+        const sections = document.querySelectorAll('.section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                sections.forEach(section => section.classList.remove('active'));
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
 </script>
