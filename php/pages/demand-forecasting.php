@@ -102,6 +102,7 @@
     </div>
   </div>
 
+<!-- Demand plan section -->
   <div class="page-section-holder" id="forcast-chart">
     <div class="section-header">
         <h3 id="report-title">Demand Plan</h3>
@@ -175,6 +176,56 @@
                         <div class="content">
                             <div class="section products active" id="products">
                                 <div class="item-list">
+                                    <div class="item-card">
+                                        <div class="item-info">
+                                            <h4>Lavender</h4>
+                                            <p>Special lavender perfume</p>
+                                        </div>
+                                        <div class="item-action">
+                                            <span class="item-price">$1,299</span>
+                                            <button class="item-btn">View</button>
+                                        </div>
+                                    </div>
+                                    <div class="item-card">
+                                        <div class="item-info">
+                                            <h4>Lavender</h4>
+                                            <p>Special lavender perfume</p>
+                                        </div>
+                                        <div class="item-action">
+                                            <span class="item-price">$1,299</span>
+                                            <button class="item-btn">View</button>
+                                        </div>
+                                    </div>
+                                    <div class="item-card">
+                                        <div class="item-info">
+                                            <h4>Lavender</h4>
+                                            <p>Special lavender perfume</p>
+                                        </div>
+                                        <div class="item-action">
+                                            <span class="item-price">$1,299</span>
+                                            <button class="item-btn">View</button>
+                                        </div>
+                                    </div>
+                                    <div class="item-card">
+                                        <div class="item-info">
+                                            <h4>Lavender</h4>
+                                            <p>Special lavender perfume</p>
+                                        </div>
+                                        <div class="item-action">
+                                            <span class="item-price">$1,299</span>
+                                            <button class="item-btn">View</button>
+                                        </div>
+                                    </div>
+                                    <div class="item-card">
+                                        <div class="item-info">
+                                            <h4>Lavender</h4>
+                                            <p>Special lavender perfume</p>
+                                        </div>
+                                        <div class="item-action">
+                                            <span class="item-price">$1,299</span>
+                                            <button class="item-btn">View</button>
+                                        </div>
+                                    </div>
                                     <div class="item-card">
                                         <div class="item-info">
                                             <h4>Lavender</h4>
