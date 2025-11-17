@@ -8,19 +8,19 @@
     <div class="sub-header">
             <input type="text" id="productSearch" name="search" placeholder="Search Product Code or Sap Code..." autocomplete="off">
         <div class="button-section">
-            <button class="sub-header-btn btn-submit">
+            <button class="sub-header-btn submit" id="btn-submit">
                 <i class="fas fa-check"></i>
                     Submit
             </button>
-            <button class="sub-header-btn btn-clear">
+            <button class="sub-header-btn clear" id="btn-clear">
                 <i class="fas fa-times"></i>
                     Clear
             </button>
-            <button class="sub-header-btn btn-check" title="Select Products">
+            <button class="sub-header-btn check" id="btn-check" title="Select Products">
                 <i class="fas fa-check"></i>
                     
             </button>
-            <button class="sub-header-btn btn-copy" title="Duplicate Specs">
+            <button class="sub-header-btn copy" id="btn-copy" title="Duplicate Specs">
                 <i class="fas fa-copy"></i>
                     
             </button>
@@ -42,7 +42,7 @@
                             <span>Sap Code</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <span class="tooltiptext">Unique SAP code associated with the product. This code is used for inventory and tracking purposes.</span>
+                                <!-- <span class="tooltiptext">Unique SAP code associated with the product. This code is used for inventory and tracking purposes.</span> -->
                             </span>
                         </label>
                         <input type="text" id="sapCode" name="sapCode" autocomplete="off" placeholder="Search SAP Code"/>
@@ -56,9 +56,9 @@
                             <span>Item Description</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <span class="tooltiptext">
+                                <!-- <span class="tooltiptext">
                                     Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span>
+                                </span> -->
                             </span>
                         </label>
                         <input type="text" id="pckDes" name="pckDes" required placeholder="Fetched item description"/>
@@ -66,23 +66,30 @@
 
                     <!-- Promotion/Project -->
                     <div class="form-group span-two-rows">
-                        <label for="promotion_project">Promotion/Project</label>
+                        <label class="Label-tags label-with-tooltip" for="promotion_project">
+                            <span>Promotion/Project</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
+                        
                         <input type="text" id="promotion_project" name="promotion_project"/>
-                    </div>
-
-                    <!-- Order Quantity -->
-                    <div class="form-group">
-                        <label for="order_quantity">Order Quantity</label>
-                        <select id="order_quantity" name="order_quantity" oninput="calculateTotal()">
-                            <option value="">--SELECT--</option>
-                            <option value="create_new">Create New</option>
-                        </select>
-                        <input type="text" id="input_order_quantity" name="input_order_quantity" placeholder="Enter new order quantity" style="display: none; margin-top: 10px"/>
                     </div>
 
                     <!-- Standard Size -->
                     <div class="form-group">
-                        <label for="size_standard">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="size_standard">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <div class="size_standard_row" style="display: flex; gap: 10px">
                             <input type="number" id="size_standard_width" name="size_standard_width" placeholder="(W)"/>
                             <span style="align-self: center">X</span>
@@ -94,7 +101,15 @@
 
                     <!-- Open Size -->
                     <div class="form-group">
-                        <label for="size_open">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="size_open">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <div class="size_open_row" style="display: flex; gap: 10px">
                             <input type="number" id="size_open_width" name="size_open_width" placeholder="(W)"/>
                             <span style="align-self: center">X</span>
@@ -104,7 +119,15 @@
 
                     <!-- UOM -->
                     <div class="form-group">
-                        <label for="capacity_unit1">UOM</label>
+                        <label class="Label-tags label-with-tooltip" for="capacity_unit1">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="capacity_unit1" name="capacity_unit1">
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -117,7 +140,15 @@
 
                     <!-- Packing Content -->
                     <div class="form-group">
-                        <label for="box_material">Packing Content</label>
+                        <label class="Label-tags label-with-tooltip" for="box_material">
+                            <span>Packing Content</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="box_material" name="box_material">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -127,7 +158,15 @@
 
                     <!-- Outer & Inner Plies Information -->
                     <div class="form-group">
-                        <label for="box_additional_material">Outer & Inner Plies Information</label>
+                        <label class="Label-tags label-with-tooltip" for="box_additional_material">
+                            <span>Outer & Inner Plies Information</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="box_additional_material" name="box_additional_material">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -137,7 +176,15 @@
 
                     <!-- Print Style -->
                     <div class="form-group">
-                        <label for="box_print_method">Print Style</label>
+                        <label class="Label-tags label-with-tooltip" for="box_print_method">
+                            <span>Print Style</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="box_print_method" name="box_print_method">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -147,7 +194,15 @@
 
                     <!-- Print Type Outer -->
                     <div class="form-group">
-                        <label for="box_print_outer">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="box_print_outer">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="box_print_outer" name="box_print_outer">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -157,7 +212,15 @@
 
                     <!-- Print Type Inner -->
                     <div class="form-group">
-                        <label for="box_print_inner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="box_print_inner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="box_print_inner" name="box_print_inner">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -167,7 +230,15 @@
 
                     <!-- Laminated Finish -->
                     <div class="form-group">
-                        <label for="box_lamination">Laminated Finish</label>
+                        <label class="Label-tags label-with-tooltip" for="box_lamination">
+                            <span>Laminated Finish</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select type="text" id="box_lamination" name="box_lamination">
                             <option value="" selected disabled>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -177,7 +248,15 @@
 
                     <!-- Box Flaps -->
                     <div class="form-group">
-                        <label for="box_flaps">Box Flaps</label>
+                        <label class="Label-tags label-with-tooltip" for="box_flaps">
+                            <span>Box Flaps</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select type="text" id="box_flaps" name="box_flaps">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -187,25 +266,57 @@
 
                     <!-- UV Varnish -->
                     <div class="form-group">
-                        <label for="box_uv_varnish">UV Varnish</label>
+                        <label class="Label-tags label-with-tooltip" for="box_uv_varnish">
+                            <span>UV Varnish</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <input type="text" id="box_uv_varnish" name="box_uv_varnish"/>
                     </div>
 
                     <!-- Hot Stamp -->
                     <div class="form-group">
-                        <label for="box_hot_stamp">Hot Stamp</label>
+                        <label class="Label-tags label-with-tooltip" for="box_hot_stamp">
+                            <span>Hot Stamp</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <input type="text" id="box_hot_stamp" name="box_hot_stamp"/>
                     </div>
 
                     <!-- Dummy/Sample Approved Date -->
                     <div class="form-group">
-                        <label for="dummy_approved_date">Dummy/Sample Approved Date</label>
+                        <label class="Label-tags label-with-tooltip" for="dummy_approved_date">
+                            <span>Dummy/Sample Approved Date</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <input type="date" id="dummy_approved_date" name="dummy_approved_date"/>
                     </div>
 
                     <!-- Cutter -->
                     <div class="form-group">
-                        <label for="box_cutter">Cutter</label>
+                        <label class="Label-tags label-with-tooltip" for="box_cutter">
+                            <span>Cutter</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select type="text" id="box_cutter" name="box_cutter">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -215,7 +326,15 @@
 
                     <!-- Artwork(s) -->
                     <div class="form-group">
-                        <label for="box_artworks">Artwork(s)</label>
+                        <label class="Label-tags label-with-tooltip" for="box_artworks">
+                            <span>Artwork(s)</span>
+                             <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="box_artworks" name="box_artworks">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -225,7 +344,15 @@
 
                     <!-- Delivery Location -->
                     <div class="form-group">
-                        <label for="delivery_location">Delivery Location</label>
+                        <label class="Label-tags label-with-tooltip" for="delivery_location">
+                            <span>Delivery Location</span>
+                            <span class="tooltip">
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <select id="delivery_location" name="delivery_location">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -235,43 +362,34 @@
 
                     <!-- Delivery Date(s) -->
                     <div class="form-group">
-                        <label for="delivery_dates">Delivery Date(s)</label>
+                        <label class="Label-tags label-with-tooltip" for="delivery_dates">
+                            <span>Delivery Date(s)</span>
+                            <span class="tooltip"> 
+                                <i class="fa-regular fa-circle-question"></i>
+                                <!-- <span class="tooltiptext">
+                                    Detailed item description. Include key features or specifications to ensure clarity in identification
+                                </span> -->
+                            </span>
+                        </label>
                         <div class="select-with-button">
-                            <button type="button" class="add-btn" onclick="openDateModal()">Select Dates +</button>
-                            <button type="button" class="see-btn" onclick="showResult()">View Results</button>
+                            <button type="button" class="form-btn" id="add-btn" onclick="openDateModal()">Select Dates <i class="fa-regular fa-calendar-plus"></i></button>
+                            <button type="button" class="form-btn" id="see-btn" onclick="showResult()">View Results <i class="fa-solid fa-check"></i></button>
                         </div>
                         <div id="hiddenDates"></div>
                         <div id="deliveryPreview" style="margin-top:10px; font-size:14px; color:#333;"></div>
                     </div>
 
-                    <!-- Unit Price -->
-                    <div class="form-group">
-                        <label for="unit_price">Unit Price</label>
-                        <div class="unit-price-row">
-                            <input type="number" id="enter_unit_price1" name="enter_unit_price1" oninput="calculateTotal()" placeholder="Enter Unit Price"/>
-                        </div>
-                        <div class="unit-price-row1">
-                            <span>Total Rs. </span>
-                            <span id="total_price" name="total_price">0</span>
-                            <input type="hidden" id="total_price_input" name="total_price" value="0"/>
-                            <span> + </span>
-                            <div class="select-group">
-                                <select id="unit_price1" name="unit_price1" onchange="toggleInput('unit_price1', 'input1_unit_price1')">
-                                    <option value="">SSCL</option>
-                                    <option value="create_new">Create New</option>
-                                </select>
-                                <input type="text" id="input1_unit_price1" name="input1_unit_price1" placeholder="New SSCL" style="display: none; margin-top: 10px"/>
-                            </div>
-                            <span> + </span>
-                            <div class="select-group">
-                                <select id="unit_price2" name="unit_price2" onchange="toggleInput('unit_price2', 'input2_unit_price2')">
-                                    <option value="">VAT</option>
-                                    <option value="create_new">Create New</option>
-                                </select>
-                                <input type="text" id="input2_unit_price2" name="input2_unit_price2" placeholder="New VAT" style="display: none; margin-top: 10px"/>
-                            </div>
-                        </div>
-                    </div>
+                    
+<!-- ✅ INSERT PRODUCT IMAGES HERE -->
+<!-- Product Images -->
+<div class="form-group full-width">
+    <label class="Label-tags label-with-tooltip">
+        <span>Product Images</span>
+        <span class="tooltip">
+            <i class="fa-regular fa-circle-question"></i>
+        </span>
+    </label>
+</div>
                 </div>
             </div>
         </div>

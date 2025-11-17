@@ -228,7 +228,7 @@
 }
 
 .label-with-tooltip .tooltip i {
-  color: var(--active-color);
+  color: #667eea;
   font-size: 12px;
 }
 
@@ -281,7 +281,7 @@
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: var(--active-color);
+  border-color: #667eea;
 }
 
 .select-with-button {
