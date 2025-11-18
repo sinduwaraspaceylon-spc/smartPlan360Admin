@@ -1,4 +1,3 @@
-
 /* Flip card container */
 .flip-card-holder {
     position: relative;
@@ -9,7 +8,6 @@
     transform-style: preserve-3d;
     transition: transform 0.7s ease-in-out;
     transform: rotateY(0deg);
-    margin-top: 20px;
 }
 
 /* When flipped - show back */
@@ -49,10 +47,7 @@
 /* Back face - rotated 180deg so it shows when container flips */
 .flip-card-back {
     transform: rotateY(180deg);
-    background: white;
-    padding: 32px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Allow scrolling within the card */
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
@@ -387,7 +382,7 @@ select.filter-input {
 .container {
     background: white;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid #e5e7eb;
     flex-shrink: 0;
 }
@@ -396,6 +391,10 @@ select.filter-input {
     display: flex;
     background: white;
     border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 8px 8px 0 0;
 }
 
 .tab {
@@ -445,7 +444,7 @@ select.filter-input {
 .item-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .item-card {

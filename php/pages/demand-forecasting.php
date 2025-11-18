@@ -144,7 +144,7 @@
                 <!-- existing demand and add demand header is here -->
                 <div class="multy-form-header">
                     <div class="form-title">
-                        <h2>Existing Demands</h2>
+                        <h2>Add Demand</h2>
                     </div>
                     <div class="demand-filter">
                         <input type="search" class="filter-input" placeholder="Search product...">
@@ -176,86 +176,6 @@
                         <div class="content">
                             <div class="section products active" id="products">
                                 <div class="item-list">
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
                                     <div class="item-card">
                                         <div class="item-info">
                                             <h4>Lavender</h4>
