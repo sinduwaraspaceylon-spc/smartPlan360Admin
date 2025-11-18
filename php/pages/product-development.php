@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="css/product_development.css">
 
 <div class="page-section-holder" id="forcast-chart">
-    <h3>Secondary Packaging Information (SPI)</h3>
+    <h3 class="page-section-header">Secondary Packaging Information (SPI)</h3>
 
     <!-- search and main button seaction-->
     <div class="sub-header">
@@ -30,7 +30,7 @@
     <!-- Form Section -->
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Box Specification</h3>
+            <h3 class="specifications-header">Box Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -42,11 +42,13 @@
                             <span>Sap Code</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">Unique SAP code associated with the product. This code is used for inventory and tracking purposes.</span> -->
+                                <span class="tooltiptext">
+                                    Unique SAP code associated with the product. This code is used for inventory and tracking purposes.
+                                </span>
                             </span>
                         </label>
                         <input type="text" id="sapCode" name="sapCode" autocomplete="off" placeholder="Search SAP Code"/>
-                        <div id="sapCodeResults" class="autocomplete-results"></div>
+                        <div id="sapCodeResults" class="autocomplete-results">                                                           </div>
                         <input type="hidden" id="formCategory" value="boxForm" />
                     </div>
 
@@ -56,9 +58,9 @@
                             <span>Item Description</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
+                                <span class="tooltiptext">
                                     Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                </span>
                             </span>
                         </label>
                         <input type="text" id="pckDes" name="pckDes" required placeholder="Fetched item description"/>
@@ -70,9 +72,7 @@
                             <span>Promotion/Project</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         
@@ -85,9 +85,7 @@
                             <span>Standard Size</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <div class="size_standard_row" style="display: flex; gap: 10px">
@@ -105,9 +103,7 @@
                             <span>Open Size</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <div class="size_open_row" style="display: flex; gap: 10px">
@@ -123,9 +119,7 @@
                             <span>Unit of Measure</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="capacity_unit1" name="capacity_unit1">
@@ -144,9 +138,7 @@
                             <span>Packing Content</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="box_material" name="box_material">
@@ -162,9 +154,7 @@
                             <span>Outer & Inner Plies Information</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="box_additional_material" name="box_additional_material">
@@ -180,9 +170,7 @@
                             <span>Print Style</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="box_print_method" name="box_print_method">
@@ -198,9 +186,7 @@
                             <span>Print Type Outer</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="box_print_outer" name="box_print_outer">
@@ -216,9 +202,7 @@
                             <span>Print Type Inner</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="box_print_inner" name="box_print_inner">
@@ -234,9 +218,7 @@
                             <span>Laminated Finish</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select type="text" id="box_lamination" name="box_lamination">
@@ -252,9 +234,7 @@
                             <span>Box Flaps</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select type="text" id="box_flaps" name="box_flaps">
@@ -270,9 +250,7 @@
                             <span>UV Varnish</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <input type="text" id="box_uv_varnish" name="box_uv_varnish"/>
@@ -284,9 +262,7 @@
                             <span>Hot Stamp</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <input type="text" id="box_hot_stamp" name="box_hot_stamp"/>
@@ -298,9 +274,7 @@
                             <span>Dummy/Sample Approved Date</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <input type="date" id="dummy_approved_date" name="dummy_approved_date"/>
@@ -312,9 +286,7 @@
                             <span>Cutter</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select type="text" id="box_cutter" name="box_cutter">
@@ -330,9 +302,7 @@
                             <span>Artwork(s)</span>
                              <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="box_artworks" name="box_artworks">
@@ -348,9 +318,7 @@
                             <span>Delivery Location</span>
                             <span class="tooltip">
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <select id="delivery_location" name="delivery_location">
@@ -366,9 +334,7 @@
                             <span>Delivery Date(s)</span>
                             <span class="tooltip"> 
                                 <i class="fa-regular fa-circle-question"></i>
-                                <!-- <span class="tooltiptext">
-                                    Detailed item description. Include key features or specifications to ensure clarity in identification
-                                </span> -->
+                                <span class="tooltiptext">Add Tooltip</span>
                             </span>
                         </label>
                         <div class="select-with-button">
@@ -379,17 +345,59 @@
                         <div id="deliveryPreview" style="margin-top:10px; font-size:14px; color:#333;"></div>
                     </div>
 
-                    
-<!-- ✅ INSERT PRODUCT IMAGES HERE -->
-<!-- Product Images -->
-<div class="form-group full-width">
-    <label class="Label-tags label-with-tooltip">
-        <span>Product Images</span>
-        <span class="tooltip">
-            <i class="fa-regular fa-circle-question"></i>
-        </span>
-    </label>
-</div>
+                    <!-- ✅ INSERT PRODUCT IMAGES HERE -->
+                    <!-- Product Images -->
+                    <div class="form-group full-width">
+                        <span><h4>Box Visual</h4></span>
+                    </div>
+
+                    <!-- Image 1 -->
+                    <div class="form-group">
+                        <label class="Label-tags label-with-tooltip">Front View
+                            <span class="tooltip"> 
+                                <i class="fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
+                        <input type="file" id="product_image_1" name="product_image_1" accept="image/*" onchange="previewImage(event,'preview1')">
+                        <img id="preview1" class="img-preview" style="display:none; margin-top:10px; width:120px; height:auto; border:1px solid #ccc; border-radius:5px;">
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="form-group">
+                        <label class="Label-tags label-with-tooltip">Rear View
+                            <span class="tooltip"> 
+                                <i class="fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
+                        <input type="file" id="product_image_2" name="product_image_2" accept="image/*" onchange="previewImage(event,'preview2')">
+                        <img id="preview2" class="img-preview" style="display:none; margin-top:10px; width:120px; height:auto; border:1px solid #ccc; border-radius:5px;">
+                    </div>
+
+                    <!-- Image 3 -->
+                    <div class="form-group">
+                        <label class="Label-tags label-with-tooltip">Side View 1
+                            <span class="tooltip"> 
+                                <i class="fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
+                        <input type="file" id="product_image_3" name="product_image_3" accept="image/*" onchange="previewImage(event,'preview3')">
+                        <img id="preview3" class="img-preview" style="display:none; margin-top:10px; width:120px; height:auto; border:1px solid #ccc; border-radius:5px;">
+                    </div>
+
+                    <!-- Image 4 -->
+                    <div class="form-group">
+                        <label class="Label-tags label-with-tooltip">Side View 2
+                            <span class="tooltip"> 
+                                <i class="fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
+                        <input type="file" id="product_image_4" name="product_image_4" accept="image/*" onchange="previewImage(event,'preview4')">
+                        <img id="preview4" class="img-preview" style="display:none; margin-top:10px; width:120px; height:auto; border:1px solid #ccc; border-radius:5px;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -397,7 +405,7 @@
 
      <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Insert Specification</h3>
+            <h3 class="specifications-header">Insert Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -409,7 +417,7 @@
 
      <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Insert Holder Specification</h3>
+            <h3 class="specifications-header">Insert Holder Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -421,7 +429,7 @@
 
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Insert Holder Platform Specification</h3>
+            <h3 class="specifications-header">Insert Holder Platform Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -433,7 +441,7 @@
 
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Insert Partition Specification</h3>
+            <h3 class="specifications-header">Insert Partition Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -445,7 +453,7 @@
 
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Lid Specification</h3>
+            <h3 class="specifications-header">Lid Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -457,7 +465,7 @@
 
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Base Specification</h3>
+            <h3 class="specifications-header">Base Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -469,7 +477,7 @@
 
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Platform Specification</h3>
+            <h3 class="specifications-header">Platform Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">
@@ -481,7 +489,7 @@
 
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
-            <h3>Sleeve Specification</h3>
+            <h3 class="specifications-header">Sleeve Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content">

@@ -136,7 +136,7 @@
   overflow: hidden;
 }
 
-.section-holder-1 .form-holder h3 {
+.specifications-header {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
@@ -180,7 +180,7 @@
 }
 
 .form-content.expanded {
-  max-height: 1000px;
+  max-height: 1100px;
 }
 
 .form-content-inner {
@@ -259,6 +259,7 @@
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="date"],
+.form-group input[type="file"],
 .form-group select {
   padding: 10px 15px;
   border: 2px solid #e0e0e0;
@@ -288,6 +289,22 @@
   display: flex;
   gap: 10px;
 }
+
+.form-group input[type="file"] {
+  background: #ffffff !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+/* input[type="file"]::-webkit-file-upload-button {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
 
 /*--------- INSIDE FORM BUTTON STYLING ---------*/
 
@@ -370,57 +387,23 @@
   flex-direction: column;
 }
 
-/* Modal Styles */
-/* #overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+/*--------- IMAGE SECTION STYLING ---------*/
+
+.img-preview {
+  width: 120px;
+  height: auto;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  padding: 4px;
+  background: #fff;
+}
+.full-width {
+  grid-column: 1 / -1;
 }
 
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  min-width: 400px;
+h4 {
+  font-size: large;
 }
-
-.popup-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #999;
-}
-
-.popup-close:hover {
-  color: #333;
-}
-
-.autocomplete-results {
-  position: absolute;
-  background: white;
-  border-radius: 8px;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 100;
-  width: 100%;
-  margin-top: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-} */
 
 @media (max-width: 768px) {
   .sub-header {

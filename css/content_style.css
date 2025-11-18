@@ -1,4 +1,4 @@
- @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Universal Selector */
 :root {
@@ -202,12 +202,12 @@ forecast-table-container {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  /* padding: 20px; */
   margin-bottom: 40px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.page-section-holder h3 {
+.page-section-header {
   margin: 0 0 25px 0;
   font-size: 24px;
   font-weight: 600;
@@ -370,7 +370,7 @@ forecast-table-container {
   border-color: #667eea;
 }
 
-.filter-sidebar-actions{
+.filter-sidebar-actions {
   padding: 25px;
 }
 
@@ -617,94 +617,94 @@ forecast-table-container {
 /* Option Buttons */
 /* Option Buttons Section */
 .option-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px solid #e0e0e0;
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
 }
 
 /* Option Button Base Style */
 .option-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border: 2px solid;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
 }
 
 .option-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .option-btn:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .option-btn svg {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /* Pick Button - Green */
 .pick-btn {
-    border-color: #4CAF50;
-    color: #4CAF50;
+  border-color: #4caf50;
+  color: #4caf50;
 }
 
 .pick-btn:hover {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4caf50;
+  color: white;
 }
 
 .pick-btn:hover svg {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Edit Button - Blue */
 .edit-btn {
-    border-color: #2196F3;
-    color: #2196F3;
+  border-color: #2196f3;
+  color: #2196f3;
 }
 
 .edit-btn:hover {
-    background-color: #2196F3;
-    color: white;
+  background-color: #2196f3;
+  color: white;
 }
 
 .edit-btn:hover svg {
-    transform: rotate(15deg);
+  transform: rotate(15deg);
 }
 
 /* Delete Button - Red */
 .delete-btn {
-    border-color: #f44336;
-    color: #f44336;
+  border-color: #f44336;
+  color: #f44336;
 }
 
 .delete-btn:hover {
-    background-color: #f44336;
-    color: white;
+  background-color: #f44336;
+  color: white;
 }
 
 .delete-btn:hover svg {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .option-buttons {
-        flex-direction: column;
-    }
-    
-    .option-btn {
-        width: 100%;
-        justify-content: center;
-    }
+  .option-buttons {
+    flex-direction: column;
+  }
+
+  .option-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
