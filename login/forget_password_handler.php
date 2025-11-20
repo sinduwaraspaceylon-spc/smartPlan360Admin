@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
             $update->execute([$token, $resetCount, $userId]);
 
             // Send email
-            $resetLink = "http://localhost/Spa_Ceylon_Admin/dynamic_content/login/reset_password.php?token=$token";
+            $resetLink = "http://localhost/Spaceylon_admin_pannel/smartPlan360Admin/login/reset_password.php?token=$token";
             $subject = "Password Reset Request - Smart Plan 360";
             $body = "
                 <h2>Password Reset Request</h2>

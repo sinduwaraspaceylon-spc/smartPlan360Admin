@@ -120,7 +120,7 @@
     <!-- Flip card section -->
     <div class="flip-card-holder" id="flipCard">
         <div class="flip-card-front">
-            <h1>Final Demand</h1>
+            <h1>Kavinda's Demand Plan</h1>
         </div>
         
         <div class="flip-card-back">
