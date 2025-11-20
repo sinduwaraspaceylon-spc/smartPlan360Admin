@@ -103,7 +103,7 @@
   </div>
 
 <!-- Demand plan section -->
-  <div class="page-section-holder" id="forcast-chart">
+<div class="page-section-holder" id="forcast-chart">
     <div class="section-header">
         <h3 id="report-title">Demand Plan</h3>
         
@@ -119,317 +119,87 @@
 
     <!-- Flip card section -->
     <div class="flip-card-holder" id="flipCard">
+        <!-- Front Side -->
         <div class="flip-card-front">
-            <h1>Kavinda's Demand Plan</h1>
+            <h1>Demand Plan</h1>
         </div>
         
+        <!-- Back Side -->
         <div class="flip-card-back">
-            <button class="back-btn" id="backBtn">✕</button>
-            
+            <!-- Action buttons -->
             <div class="action-btn-holder">
-                <button class="action-btn active">
+                <button class="action-btn active" id="add-demand-btn">
                     <i class="fa-solid fa-plus"></i>Add
                 </button>
-
                 <button class="action-btn">
                     <i class="fa-solid fa-gear"></i>Edit
                 </button>
-
                 <button class="action-btn">
                     <i class="fa-solid fa-trash"></i>Delete
                 </button>
+                <button class="close-add-demand">
+                    <i class="fa-solid fa-arrow-left"></i>Back to Existing Demands
+                </button>
             </div>
             
+            <!-- Multi section holder -->
             <div class="multy-section-holder">
-                <!-- existing demand and add demand header is here -->
-                 
-                 <!-- multi section header -->
+                <!-- Form header with title and filters -->
                 <div class="multy-form-header">
                     <div class="form-title">
-                        <h2>Add Demand</h2>
+                        <h2 id="section-title">Existing Demands</h2>
                     </div>
-                    <div class="demand-filter">
-                        <input type="search" class="filter-input" placeholder="Search product...">
-                        <select class="filter-input">
-                            <option>All Departments</option>
-                            <option>Plant Care</option>
-                            <option>Seeds & Bulbs</option>
-                            <option>Tools & Equipment</option>
+                    
+                    <!-- Filters (hidden by default, shown when adding demand) -->
+                    <div class="demand-filter" id="demand-filters">
+                        <input type="search" class="filter-input" id="search-input" placeholder="Search product...">
+                        <select class="filter-input" id="department-filter">
+                            <option value="">All Departments</option>
                         </select>
-                        <select class="filter-input">
-                            <option>All Categories</option>
-                            <option>Indoor Plants</option>
-                            <option>Outdoor Plants</option>
-                            <option>Succulents</option>
+                        <select class="filter-input" id="category-filter">
+                            <option value="">All Categories</option>
                         </select>
                     </div>
                 </div>
                 
-                <!-- both sections content displays here -->
+                <!-- Section body - main content area -->
                 <div class="section-body">
-                    <!-- Section Content -->
-                    <div class="container">
+                    <!-- Existing Demands Section -->
+                    <div class="container hidden" id="existing-demands-section">
+                        <div class="item-list" id="existing-demands-list">
+                            <!-- Existing demand cards will be populated here dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Add Demand Section -->
+                    <div class="container hidden" id="add-demand-section">
+                        <!-- Tabs -->
                         <div class="tabs">
                             <div class="tab active" data-tab="products">Products</div>
                             <div class="tab" data-tab="departments">Departments</div>
                             <div class="tab" data-tab="categories">Categories</div>
                         </div>
 
+                        <!-- Tab content -->
                         <div class="content">
+                            <!-- Products tab -->
                             <div class="section products active" id="products">
-                                <div class="item-list">
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
-                                    <div class="item-card">
-                                        <div class="item-info">
-                                            <h4>Lavender</h4>
-                                            <p>Special lavender perfume</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="item-price">$1,299</span>
-                                            <button class="item-btn">View</button>
-                                        </div>
-                                    </div>
+                                <div class="item-list" id="products-list">
+                                    <!-- Products will be populated here dynamically -->
                                 </div>
                             </div>
 
+                            <!-- Departments tab -->
                             <div class="section departments" id="departments">
-                                <div class="item-list">
-                                    <div class="item-card">
-                                        <div class="item-icon">⚡</div>
-                                        <div class="item-info">
-                                            <h4>Electronics</h4>
-                                            <p>Latest gadgets and technology • 1,245 products</p>
-                                        </div>
-                                        <div class="item-action">
-                                            <span class="badge">15 Categories</span>
-                                            <button class="item-btn">Manage</button>
-                                        </div>
-                                    </div>
+                                <div class="item-list" id="departments-list">
+                                    <!-- Departments will be populated here dynamically -->
                                 </div>
                             </div>
 
+                            <!-- Categories tab -->
                             <div class="section categories" id="categories">
-                                <div class="item-list">
-                                    <!-- Category display here -->
+                                <div class="item-list" id="categories-list">
+                                    <!-- Categories will be populated here dynamically -->
                                 </div>
                             </div>
                         </div>
@@ -512,16 +282,22 @@
 </template>
 
 <script>
-    // Global flag to prevent multiple initializations
+ // ---------------------------
+// GLOBAL FLAGS
+// ---------------------------
 let demandFiltersInitialized = false;
+let isAddMode = false; // for ADD → SUBMIT toggle
 
-// Flip function (Create Demand / Cancel Button)
+
+
+// ---------------------------
+// FLIP CARD FUNCTION
+// ---------------------------
 function toggleDemandForm() {
     const card = document.getElementById('flipCard');
     const btn = document.getElementById('createNewDemandBtn');
     const title = document.getElementById('report-title');
 
-    // Check if elements exist
     if (!card || !btn || !title) {
         console.error('Required elements not found', { card, btn, title });
         return;
@@ -530,7 +306,7 @@ function toggleDemandForm() {
     card.classList.toggle('flipped');
 
     if (card.classList.contains('flipped')) {
-        // Change button to Cancel
+        // SWITCH TO BACK SIDE (Demand Creation UI)
         btn.innerHTML = `
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -542,15 +318,14 @@ function toggleDemandForm() {
         btn.style.backgroundColor = '#dc3545';
         title.textContent = 'Add Demand';
 
-        // Initialize filters when flipped to form (only once)
+        // Init Filters Only Once
         if (!demandFiltersInitialized) {
-            // Call your filter initialization function here if needed
-            // initDemandFilters();
+            initDemandAddMode();
             demandFiltersInitialized = true;
-            console.log('Demand filters initialized');
         }
+
     } else {
-        // Change button back to Create Demand
+        // SWITCH TO FRONT SIDE (Final Report View)
         btn.innerHTML = `
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -558,54 +333,140 @@ function toggleDemandForm() {
             </svg>
             Create Demand
         `;
+
         btn.classList.remove('cancel');
         btn.style.backgroundColor = '#04127a';
         title.textContent = 'Demand Plan';
+
+        // Reset add-mode
+        resetDemandAddMode();
     }
 }
 
-// Wait for DOM to be ready
+
+
+// ---------------------------
+// INITIALIZE FLIP LOGIC
+// ---------------------------
+function initFlipCard() {
+    const createBtn = document.getElementById('createNewDemandBtn');
+    if (createBtn) {
+        createBtn.addEventListener('click', toggleDemandForm);
+        console.log('✓ Create Demand button initialized');
+    } else {
+        console.error('✗ createNewDemandBtn not found');
+    }
+}
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initFlipCard);
 } else {
     initFlipCard();
 }
 
-function initFlipCard() {
-    // Add click event to the Create Demand button
-    const createBtn = document.getElementById('createNewDemandBtn');
-    if (createBtn) {
-        createBtn.addEventListener('click', toggleDemandForm);
-        console.log('✓ Create Demand button listener attached');
-    } else {
-        console.error('✗ createNewDemandBtn not found');
+
+
+// ---------------------------
+// TABS FUNCTIONALITY
+// ---------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.section');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.dataset.tab;
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+
+
+
+
+function initDemandAddMode() {
+    console.log("✓ Initializing Add-Demand mode");
+
+    const addBtn = document.getElementById("add-demand-btn");
+    const closeBtn = document.querySelector(".close-add-demand");
+
+    const filters = document.getElementById("demand-filters");
+    const sectionTitle = document.getElementById("section-title");
+
+    const existingSection = document.getElementById("existing-demands-section");
+    const addSection = document.getElementById("add-demand-section");
+
+    if (!addBtn || !filters || !closeBtn) {
+        console.error("Missing elements:", { addBtn, filters, closeBtn });
+        return;
     }
 
-    // Also handle the back button (✕) on the card
-    const backBtn = document.getElementById('backBtn');
-    if (backBtn) {
-        backBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleDemandForm();
-        });
-        console.log('✓ Back button listener attached');
-    } else {
-        console.error('✗ backBtn not found');
-    }
+    // ------------------------------
+    // ADD BUTTON CLICK
+    // ------------------------------
+    addBtn.addEventListener("click", () => {
+
+        if (!isAddMode) {
+            // ENTER ADD MODE
+            isAddMode = true;
+
+            // Show filters
+            filters.classList.add("active");
+
+            // Update form title
+            sectionTitle.textContent = "Add Demand";
+
+            // Show add section, hide existing
+            existingSection.classList.add("hidden");
+            addSection.classList.remove("hidden");
+
+            // Change Add → Submit
+            addBtn.innerHTML = `<i class="fa-solid fa-check"></i>Submit`;
+            addBtn.classList.add("submit-mode");
+
+            // SHOW CLOSE BUTTON
+            closeBtn.style.display = "flex";
+
+            return;
+        }
+
+        // SUBMIT (Here you will add save logic)
+        console.log("Submitting demand...");
+    });
+
+
+
+    // ------------------------------
+    // CLOSE BUTTON CLICK
+    // ------------------------------
+    closeBtn.addEventListener("click", () => {
+
+        // EXIT ADD MODE
+        isAddMode = false;
+
+        // Hide filters
+        filters.classList.remove("active");
+
+        // Reset title
+        sectionTitle.textContent = "Existing Demands";
+
+        // Show existing, hide add section
+        existingSection.classList.remove("hidden");
+        addSection.classList.add("hidden");
+
+        // Reset Add button
+        addBtn.innerHTML = `<i class="fa-solid fa-plus"></i>Add`;
+        addBtn.classList.remove("submit-mode");
+
+        // HIDE CLOSE BUTTON
+        closeBtn.style.display = "none";
+    });
 }
 
-const tabs = document.querySelectorAll('.tab');
-        const sections = document.querySelectorAll('.section');
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                sections.forEach(section => section.classList.remove('active'));
-                document.getElementById(targetTab).classList.add('active');
-            });
-        });
 </script>

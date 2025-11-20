@@ -95,6 +95,7 @@
     flex-wrap: wrap;
     padding-top: 24px;
     flex-shrink: 0;
+    justify-content: flex-start;
 }
 
 .action-btn {
@@ -147,6 +148,45 @@
     border-color: #030d5a;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(4, 18, 122, 0.4);
+}
+
+/* back to existing demand btn */
+.close-add-demand {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 500;
+    color: #dc2626;
+    background: #ffffff;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close-add-demand.active{
+    display: inline-flex;
+}
+
+.close-add-demand:hover {
+    color: #ffffff;
+    background: #dc2626;
+    border-color: #dc2626;
+}
+
+.close-add-demand i {
+    font-size: 13px;
+}
+
+/* Disabled state */
+.action-btn-holder .action-btn:disabled,
+.close-add-demand:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* Individual button colors on hover */
@@ -204,10 +244,14 @@
 }
 
 .demand-filter {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 12px;
     width: 100%;
+    display: none;
+}
+
+.demand-filter.active {
+    display: grid;
 }
 
 .filter-input {
@@ -534,6 +578,88 @@ select.filter-input {
     color: #4b5563;
 }
 
+/* existing demand  */
+.demand-card {
+            padding: 24px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .demand-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .demand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+
+        .demand-title h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .demand-date {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .demand-status {
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #e8f5e9;
+            color: #4CAF50;
+        }
+
+        .status-pending {
+            background: #fff3e0;
+            color: #ff9800;
+        }
+
+        .demand-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .detail-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .demand-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .hidden {
+            display: none;
+        }
+
 /* Responsive design */
 @media (max-width: 768px) {
     .flip-card-holder {
@@ -562,6 +688,11 @@ select.filter-input {
 
     .demand-filter {
         grid-template-columns: 1fr;
+        display: none;
+    }
+
+    .demand-filter.active {
+        display: flex;
     }
 
     .item-card {
