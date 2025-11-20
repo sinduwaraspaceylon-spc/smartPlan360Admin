@@ -9,6 +9,7 @@
   --button-hover-color: #202124;
   --active-color: #667eea;
 }
+
 .sub-header {
   background: var(--background-color);
   padding: 15px 20px;
@@ -131,9 +132,9 @@
 .section-holder-1 {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0);
   margin-bottom: 20px;
-  overflow: hidden;
+  overflow: visible; /* ✅ CHANGED from hidden to visible */
 }
 
 .specifications-header {
@@ -151,6 +152,7 @@
   justify-content: space-between;
   align-items: center;
   transition: background 0.3s ease;
+  overflow: visible;
 }
 
 .from-holder h3 {
@@ -172,19 +174,23 @@
 
 .form-content {
   max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+  overflow: hidden; /* ✅ Keep hidden for collapsed state */
+  transition: max-height 0.3s ease, overflow 0s 0.3s; /* ✅ Added overflow transition with delay */
   background: var(--background-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 0 0 12px 12px;
+  margin-bottom: 8px;
 }
 
 .form-content.expanded {
   max-height: 1100px;
+  overflow: visible; /* ✅ ADDED - Allow tooltips when expanded */
+  transition: max-height 0.3s ease, overflow 0s 0s; /* ✅ Immediate overflow change when expanding */
 }
 
 .form-content-inner {
   padding: 30px;
+  overflow: visible; /* ✅ ADDED - Allow tooltips to escape */
 }
 
 .form-content-inner p {
@@ -197,12 +203,88 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  overflow: visible; /* ✅ ADDED - Allow tooltips to escape grid */
 }
 
+/* Parent container */
+.label-with-tooltip {
+  position: relative;
+  z-index: 10;
+}
+
+.label-with-tooltip .tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.815);
+  font-size: 10px;
+}
+
+.label-with-tooltip .tooltip i {
+  color: #667eea;
+  font-size: 12px;
+  transition: color 0.2s ease-in-out;
+}
+
+.label-with-tooltip .tooltip:hover i {
+  color: var(--body-components);
+}
+
+.label-with-tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  max-width: 250px;
+  background-color: var(--body-components);
+  color: #fffdfdf4;
+  text-align: left;
+  padding: 12px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 9999;
+  bottom: calc(
+    100% + 12px
+  ); /* ✅ CHANGED from 8px to 12px for better spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-size: 12px;
+  font-weight: 500; /* ✅ ADDED - Moderate font weight for readability */
+  white-space: normal;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  line-height: 1.5; /* ✅ ADDED - Better line spacing for multi-line tooltips */
+}
+
+.label-with-tooltip .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.label-with-tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--body-components) transparent transparent transparent; /* ✅ CHANGED to use CSS variable for consistency */
+}
+
+/* Ensure form groups don't block tooltips */
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+  overflow: visible; /* ✅ ADDED - Allow tooltips to escape */
+}
+
+.form-group:has(.label-with-tooltip:hover) {
+  z-index: 100; /* Bring to front when tooltip is hovered */
 }
 
 .form-group.span-two-rows {
@@ -221,45 +303,11 @@
   gap: 8px;
 }
 
-.label-with-tooltip .tooltip {
-  position: relative;
-  display: inline-flex;
-  cursor: help;
-}
-
-.label-with-tooltip .tooltip i {
-  color: #667eea;
-  font-size: 12px;
-}
-
-.label-with-tooltip .tooltiptext {
-  visibility: hidden;
-  width: 250px;
-  background-color: #333;
-  color: #fff;
-  text-align: left;
-  border-radius: 6px;
-  padding: 10px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 12px;
-  font-weight: normal;
-}
-
-.label-with-tooltip .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
 .form-group input[type="text"],
 .form-group input[type="number"],
 .form-group input[type="date"],
 .form-group input[type="file"],
+.form-group textarea,
 .form-group select {
   padding: 10px 15px;
   border: 2px solid #e0e0e0;
@@ -280,7 +328,8 @@
 }
 
 .form-group input:focus,
-.form-group select:focus {
+.form-group select:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: #667eea;
 }
@@ -298,13 +347,58 @@
   font-size: 14px;
 }
 
-/* input[type="file"]::-webkit-file-upload-button {
-  background: #ffffff !important;
-  border: 1px solid #d1d5db !important;
-  border-radius: 6px;
-  padding: 6px 12px;
-  cursor: pointer;
+.input-percent {
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.input-percent input {
+  width: 80px;
+  padding-right: 20px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.percent-sign {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #333;
+  pointer-events: none; /* so clicking on % still focuses input */
+}
+/* 
+.image-grid-four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.column-grid .image-upload-item {
+  grid-column: span 1; 
 } */
+.image-grid-container {
+  grid-column: 1 / -1; /* Spans all columns in parent grid */
+  max-width: auto; /* Adjust this value to your preference */
+}
+
+.image-grid-four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+}
+
+.image-upload-item {
+  display: flex;
+  flex-direction: column;
+}
 
 /*--------- INSIDE FORM BUTTON STYLING ---------*/
 
@@ -320,7 +414,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   background: white;
   border-radius: 8px;
   cursor: pointer;
@@ -421,6 +515,18 @@ h4 {
 
   .sub-header-btn {
     flex: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .image-grid-four-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .image-grid-four-columns {
+    grid-template-columns: 1fr;
   }
 }
 
