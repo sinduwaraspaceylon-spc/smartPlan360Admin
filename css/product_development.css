@@ -145,7 +145,7 @@
   letter-spacing: -0.3px;
 }
 
-.from-holder {
+.form-holder {
   padding: 16px;
   cursor: pointer;
   display: flex;
@@ -153,9 +153,10 @@
   align-items: center;
   transition: background 0.3s ease;
   overflow: visible;
+  border: #999;
 }
 
-.from-holder h3 {
+.form-holder h3 {
   color: var(--accent-color);
   font-size: 20px;
   margin: 0;

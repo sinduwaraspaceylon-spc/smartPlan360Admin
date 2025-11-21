@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="css/content_style.css">
 <link rel="stylesheet" href="css/product_development.css">
-<link rel="stylesheet" href="css/test_demand.css">
-
 
 <div class="page-section-holder" id="forcast-chart">
     <h3 class="page-section-header">Secondary Packaging Information (SPI)</h3>
@@ -28,7 +26,7 @@
     <!------------------------------------------------------------ Form Section ---------------------------------------------------------------------->
     <!-------------------- Box Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Box Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -389,7 +387,7 @@
 
     <!-------------------- Insert Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Insert Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -589,7 +587,7 @@
 
     <!-------------------- Insert Holder Specification ------------------->
      <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Insert Holder Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -815,7 +813,7 @@
 
     <!-------------------- Insert Holder Platform Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Insert Holder Platform Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -1041,7 +1039,7 @@
 
     <!-------------------- Insert Partiton Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Insert Partition Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -1226,7 +1224,7 @@
 
     <!-------------------- Lid Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Lid Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -1466,7 +1464,7 @@
 
     <!-------------------- Base Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Base Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -1692,7 +1690,7 @@
 
     <!-------------------- PLatform Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Platform Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -1878,7 +1876,7 @@
 
     <!-------------------- Sleeve Specification ------------------->
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Sleeve Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
@@ -2106,7 +2104,7 @@
 
     <!-------------------- Dispatch Dates ------------------>
     <div class="section-holder-1">
-        <div class="from-holder" onclick="toggleSection(this)">
+        <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Dispatch Dates</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
