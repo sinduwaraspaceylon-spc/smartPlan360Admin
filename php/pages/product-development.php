@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="css/content_style.css">
 <link rel="stylesheet" href="css/product_development.css">
+<link rel="stylesheet" href="css/test_demand.css">
+
 
 <div class="page-section-holder" id="forcast-chart">
     <h3 class="page-section-header">Secondary Packaging Information (SPI)</h3>
@@ -422,7 +424,13 @@
 
                     <!-- Size Standard - INSERT -->
                     <div class="form-group">
-                        <label for="insStdSize">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insStdSize">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insSizeStdWidth" name="insSizeStdWidth" placeholder="(W)"/>
@@ -436,7 +444,13 @@
 
                     <!-- Size Open - INSERT -->
                     <div class="form-group">
-                        <label for="insert_size">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_size">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insSizeOpnWidth" name="insSizeOpnWidth" placeholder="(W)"/>
@@ -448,7 +462,13 @@
 
                     <!-- Unit of Measure - INSERT-->
                     <div class="form-group">
-                        <label for="uom">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="uom">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="uom" name="uom" >
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -461,7 +481,13 @@
 
                     <!-- Material - INSERT -->
                     <div class="form-group">
-                        <label for="insMaterial">Packing Content</label>
+                        <label class="Label-tags label-with-tooltip" for="insMaterial">
+                            <span>Packing Content</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select type="text" id="insMaterial" name="insMaterial">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -471,7 +497,13 @@
 
                     <!-- Print Outer - INSERT -->
                     <div class="form-group">
-                        <label for="insPrintOuter">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="insPrintOuter">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insPrintOuter" name="insPrintOuter">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -481,7 +513,13 @@
 
                     <!-- Print Inner - INSERT -->
                     <div class="form-group">
-                        <label for="insPrintInner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="insPrintInner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                            <i class="fa-etch fa-regular fa-circle-question"></i>
+                            <span class="tooltiptext">Add Tooltip</span>
+                        </span>
+                        </label>
                         <select id="insPrintInner" name="insPrintInner">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -588,7 +626,13 @@
                     
                     <!-- Standard Size - INSERT HOLDER -->
                     <div class="form-group">
-                        <label for="insert_holder_size_standard">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_size_standard">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insHoldSizeStdWidth" name="insHoldSizeStdWidth" placeholder="(W)"/>
@@ -602,7 +646,13 @@
 
                     <!-- Open Size - INSERT HOLDER -->
                     <div class="form-group">
-                        <label for="insert_holder_size_standard">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_size_standard">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insHoldSizeOpnWidth" name="insHoldSizeOpnWidth" placeholder="(W)"/>
@@ -614,7 +664,13 @@
 
                     <!-- Unit of Measure - INSERT HOLDER -->
                     <div class="form-group">
-                        <label for="insHoldUom">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="insHoldUom">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insHoldUom" name="insHoldUom">
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -627,7 +683,13 @@
 
                     <!-- Material - INSERT HOLDER -->
                     <div class="form-group">
-                        <label for="insHoldMaterial">Packing Content</label>
+                        <label class="Label-tags label-with-tooltip" for="insHoldMaterial">
+                            <span>Packing Content</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insHoldMaterial" name="insHoldMaterial">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -636,9 +698,14 @@
                     </div>
 
                     <!-- Print (Outer) - INSERT HOLDER -->
-
                     <div class="form-group">
-                        <label for="insHoldPrintOuter">Print Type Outer </label>
+                        <label class="Label-tags label-with-tooltip"  for="insHoldPrintOuter">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insHoldPrintOuter" name="insHoldPrintOuter">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -647,9 +714,14 @@
                     </div>
 
                     <!-- Print (Inner) - INSERT HOLDER  -->
-
                     <div class="form-group">
-                        <label for="insHoldPrintInner">Print Type Inner </label>
+                        <label class="Label-tags label-with-tooltip" for="insHoldPrintInner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insHoldPrintInner" name="insHoldPrintInner">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -658,15 +730,26 @@
                     </div>
 
                     <!-- UV Varnish - INSERT HOLDER  -->
-
                     <div class="form-group">
-                        <label for="insHoldUvVarnish">UV Varnish</label>
+                        <label class="Label-tags label-with-tooltip" for="insHoldUvVarnish">
+                            <span>UV Varnish</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="insHoldUvVarnish" name="insHoldUvVarnish"/>
                     </div>
 
                     <!-- Hot Stamp - INSERT HOLDER -->
                     <div class="form-group">
-                        <label for="insHoldHotStamp">Hot Stamp</label>
+                        <label class="Label-tags label-with-tooltip" for="insHoldHotStamp">
+                            <span>Hot Stamp</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="insHoldHotStamp" name="insHoldHotStamp"/>
                     </div>
 
@@ -767,7 +850,13 @@
 
                     <!-- Standard Size - INSERT HOLDER PLATFORM -->
                     <div class="form-group">
-                        <label for="insert_holder_platforms_size_standard">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_platforms_size_standard">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insert_holder_platform_size_standard_width" placeholder="(W)" />
@@ -781,7 +870,13 @@
 
                     <!-- Open Size - INSERT HOLDER PLATFORM-->
                     <div class="form-group">
-                        <label for="insert_holder_platforms_size_open">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_platforms_size_open">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insert_holder_platform_size_open_width" placeholder="(W)" />
@@ -793,7 +888,13 @@
 
                     <!-- Unit of Measure - INSERT HOLDER PLATFORM -->
                     <div class="form-group">
-                        <label for="capacity_unit6">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="capacity_unit6">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="capacity_unit6" >
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -806,7 +907,13 @@
 
                     <!-- Product Volume - INSERT HOLDER PLATFORM -->
                     <div class="form-group">
-                        <label for="insert_holder_platforms_product_volume">Product Volume</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_platforms_product_volume">
+                            <span>Product Volume</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insert_holder_platforms_product_volume" onchange="toggleSizerVolumeInput(this)">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -816,7 +923,13 @@
 
                     <!-- Print (Outer) - INSERT HOLDER PLATFORM -->
                     <div class="form-group">
-                        <label for="insert_holder_platform_print_outer">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_platform_print_outer">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select type="text" id="insert_holder_platform_print_outer" name="insert_holder_platform_print_outer"> 
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -826,7 +939,13 @@
 
                     <!-- Print (Inner) - INSERT HOLDER PLATFORM -->
                     <div class="form-group">
-                        <label for="insert_holder_platform_print_inner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_platform_print_inner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select type="text" id="insert_holder_platform_print_inner" name="insert_holder_platform_print_inner">
                             <option value="">--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -837,14 +956,26 @@
 
                     <!-- UV Varnish - INSERT HOLDER PLATFORMS -->
                     <div class="form-group">
-                        <label for="insert_holder_platforms_uv_varnish">UV Varnish</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_platforms_uv_varnish">
+                            <span>UV Varnish</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="insert_holder_platforms_uv_varnish" name="insert_holder_platforms_uv_varnish"/>
                     </div>
 
                     <!-- Hot Stamp - INSERT HOLDER PLATFORMS -->
 
                     <div class="form-group">
-                        <label for="insert_holder_platforms_hot_stamp">Hot Stamp</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_holder_platforms_hot_stamp">
+                            <span>Hot Stamp</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="insert_holder_platforms_hot_stamp" name="insert_holder_platforms_hot_stamp"/>
                     </div>
 
@@ -945,7 +1076,13 @@
 
                     <!-- Standard Size - INSERT PARTITION -->
                     <div class="form-group">
-                        <label for="insPartiStdSize">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insPartiStdSize">
+                            <span>Standard Size<span>
+                                <span class="tooltip">
+                                    <i class="fa-etch fa-regular fa-circle-question"></i>
+                                    <span class="tooltiptext">Add Tooltip</span>
+                                </span>
+                            </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insPartiSizeStdWidth" name="insPartiSizeStdWidth" placeholder="(W)"/>
@@ -959,7 +1096,13 @@
 
                     <!-- Open Size - INSERT PARTITION -->
                     <div class="form-group">
-                        <label for="insert_partition_size_open">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_partition_size_open">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="insPartiSizeOpnWidth" name="insPartiSizeOpnWidth" placeholder="(W)"/>
@@ -971,7 +1114,13 @@
 
                     <!-- Unit of Measure - INSERT PARTITION -->
                     <div class="form-group">
-                        <label for="insPartiUom">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="insPartiUom">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insPartiUom" name="insPartiUom">
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -984,7 +1133,13 @@
 
                     <!-- Print (Outer) - INSERT PARTITION -->
                     <div class="form-group">
-                        <label for="insPartiPrintOuter">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="insPartiPrintOuter">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insPartiPrintOuter" name="insPartiPrintOuter">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -994,7 +1149,13 @@
 
                     <!-- Print (Inner) - INSERT PARTITION -->
                     <div class="form-group">
-                        <label for="insPartiPrintInner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="insPartiPrintInner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="insPartiPrintInner" name="insPartiPrintInner">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1102,7 +1263,13 @@
 
                     <!-- Size Standard - LID -->
                     <div class="form-group">
-                        <label for="lidSize">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="lidSize">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="lidSizeStdWidth" name="lidSizeStdWidth" placeholder="(W)"/>
@@ -1116,7 +1283,13 @@
 
                     <!-- Size Open - LID -->
                     <div class="form-group">
-                        <label for="insert_size">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_size">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="lidSizeOpnWidth" name="lidSizeOpnWidth" placeholder="(W)"/>
@@ -1128,7 +1301,13 @@
 
                     <!-- Unit of Measure - LID -->
                     <div class="form-group">
-                        <label for="lidUom">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="lidUom">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="lidUom" name="lidUom">
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -1142,7 +1321,13 @@
                     <!-- Packing Content - LID -->
 
                     <div class="form-group">
-                        <label for="lidMaterial">Packing Content</label>
+                        <label class="Label-tags label-with-tooltip" for="lidMaterial">
+                            <span>Packing Content</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="lidMaterial" name="lidMaterial">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1152,7 +1337,13 @@
 
                     <!-- Print (Outer) - LID -->
                     <div class="form-group">
-                        <label for="lidPrintOuter">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="lidPrintOuter">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select type="text" id="lidPrintOuter" name="lidPrintOuter">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1162,7 +1353,13 @@
 
                     <!-- Print (Inner) - LID -->
                     <div class="form-group">
-                        <label for="lidPrintInner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="lidPrintInner">
+                            <span>Print Type Inner</span> 
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select type="text" id="lidPrintInner" name="lidPrintInner">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1172,14 +1369,25 @@
 
                     <!-- UV Varnish - LID -->
                     <div class="form-group">
-                        <label for="lidUvVarnish">UV Varnish</label>
+                        <label class="Label-tags label-with-tooltip" for="lidUvVarnish">
+                            <span>UV Varnish</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="lidUvVarnish" name="lidUvVarnish" />
                     </div>
 
                     <!-- Hot Stamp - LID -->
-
                     <div class="form-group">
-                        <label for="lidHotStamp">Hot Stamp</label>
+                        <label class="Label-tags label-with-tooltip" for="lidHotStamp">
+                            <span>Hot Stamp</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="lidHotStamp" name="lidHotStamp" />
                     </div>
                 
@@ -1294,7 +1502,13 @@
 
                     <!-- Size Standard - BASE -->
                     <div class="form-group">
-                        <label for="baseStdSize">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="baseStdSize">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="baseSizeStdWidth" name="baseSizeStdWidth" placeholder="(W)"/>
@@ -1307,9 +1521,14 @@
                     </div>
 
                     <!-- Size Open - BASE -->
-
                     <div class="form-group">
-                        <label for="baseOpnSize">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="baseOpnSize">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="baseSizeOpnWidth" name="baseSizeOpnWidth" placeholder="(W)"/>
@@ -1321,7 +1540,13 @@
 
                     <!-- Unit of Measure - BASE -->
                     <div class="form-group">
-                        <label for="baseUom">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="baseUom">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="baseUom" name="baseUom">
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">MM</option>
@@ -1332,9 +1557,15 @@
                         </select>
                     </div>
 
-                    <!-- Material - BASE -->
+                    <!-- Packing Content - BASE -->
                     <div class="form-group">
-                        <label for="baseMaterial">Packing Content</label>
+                        <label class="Label-tags label-with-tooltip" for="baseMaterial">
+                            <span>Packing Content</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="baseMaterial" name="baseMaterial">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1344,7 +1575,13 @@
 
                     <!-- Print (Outer) - BASE -->
                     <div class="form-group">
-                        <label for="basePrintOuter">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="basePrintOuter">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="basePrintOuter" name="basePrintOuter">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1354,7 +1591,13 @@
 
                     <!-- Print (Inner) - BASE-->
                     <div class="form-group">
-                        <label for="basePrintInner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="basePrintInner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="basePrintInner" name="basePrintInner">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1364,13 +1607,25 @@
 
                     <!-- UV Varnish - BASE -->
                     <div class="form-group">
-                        <label for="baseUvVarnish">UV Varnish</label>
+                        <label class="Label-tags label-with-tooltip" for="baseUvVarnish">
+                            <span>UV Varnish</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="baseUvVarnish" name="baseUvVarnish" />
                     </div>
 
                     <!-- Hot Stamp - BASE -->
                     <div class="form-group">
-                        <label for="baseHotStamp">Hot Stamp</label>
+                        <label class="Label-tags label-with-tooltip" for="baseHotStamp">
+                            <span>Hot Stamp</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="baseHotStamp" name="baseHotStamp" />
                     </div>
 
@@ -1473,7 +1728,13 @@
 
                     <!-- Standard Size - PLATFORM -->
                     <div class="form-group">
-                        <label for="platform_size_standard">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="platform_size_standard">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="platSizeStdWidth" name="platSizeStdWidth"placeholder="(W)"/>
@@ -1487,7 +1748,13 @@
 
                     <!-- Open Size - PLATFORM -->
                     <div class="form-group">
-                        <label for="insert_sleeve_ size_open">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_sleeve_ size_open">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="platSizeOpnWidth" name="platSizeOpnWidth" placeholder="(W)"/>
@@ -1499,7 +1766,13 @@
 
                     <!-- Unit of Measure - PLATFORM -->
                     <div class="form-group">
-                        <label for="platUom">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="platUom">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="platUom" name="platUom">
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -1512,7 +1785,13 @@
 
                     <!-- Print (Outer) - PLATFORM -->
                     <div class="form-group">
-                        <label for="platPrintOuter">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="platPrintOuter">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="platPrintOuter" name="platPrintOuter">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1522,7 +1801,13 @@
 
                     <!-- Print (Inner) - PLATFORM -->
                     <div class="form-group">
-                        <label for="platPrintInner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="platPrintInner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="platPrintInner" name="platPrintInner">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1629,7 +1914,13 @@
 
                     <!-- Standard Size - SLEEVE -->
                     <div class="form-group">
-                        <label for="sleeve_size_standard">Standard Size</label>
+                        <label class="Label-tags label-with-tooltip" for="sleeve_size_standard">
+                            <span>Standard Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="sleSizeStdWidth" name="sleSizeStdWidth" placeholder="(W)"/>
@@ -1643,7 +1934,13 @@
 
                     <!--  Open Size - SLEEVE -->
                     <div class="form-group">
-                        <label for="insert_sleeve_size_open">Open Size</label>
+                        <label class="Label-tags label-with-tooltip" for="insert_sleeve_size_open">
+                            <span>Open Size</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <div class="size_standard_row">
                             <div>
                                 <input type="number" id="sleSizeOpnWidth" name="sleSizeOpnWidth" placeholder="(W)"/>
@@ -1655,7 +1952,13 @@
 
                     <!-- Unit of Measure - SLEEVE -->
                     <div class="form-group">
-                        <label for="sleUom">Unit of Measure</label>
+                        <label class="Label-tags label-with-tooltip" for="sleUom">
+                            <span>Unit of Measure</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="sleUom" name="sleUom">
                             <option value="" disabled selected>Unit</option>
                             <option value="mm">mm</option>
@@ -1668,7 +1971,13 @@
 
                     <!-- Print (Outer) - SLEEVE -->
                     <div class="form-group">
-                        <label for="slePrintOuter">Print Type Outer</label>
+                        <label class="Label-tags label-with-tooltip" for="slePrintOuter">
+                            <span>Print Type Outer</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="slePrintOuter" name="slePrintOuter">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1678,7 +1987,13 @@
 
                     <!-- Print (Inner) - SLEEVE -->
                     <div class="form-group">
-                        <label for="slePrintInner">Print Type Inner</label>
+                        <label class="Label-tags label-with-tooltip" for="slePrintInner">
+                            <span>Print Type Inner</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="slePrintInner" name="slePrintInner">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1689,7 +2004,13 @@
 
                     <!-- Lamination - SLEEVE -->
                     <div class="form-group">
-                        <label for="sleLamination">Lamination</label>
+                        <label class="Label-tags label-with-tooltip" for="sleLamination">
+                            <span>Lamination</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <select id="sleLamination" name="sleLamination">
                             <option value="" disabled selected>--SELECT--</option>
                             <option value="create_new">Create New</option>
@@ -1700,13 +2021,25 @@
 
                     <!-- UV Varnish - SLEEVE -->
                     <div class="form-group">
-                        <label for="sleUvVarnish">UV Varnish</label>
+                        <label class="Label-tags label-with-tooltip" for="sleUvVarnish">
+                            <span>UV Varnish</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="sleUvVarnish" name="sleUvVarnish"/>
                     </div>
 
                     <!-- Hot Stamp - SLEEVE -->
                     <div class="form-group">
-                        <label for="sleHotStamp">Hot Stamp</label>
+                        <label class="Label-tags label-with-tooltip" for="sleHotStamp">
+                            <span>Hot Stamp</span>
+                            <span class="tooltip">
+                                <i class="fa-etch fa-regular fa-circle-question"></i>
+                                <span class="tooltiptext">Add Tooltip</span>
+                            </span>
+                        </label>
                         <input type="text" id="sleHotStamp" name="sleHotStamp"/>
                     </div>
 
@@ -1815,4 +2148,4 @@
             // Rotate the icon
             icon.classList.toggle('rotate');
         }
-    </script>
+</script>
