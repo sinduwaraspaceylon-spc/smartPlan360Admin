@@ -193,7 +193,7 @@
         <!-- Products tab -->
         <div class="section-products" id="products">
             <div class="item-list" id="products-list">
-                <div class="table-holder" id="add-demand-departments-section">
+        <div class="table-holder" id="add-demand-departments-section">
             <div class="table-wrapper">
                 <table class="demand-table">
                     <thead>
