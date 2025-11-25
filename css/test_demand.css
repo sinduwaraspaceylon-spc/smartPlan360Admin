@@ -992,3 +992,104 @@ select.filter-input {
         .demand-products-list::-webkit-scrollbar-thumb:hover {
             background: #475569;
         }
+
+        /* demand add table css */
+        .table-wrapper {
+    overflow-x: auto;
+    max-width: 100%;
+    position: relative;
+}
+
+.demand-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    white-space: nowrap;
+}
+
+.demand-table thead th {
+    background-color: #f8f9fa;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+}
+
+.demand-table tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Sticky checkbox column */
+.sticky-checkbox {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.demand-table thead .sticky-checkbox {
+    background-color: #f8f9fa;
+    z-index: 3;
+}
+
+/* Sticky product column */
+.sticky-product {
+    position: sticky;
+    left: 50px; /* Adjust based on checkbox column width */
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    min-width: 200px;
+}
+
+.demand-table thead .sticky-product {
+    background-color: #f8f9fa;
+    z-index: 3;
+}
+
+/* Month columns */
+.demand-table th:not(.sticky-checkbox):not(.sticky-product),
+.demand-table td:not(.sticky-checkbox):not(.sticky-product) {
+    min-width: 100px;
+}
+
+/* Input styling */
+.month-input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.month-input:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+/* Scrollbar styling */
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

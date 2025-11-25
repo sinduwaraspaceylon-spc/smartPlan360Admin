@@ -1,9 +1,7 @@
 function initDemandPlanSection() {
     console.log("[initDemandPlanSection] initializing...");
 
-    /* --------------------------------------------------
-       GLOBAL RESET FUNCTION (called whenever card not flipped)
-    -------------------------------------------------- */
+    // global reset fuction
     function resetAllUI() {
         console.log("[resetAllUI] Resetting ALL sections...");
 
@@ -24,9 +22,7 @@ function initDemandPlanSection() {
         resetTabs(); // reset tab section as well
     }
 
-    /* --------------------------------------------------
-       1. FLIP CARD TOGGLE (Create Demand ↔ Cancel)
-    -------------------------------------------------- */
+    // flip card (Create Demand + Cancel)
     function initFlipCard() {
         const flipCard = document.getElementById("flipCard");
         const toggleBtn = document.getElementById("createNewDemandBtn");
@@ -79,9 +75,7 @@ function initDemandPlanSection() {
         });
     }
 
-    /* --------------------------------------------------
-       2. ADD-DEMAND SECTION (Add → Submit + Back)
-    -------------------------------------------------- */
+    // ADD-DEMAND SECTION (Add → Submit + Back)
     function initAddDemandSection() {
         const addBtn = document.getElementById("add-demand-btn");
         const addSection = document.getElementById("add-demand-section");
@@ -113,34 +107,54 @@ function initDemandPlanSection() {
     /* --------------------------------------------------
        3. TABS HANDLING
     -------------------------------------------------- */
-    function initTabs() {
-        const tabButtons = document.querySelectorAll(".tabs .tab");
+    function initDemandTabs() {
+    const tabButtons = document.querySelectorAll(".tabs .tab");
+    const panels = document.querySelectorAll(".demand-content > div");
 
-        const panels = {
-            products: document.getElementById("products"),
-            departments: document.getElementById("departments"),
-            categories: document.getElementById("categories")
-        };
-
-        if (!tabButtons.length) return;
-
-        tabButtons.forEach(tab => {
-            tab.addEventListener("click", () => {
-                const selected = tab.dataset.tab;
-
-                tabButtons.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
-
-                Object.keys(panels).forEach(key => {
-                    panels[key].classList.toggle("hidden", key !== selected);
-                });
-            });
-        });
+    if (tabButtons.length === 0 || panels.length === 0) {
+        console.warn("[initDemandTabs] No tabs or panels found.");
+        return;
     }
 
-    /* --------------------------------------------------
-       TAB RESET FUNCTION
-    -------------------------------------------------- */
+    // Remove old listeners by cloning tabs
+    tabButtons.forEach(tab => {
+        tab.replaceWith(tab.cloneNode(true));
+    });
+
+    const cleanTabs = document.querySelectorAll(".tabs .tab");
+
+    function activateTab(tabName) {
+        // Remove active from all tabs
+        cleanTabs.forEach(t => t.classList.remove("active"));
+
+        // Set active tab
+        const clicked = document.querySelector(`.tab[data-tab="${tabName}"]`);
+        if (clicked) clicked.classList.add("active");
+
+        // Hide all panels
+        panels.forEach(panel => panel.classList.add("hidden"));
+
+        // Show only selected panel
+        const activePanel = document.getElementById(tabName);
+        if (activePanel) activePanel.classList.remove("hidden");
+    }
+
+    // Bind click listeners
+    cleanTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const tabName = tab.dataset.tab;
+            activateTab(tabName);
+        });
+    });
+
+    // Ensure default state (first tab = active)
+    const firstTab = cleanTabs[0];
+    if (firstTab) activateTab(firstTab.dataset.tab);
+
+    console.log("[initDemandTabs] Tabs ready.");
+}
+
+    // Reset tabs to default state
     function resetTabs() {
         const tabButtons = document.querySelectorAll(".tabs .tab");
 
@@ -162,12 +176,10 @@ function initDemandPlanSection() {
         console.log("[resetTabs] Default tab restored.");
     }
 
-    /* --------------------------------------------------
-       INIT ALL
-    -------------------------------------------------- */
+    // initialize all features    
     initFlipCard();
     initAddDemandSection();
-    initTabs();
+    initDemandTabs();
 
     console.log("[initDemandPlanSection] All features initialized.");
 }

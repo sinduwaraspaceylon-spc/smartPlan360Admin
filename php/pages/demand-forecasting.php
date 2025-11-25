@@ -191,25 +191,229 @@
     <!-- Tab content -->
     <div class="demand-content">
         <!-- Products tab -->
-        <div class="section products active" id="products">
+        <div class="section-products" id="products">
             <div class="item-list" id="products-list">
-                <div class="table-holder" id="add-demand-products-section">
-                    <!-- products will be populated here dynamically -->    
-                </div>
+                <div class="table-holder" id="add-demand-departments-section">
+            <div class="table-wrapper">
+                <table class="demand-table">
+                    <thead>
+                        <tr>
+                            <th class="sticky-checkbox">
+                                <input type="checkbox" id="select-all" />
+                            </th>
+                            <th class="sticky-product">Selected Products</th>
+                            <th>Jan</th>
+                            <th>Feb</th>
+                            <th>Mar</th>
+                            <th>Apr</th>
+                            <th>May</th>
+                            <th>Jun</th>
+                            <th>Jul</th>
+                            <th>Aug</th>
+                            <th>Sep</th>
+                            <th>Oct</th>
+                            <th>Nov</th>
+                            <th>Dec</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <tr>
+                            <td class="sticky-checkbox">
+                                <input type="checkbox" class="row-checkbox" />
+                            </td>
+                            <td class="sticky-product">Product 1</td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                            <td><input type="number" class="month-input" placeholder="0" /></td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
             </div>
         </div>
 
         <!-- Departments tab -->
-        <div class="section departments" id="departments">
+        <div class="section-departments" id="departments">
             <div class="item-list" id="departments-list">
-                <div class="table-holder" id="add-demand-departments-section">
-                    <!-- Departments will be populated here dynamically -->
-                </div>
+                <!-- departments will be populated here dynamically -->
             </div>
         </div>
 
         <!-- Categories tab -->
-        <div class="section categories" id="categories">
+        <div class="section-categories" id="categories">
             <div class="item-list" id="categories-list">
                 <div class="table-holder" id="add-demand-categories-section">
                     <!-- Categories will be populated here dynamically -->
