@@ -137,7 +137,7 @@
                 <button class="action-btn">
                     <i class="fa-solid fa-trash"></i>Delete
                 </button>
-                <button class="close-add-demand">
+                <button class="close-add-demand hidden" id="back-to-demands-btn">
                     <i class="fa-solid fa-arrow-left"></i>Back to Existing Demands
                 </button>
             </div>
@@ -151,59 +151,72 @@
                     </div>
                     
                     <!-- Filters (hidden by default, shown when adding demand) -->
-                    <div class="demand-filter" id="demand-filters">
+                <div class="demand-filter hidden" id="demand-filters">
                         <input type="search" class="filter-input" id="search-input" placeholder="Search product...">
+                    <div class="demand-filter-dropdowns">
+                        <select class="filter-input" id="category-filter">
+                            <option value="">All Brands</option>
+                        </select>
                         <select class="filter-input" id="department-filter">
                             <option value="">All Departments</option>
                         </select>
                         <select class="filter-input" id="category-filter">
+                            <option value="">All Ranges</option>
+                        </select>
+                        <select class="filter-input" id="category-filter">
                             <option value="">All Categories</option>
                         </select>
-                    </div>
-                </div>
+                    </div> <!-- close demand filter dropdown -->
+                </div> <!-- cloase demand fiter -->
+            </div> <!-- Close multy-form-header -->
                 
                 <!-- Section body - main content area -->
                 <div class="section-body">
                     <!-- Existing Demands Section -->
-                    <div class="container hidden" id="existing-demands-section">
+                    <div class="container" id="existing-demands-section">
                         <div class="item-list" id="existing-demands-list">
                             <!-- Existing demand cards will be populated here dynamically -->
                         </div>
                     </div>
                     
                     <!-- Add Demand Section -->
-                    <div class="container hidden" id="add-demand-section">
-                        <!-- Tabs -->
-                        <div class="tabs">
-                            <div class="tab active" data-tab="products">Products</div>
-                            <div class="tab" data-tab="departments">Departments</div>
-                            <div class="tab" data-tab="categories">Categories</div>
-                        </div>
+<div class="container hidden" id="add-demand-section">
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="tab active" data-tab="products">Products</div>
+        <div class="tab" data-tab="departments">Departments</div>
+        <div class="tab" data-tab="categories">Categories</div>
+    </div>
 
-                        <!-- Tab content -->
-                        <div class="content">
-                            <!-- Products tab -->
-                            <div class="section products active" id="products">
-                                <div class="item-list" id="products-list">
-                                    <!-- Products will be populated here dynamically -->
-                                </div>
-                            </div>
+    <!-- Tab content -->
+    <div class="demand-content">
+        <!-- Products tab -->
+        <div class="section products active" id="products">
+            <div class="item-list" id="products-list">
+                <div class="table-holder" id="add-demand-products-section">
+                    <!-- products will be populated here dynamically -->    
+                </div>
+            </div>
+        </div>
 
-                            <!-- Departments tab -->
-                            <div class="section departments" id="departments">
-                                <div class="item-list" id="departments-list">
-                                    <!-- Departments will be populated here dynamically -->
-                                </div>
-                            </div>
+        <!-- Departments tab -->
+        <div class="section departments" id="departments">
+            <div class="item-list" id="departments-list">
+                <div class="table-holder" id="add-demand-departments-section">
+                    <!-- Departments will be populated here dynamically -->
+                </div>
+            </div>
+        </div>
 
-                            <!-- Categories tab -->
-                            <div class="section categories" id="categories">
-                                <div class="item-list" id="categories-list">
-                                    <!-- Categories will be populated here dynamically -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Categories tab -->
+        <div class="section categories" id="categories">
+            <div class="item-list" id="categories-list">
+                <div class="table-holder" id="add-demand-categories-section">
+                    <!-- Categories will be populated here dynamically -->
+                </div>
+            </div>
+        </div>
+</div>
                 </div> <!-- Close section-body -->
             </div> <!-- Close multy-section-holder -->
         </div> <!-- Close flip-card-back -->
@@ -280,193 +293,3 @@
     </select>
   </div>
 </template>
-
-<script>
- // ---------------------------
-// GLOBAL FLAGS
-// ---------------------------
-let demandFiltersInitialized = false;
-let isAddMode = false; // for ADD → SUBMIT toggle
-
-
-
-// ---------------------------
-// FLIP CARD FUNCTION
-// ---------------------------
-function toggleDemandForm() {
-    const card = document.getElementById('flipCard');
-    const btn = document.getElementById('createNewDemandBtn');
-    const title = document.getElementById('report-title');
-
-    if (!card || !btn || !title) {
-        console.error('Required elements not found', { card, btn, title });
-        return;
-    }
-
-    card.classList.toggle('flipped');
-
-    if (card.classList.contains('flipped')) {
-        // SWITCH TO BACK SIDE (Demand Creation UI)
-        btn.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-            Cancel
-        `;
-        btn.classList.add('cancel');
-        btn.style.backgroundColor = '#dc3545';
-        title.textContent = 'Add Demand';
-
-        // Init Filters Only Once
-        if (!demandFiltersInitialized) {
-            initDemandAddMode();
-            demandFiltersInitialized = true;
-        }
-
-    } else {
-        // SWITCH TO FRONT SIDE (Final Report View)
-        btn.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-            Create Demand
-        `;
-
-        btn.classList.remove('cancel');
-        btn.style.backgroundColor = '#04127a';
-        title.textContent = 'Demand Plan';
-
-        // Reset add-mode
-        resetDemandAddMode();
-    }
-}
-
-
-
-// ---------------------------
-// INITIALIZE FLIP LOGIC
-// ---------------------------
-function initFlipCard() {
-    const createBtn = document.getElementById('createNewDemandBtn');
-    if (createBtn) {
-        createBtn.addEventListener('click', toggleDemandForm);
-        console.log('✓ Create Demand button initialized');
-    } else {
-        console.error('✗ createNewDemandBtn not found');
-    }
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initFlipCard);
-} else {
-    initFlipCard();
-}
-
-
-
-// ---------------------------
-// TABS FUNCTIONALITY
-// ---------------------------
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab');
-    const sections = document.querySelectorAll('.section');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const targetTab = tab.dataset.tab;
-
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            sections.forEach(section => section.classList.remove('active'));
-            document.getElementById(targetTab).classList.add('active');
-        });
-    });
-});
-
-
-
-
-function initDemandAddMode() {
-    console.log("✓ Initializing Add-Demand mode");
-
-    const addBtn = document.getElementById("add-demand-btn");
-    const closeBtn = document.querySelector(".close-add-demand");
-
-    const filters = document.getElementById("demand-filters");
-    const sectionTitle = document.getElementById("section-title");
-
-    const existingSection = document.getElementById("existing-demands-section");
-    const addSection = document.getElementById("add-demand-section");
-
-    if (!addBtn || !filters || !closeBtn) {
-        console.error("Missing elements:", { addBtn, filters, closeBtn });
-        return;
-    }
-
-    // ------------------------------
-    // ADD BUTTON CLICK
-    // ------------------------------
-    addBtn.addEventListener("click", () => {
-
-        if (!isAddMode) {
-            // ENTER ADD MODE
-            isAddMode = true;
-
-            // Show filters
-            filters.classList.add("active");
-
-            // Update form title
-            sectionTitle.textContent = "Add Demand";
-
-            // Show add section, hide existing
-            existingSection.classList.add("hidden");
-            addSection.classList.remove("hidden");
-
-            // Change Add → Submit
-            addBtn.innerHTML = `<i class="fa-solid fa-check"></i>Submit`;
-            addBtn.classList.add("submit-mode");
-
-            // SHOW CLOSE BUTTON
-            closeBtn.style.display = "flex";
-
-            return;
-        }
-
-        // SUBMIT (Here you will add save logic)
-        console.log("Submitting demand...");
-    });
-
-
-
-    // ------------------------------
-    // CLOSE BUTTON CLICK
-    // ------------------------------
-    closeBtn.addEventListener("click", () => {
-
-        // EXIT ADD MODE
-        isAddMode = false;
-
-        // Hide filters
-        filters.classList.remove("active");
-
-        // Reset title
-        sectionTitle.textContent = "Existing Demands";
-
-        // Show existing, hide add section
-        existingSection.classList.remove("hidden");
-        addSection.classList.add("hidden");
-
-        // Reset Add button
-        addBtn.innerHTML = `<i class="fa-solid fa-plus"></i>Add`;
-        addBtn.classList.remove("submit-mode");
-
-        // HIDE CLOSE BUTTON
-        closeBtn.style.display = "none";
-    });
-}
-
-
-</script>

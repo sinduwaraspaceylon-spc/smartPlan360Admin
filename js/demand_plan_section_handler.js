@@ -1,31 +1,173 @@
-// === FLIP FUNCTION (Add / Cancel Button) ===
-function toggleDemandForm() {
-    const card = document.getElementById('demandCard');
-    const btn = document.getElementById('addDemandBtn');
-    const btnText = document.getElementById('btnText');
-    const btnIcon = document.getElementById('btnIcon');
-    const title = document.getElementById('add-demand-report-title');
+function initDemandPlanSection() {
+    console.log("[initDemandPlanSection] initializing...");
 
-    card.classList.toggle('flipped');
+    /* --------------------------------------------------
+       GLOBAL RESET FUNCTION (called whenever card not flipped)
+    -------------------------------------------------- */
+    function resetAllUI() {
+        console.log("[resetAllUI] Resetting ALL sections...");
 
-    if (card.classList.contains('flipped')) {
-        btnText.textContent = 'Cancel';
-        btn.classList.add('cancel');
-        btn.style.backgroundColor = '#f44336';
-        title.textContent = 'Add Demand';
-        btnIcon.innerHTML = `
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        `;
-        loadDepartments();
-    } else {
-        btnText.textContent = 'Add Demand';
-        btn.classList.remove('cancel');
-        btn.style.backgroundColor = '#04127a';
-        title.textContent = 'Demand Plan';
-        btnIcon.innerHTML = `
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-        `;
+        const addSection = document.getElementById("add-demand-section");
+        const addBtn = document.getElementById("add-demand-btn");
+        const backBtn = document.getElementById("back-to-demands-btn");
+        const demandFilters = document.getElementById("demand-filters");
+
+        if (addSection) addSection.classList.add("hidden");
+        if (backBtn) backBtn.classList.add("hidden");
+        if (demandFilters) demandFilters.classList.add("hidden");
+
+        if (addBtn) {
+            addBtn.innerHTML = `<i class="fa-solid fa-plus"></i> Add`;
+            addBtn.classList.remove("submit-mode");
+        }
+
+        resetTabs(); // reset tab section as well
     }
+
+    /* --------------------------------------------------
+       1. FLIP CARD TOGGLE (Create Demand ↔ Cancel)
+    -------------------------------------------------- */
+    function initFlipCard() {
+        const flipCard = document.getElementById("flipCard");
+        const toggleBtn = document.getElementById("createNewDemandBtn");
+
+        if (!flipCard || !toggleBtn) return;
+
+        toggleBtn.replaceWith(toggleBtn.cloneNode(true));
+        const btn = document.getElementById("createNewDemandBtn");
+
+        function setCreateMode() {
+            btn.classList.remove("cancel-mode");
+            btn.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg> Create Demand
+            `;
+        }
+
+        function setCancelMode() {
+            btn.classList.add("cancel-mode");
+            btn.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg> Cancel
+            `;
+        }
+
+        // Set initial state based on DOM
+        flipCard.classList.contains("flipped") ? setCancelMode() : setCreateMode();
+
+        btn.addEventListener("click", () => {
+            const isFlipped = flipCard.classList.contains("flipped");
+
+            if (isFlipped) {
+                // user is canceling → flip back → RESET ALL
+                flipCard.classList.remove("flipped");
+                setCreateMode();
+
+                resetAllUI(); // <-- FULL SYSTEM RESET
+
+            } else {
+                // user is opening add-demand view
+                flipCard.classList.add("flipped");
+                setCancelMode();
+            }
+        });
+    }
+
+    /* --------------------------------------------------
+       2. ADD-DEMAND SECTION (Add → Submit + Back)
+    -------------------------------------------------- */
+    function initAddDemandSection() {
+        const addBtn = document.getElementById("add-demand-btn");
+        const addSection = document.getElementById("add-demand-section");
+        const demandFilters = document.getElementById("demand-filters");
+        const backBtn = document.getElementById("back-to-demands-btn");
+
+        if (!addBtn || !addSection || !demandFilters || !backBtn) return;
+
+        addBtn.replaceWith(addBtn.cloneNode(true));
+        backBtn.replaceWith(backBtn.cloneNode(true));
+
+        const btn = document.getElementById("add-demand-btn");
+        const back = document.getElementById("back-to-demands-btn");
+
+        btn.addEventListener("click", () => {
+            demandFilters.classList.remove("hidden");
+            addSection.classList.remove("hidden");
+            back.classList.remove("hidden");
+
+            btn.innerHTML = `<i class="fa-solid fa-check"></i> Submit`;
+            btn.classList.add("submit-mode");
+        });
+
+        back.addEventListener("click", () => {
+            resetAllUI(); // full reset from back button
+        });
+    }
+
+    /* --------------------------------------------------
+       3. TABS HANDLING
+    -------------------------------------------------- */
+    function initTabs() {
+        const tabButtons = document.querySelectorAll(".tabs .tab");
+
+        const panels = {
+            products: document.getElementById("products"),
+            departments: document.getElementById("departments"),
+            categories: document.getElementById("categories")
+        };
+
+        if (!tabButtons.length) return;
+
+        tabButtons.forEach(tab => {
+            tab.addEventListener("click", () => {
+                const selected = tab.dataset.tab;
+
+                tabButtons.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                Object.keys(panels).forEach(key => {
+                    panels[key].classList.toggle("hidden", key !== selected);
+                });
+            });
+        });
+    }
+
+    /* --------------------------------------------------
+       TAB RESET FUNCTION
+    -------------------------------------------------- */
+    function resetTabs() {
+        const tabButtons = document.querySelectorAll(".tabs .tab");
+
+        const panels = {
+            products: document.getElementById("products"),
+            departments: document.getElementById("departments"),
+            categories: document.getElementById("categories")
+        };
+
+        if (!tabButtons.length) return;
+
+        tabButtons.forEach(t => t.classList.remove("active"));
+        tabButtons[0].classList.add("active");
+
+        panels.products.classList.remove("hidden");
+        panels.departments.classList.add("hidden");
+        panels.categories.classList.add("hidden");
+
+        console.log("[resetTabs] Default tab restored.");
+    }
+
+    /* --------------------------------------------------
+       INIT ALL
+    -------------------------------------------------- */
+    initFlipCard();
+    initAddDemandSection();
+    initTabs();
+
+    console.log("[initDemandPlanSection] All features initialized.");
 }

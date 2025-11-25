@@ -114,7 +114,7 @@
     <script src="js/admin_frontend.js"></script>
     <script src="js/dynamic_content.js"></script>
     <script src="js/charts.js"></script>
-    <!-- <script src="js/demand_plan_section_handler.js"></script> -->
+    <script src="js/demand_plan_section_handler.js"></script>
     <script src="js/department_chart_handler.js"></script>
     
     <!-- still testing.. -->

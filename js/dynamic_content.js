@@ -260,13 +260,12 @@ async function loadContent(page, title) {
       initSharedFilterSidebar();
     }
 
-    // demand form rorate option loader
-    // if (
-    //   page === "demand-forecasting" &&
-    //   typeof toggleDemandForm === "function"
-    // ) {
-    //   toggleDemandForm();
-    // }
+    if (
+      page === "demand-forecasting" &&
+      typeof initDemandPlanSection === "function"
+    ) {
+      initDemandPlanSection();
+    }
 
     // demand filter handler
     if (

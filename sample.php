@@ -1,574 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demand Management</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Planner - Template</title>
+  <style>
+    :root{--accent:#11213b;--muted:#f3f6f9;--card:#ffffff;--border:#e6e9ee}
+    body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:#f6f8fb;margin:24px;color:#1f2937}
+    .container{max-width:1200px;margin:0 auto}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f5f5f5;
-            padding: 20px;
-        }
+    /* Header area */
+    .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .header-left{display:flex;gap:12px;align-items:center}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo img{height:46px;border-radius:6px}
+    h1{font-size:22px;margin:0}
 
-        .multy-section-holder {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
+    /* Filters row */
+    .filters{display:flex;gap:12px;padding:14px;background:var(--card);border-radius:10px;border:1px solid var(--border);align-items:center}
+    .filters input[type=text]{flex:1;padding:10px 12px;border-radius:8px;border:1px solid var(--border)}
+    .filters select{padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:white}
 
-        .multy-form-header {
-            padding: 24px 32px;
-            border-bottom: 1px solid #e0e0e0;
-            background: #fafafa;
-        }
+    /* Tabs */
+    .tabs{display:flex;margin-top:16px}
+    .tab-btn{padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:white;cursor:pointer}
+    .tab-btn.active{background:linear-gradient(180deg,#fff,#f1f6ff);border:1px solid #cfe0ff;color:var(--accent)}
 
-        .form-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    /* Table card */
+    .card{margin-top:12px;background:var(--card);border-radius:10px;border:1px solid var(--border);overflow:hidden}
+    .card .controls{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid var(--border)}
+    .card .controls .btn{padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:white;cursor:pointer}
+    .card .controls .btn.primary{background:var(--accent);color:white;border:0}
 
-        .form-title h2 {
-            font-size: 24px;
-            color: #333;
-        }
+    /* Table wrapper - horizontal scroll for months */
+    .table-wrapper{overflow:auto;max-height:520px}
+    table{border-collapse:collapse;width:max-content;min-width:100%;font-size:14px}
+    thead th{position:sticky;top:0;background:var(--accent);color:#fff;padding:12px 14px;z-index:4;border-bottom:1px solid rgba(255,255,255,0.06)}
 
-        .header-actions {
-            display: flex;
-            gap: 12px;
-        }
+    /* Make first column sticky */
+    th.sticky-left, td.sticky-left{position:sticky;left:0;background:#fff;z-index:3;border-right:1px solid var(--border);text-align:left}
+    thead th.sticky-left{background:var(--accent);color:#fff}
 
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+    td, th{padding:12px 16px;border-bottom:1px solid var(--border);text-align:center}
+    tr.row-item td{background:#fbfdff}
 
-        .btn-primary {
-            background: #4CAF50;
-            color: white;
-        }
+    /* SKU badge */
+    .sku{display:inline-block;padding:4px 8px;border-radius:6px;background:#e8f0ff;color:#254e9b;font-weight:600;margin-right:10px;font-size:12px}
 
-        .btn-primary:hover {
-            background: #45a049;
-        }
+    /* input inside cells */
+    .cell-input{width:72px;padding:6px;border-radius:6px;border:1px solid var(--border);text-align:center}
 
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
+    /* checkbox column */
+    .chk-col{width:56px}
 
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
+    /* small screens responsiveness */
+    @media (max-width:720px){.filters{flex-direction:column;align-items:stretch}.tabs{flex-wrap:wrap}}
 
-        .demand-filter {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+    /* Hover and controls */
+    .row-actions{color:#ef4444;cursor:pointer;padding-left:8px}
 
-        .filter-input {
-            padding: 10px 16px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 14px;
-            min-width: 200px;
-            outline: none;
-        }
+    /* Footer note */
+    .note{font-size:13px;color:#6b7280;margin-top:10px}
 
-        .filter-input:focus {
-            border-color: #4CAF50;
-        }
-
-        .section-body {
-            padding: 32px;
-        }
-
-        .container {
-            width: 100%;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 8px;
-            border-bottom: 2px solid #e0e0e0;
-            margin-bottom: 24px;
-        }
-
-        .tab {
-            padding: 12px 24px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            margin-bottom: -2px;
-            font-weight: 500;
-            color: #666;
-            transition: all 0.3s;
-        }
-
-        .tab:hover {
-            color: #4CAF50;
-        }
-
-        .tab.active {
-            color: #4CAF50;
-            border-bottom-color: #4CAF50;
-        }
-
-        .content {
-            min-height: 400px;
-        }
-
-        .section {
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        .item-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 16px;
-        }
-
-        .item-card {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background: white;
-            transition: all 0.3s;
-        }
-
-        .item-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-color: #4CAF50;
-        }
-
-        .item-icon {
-            font-size: 32px;
-            margin-right: 16px;
-        }
-
-        .item-info {
-            flex: 1;
-        }
-
-        .item-info h4 {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 4px;
-        }
-
-        .item-info p {
-            font-size: 13px;
-            color: #666;
-        }
-
-        .item-action {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .item-price {
-            font-size: 18px;
-            font-weight: 600;
-            color: #4CAF50;
-        }
-
-        .item-btn {
-            padding: 8px 16px;
-            border: 1px solid #4CAF50;
-            background: white;
-            color: #4CAF50;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .item-btn:hover {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .badge {
-            padding: 4px 12px;
-            background: #e8f5e9;
-            color: #4CAF50;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .demand-card {
-            padding: 24px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background: white;
-            transition: all 0.3s;
-        }
-
-        .demand-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .demand-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 16px;
-        }
-
-        .demand-title h3 {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 4px;
-        }
-
-        .demand-date {
-            font-size: 13px;
-            color: #999;
-        }
-
-        .demand-status {
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .status-active {
-            background: #e8f5e9;
-            color: #4CAF50;
-        }
-
-        .status-pending {
-            background: #fff3e0;
-            color: #ff9800;
-        }
-
-        .demand-details {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .detail-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .detail-label {
-            font-size: 12px;
-            color: #666;
-            margin-bottom: 4px;
-        }
-
-        .detail-value {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .demand-actions {
-            display: flex;
-            gap: 8px;
-            justify-content: flex-end;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+    /* Make month headers narrower so 4 show by default on medium screens (approx) */
+    .month-col{min-width:120px}
+  </style>
 </head>
 <body>
-    <div class="multy-section-holder">
-        <!-- Header -->
-        <div class="multy-form-header">
-            <div class="form-title">
-                <h2 id="header-title">Existing Demands</h2>
-                <div class="header-actions">
-                    <button class="btn btn-secondary hidden" id="back-btn">← Back to Existing Demands</button>
-                    <button class="btn btn-primary" id="action-btn">+ Add Demand</button>
-                </div>
-            </div>
-            <div class="demand-filter hidden" id="filter-section">
-                <input type="search" class="filter-input" placeholder="Search product...">
-                <select class="filter-input">
-                    <option>All Departments</option>
-                    <option>Plant Care</option>
-                    <option>Seeds & Bulbs</option>
-                    <option>Tools & Equipment</option>
-                </select>
-                <select class="filter-input">
-                    <option>All Categories</option>
-                    <option>Indoor Plants</option>
-                    <option>Outdoor Plants</option>
-                    <option>Succulents</option>
-                </select>
-            </div>
+  <div class="container">
+
+    <div class="header">
+      <div class="header-left">
+        <div class="logo"><img src="/mnt/data/30d424ae-ac6c-4d8e-b901-402fe829aed3.png" alt="screenshot"/></div>
+        <div>
+          <h1>Add Demand</h1>
+          <div style="color:#6b7280;font-size:13px">Search products, add them to the table and fill monthly percentages</div>
         </div>
-        
-        <!-- Body -->
-        <div class="section-body">
-            <!-- Existing Demands Section -->
-            <div class="container" id="existing-demands-section">
-                <div class="item-list">
-                    <div class="demand-card">
-                        <div class="demand-header">
-                            <div class="demand-title">
-                                <h3>Spring Garden Collection</h3>
-                                <span class="demand-date">Created: Nov 15, 2025</span>
-                            </div>
-                            <span class="demand-status status-active">Active</span>
-                        </div>
-                        <div class="demand-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Total Products</span>
-                                <span class="detail-value">45</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Departments</span>
-                                <span class="detail-value">3</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Est. Value</span>
-                                <span class="detail-value">$12,450</span>
-                            </div>
-                        </div>
-                        <div class="demand-actions">
-                            <button class="item-btn">View Details</button>
-                            <button class="item-btn">Edit</button>
-                        </div>
-                    </div>
+      </div>
 
-                    <div class="demand-card">
-                        <div class="demand-header">
-                            <div class="demand-title">
-                                <h3>Indoor Plant Essentials</h3>
-                                <span class="demand-date">Created: Nov 10, 2025</span>
-                            </div>
-                            <span class="demand-status status-pending">Pending</span>
-                        </div>
-                        <div class="demand-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Total Products</span>
-                                <span class="detail-value">28</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Departments</span>
-                                <span class="detail-value">2</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Est. Value</span>
-                                <span class="detail-value">$8,320</span>
-                            </div>
-                        </div>
-                        <div class="demand-actions">
-                            <button class="item-btn">View Details</button>
-                            <button class="item-btn">Edit</button>
-                        </div>
-                    </div>
-
-                    <div class="demand-card">
-                        <div class="demand-header">
-                            <div class="demand-title">
-                                <h3>Summer Sale Inventory</h3>
-                                <span class="demand-date">Created: Nov 8, 2025</span>
-                            </div>
-                            <span class="demand-status status-active">Active</span>
-                        </div>
-                        <div class="demand-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Total Products</span>
-                                <span class="detail-value">62</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Departments</span>
-                                <span class="detail-value">5</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Est. Value</span>
-                                <span class="detail-value">$18,900</span>
-                            </div>
-                        </div>
-                        <div class="demand-actions">
-                            <button class="item-btn">View Details</button>
-                            <button class="item-btn">Edit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add Demand Section -->
-            <div class="container hidden" id="add-demand-section">
-                <div class="tabs">
-                    <div class="tab active" data-tab="products">Products</div>
-                    <div class="tab" data-tab="departments">Departments</div>
-                    <div class="tab" data-tab="categories">Categories</div>
-                </div>
-
-                <div class="content">
-                    <div class="section products active" id="products">
-                        <div class="item-list">
-                            <div class="item-card">
-                                <div class="item-info">
-                                    <h4>Lavender</h4>
-                                    <p>Special lavender perfume</p>
-                                </div>
-                                <div class="item-action">
-                                    <span class="item-price">$1,299</span>
-                                    <button class="item-btn">Add</button>
-                                </div>
-                            </div>
-                            <div class="item-card">
-                                <div class="item-info">
-                                    <h4>Rose Plant</h4>
-                                    <p>Beautiful red roses</p>
-                                </div>
-                                <div class="item-action">
-                                    <span class="item-price">$899</span>
-                                    <button class="item-btn">Add</button>
-                                </div>
-                            </div>
-                            <div class="item-card">
-                                <div class="item-info">
-                                    <h4>Succulent Mix</h4>
-                                    <p>Assorted succulents pack</p>
-                                </div>
-                                <div class="item-action">
-                                    <span class="item-price">$599</span>
-                                    <button class="item-btn">Add</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section departments" id="departments">
-                        <div class="item-list">
-                            <div class="item-card">
-                                <div class="item-icon">🌱</div>
-                                <div class="item-info">
-                                    <h4>Plant Care</h4>
-                                    <p>Everything for healthy plants • 342 products</p>
-                                </div>
-                                <div class="item-action">
-                                    <span class="badge">8 Categories</span>
-                                    <button class="item-btn">Add All</button>
-                                </div>
-                            </div>
-                            <div class="item-card">
-                                <div class="item-icon">🌾</div>
-                                <div class="item-info">
-                                    <h4>Seeds & Bulbs</h4>
-                                    <p>Fresh seeds and bulbs • 156 products</p>
-                                </div>
-                                <div class="item-action">
-                                    <span class="badge">5 Categories</span>
-                                    <button class="item-btn">Add All</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="section categories" id="categories">
-                        <div class="item-list">
-                            <div class="item-card">
-                                <div class="item-info">
-                                    <h4>Indoor Plants</h4>
-                                    <p>Perfect for home decoration • 89 products</p>
-                                </div>
-                                <div class="item-action">
-                                    <button class="item-btn">Add All</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div>
+        <button class="btn primary" onclick="saveData()">Submit</button>
+      </div>
     </div>
 
-    <script>
-        // Tab switching functionality
-        const tabs = document.querySelectorAll('.tab');
-        const sections = document.querySelectorAll('.section');
+    <div class="filters">
+      <input id="searchBox" type="text" placeholder="Search product or type SKU and press Enter..." />
+      <select id="brandFilter"><option value="">All Brands</option></select>
+      <select id="deptFilter"><option value="">All Departments</option></select>
+      <select id="rangeFilter"><option value="">All Ranges</option></select>
+      <select id="catFilter"><option value="">All Categories</option></select>
+    </div>
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.getAttribute('data-tab');
-                
-                tabs.forEach(t => t.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                
-                tab.classList.add('active');
-                document.getElementById(targetTab).classList.add('active');
-            });
-        });
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="products">Products</button>
+      <button class="tab-btn" data-tab="departments">Departments</button>
+      <button class="tab-btn" data-tab="categories">Categories</button>
+    </div>
 
-        // Section switching functionality
-        const actionBtn = document.getElementById('action-btn');
-        const backBtn = document.getElementById('back-btn');
-        const headerTitle = document.getElementById('header-title');
-        const filterSection = document.getElementById('filter-section');
-        const existingDemandsSection = document.getElementById('existing-demands-section');
-        const addDemandSection = document.getElementById('add-demand-section');
+    <div class="card">
+      <div class="controls">
+        <button class="btn" id="addRowBtn">Add Item</button>
+        <button class="btn" id="deleteSelectedBtn">Delete Selected</button>
+        <div style="flex:1"></div>
+        <div style="font-size:13px;color:#6b7280">Showing 12 months — horizontally scroll to view more</div>
+      </div>
 
-        actionBtn.addEventListener('click', () => {
-            if (actionBtn.textContent.includes('Add Demand')) {
-                // Switch to Add Demand view
-                existingDemandsSection.classList.add('hidden');
-                addDemandSection.classList.remove('hidden');
-                filterSection.classList.remove('hidden');
-                backBtn.classList.remove('hidden');
-                headerTitle.textContent = 'Add Demand';
-                actionBtn.textContent = 'Submit Demand';
-                actionBtn.classList.remove('btn-primary');
-                actionBtn.classList.add('btn-success');
-            } else {
-                // Submit the demand
-                alert('Demand submitted successfully!');
-                // Reset to existing demands view
-                showExistingDemands();
-            }
-        });
+      <div class="table-wrapper">
+        <table id="demandTable">
+          <thead id="tableHead"></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
 
-        backBtn.addEventListener('click', () => {
-            showExistingDemands();
-        });
+    <div class="note">Tip: You can edit a cell value, use the checkbox to select rows and press "Delete Selected". The top row (month labels) stays visible while you scroll vertically.</div>
 
-        function showExistingDemands() {
-            existingDemandsSection.classList.remove('hidden');
-            addDemandSection.classList.add('hidden');
-            filterSection.classList.add('hidden');
-            backBtn.classList.add('hidden');
-            headerTitle.textContent = 'Existing Demands';
-            actionBtn.textContent = '+ Add Demand';
-            actionBtn.classList.add('btn-primary');
-            actionBtn.classList.remove('btn-success');
+  </div>
+
+  <script>
+    /* --------- Sample data --------- */
+    const sampleProducts = [
+      {sku:'SKU001', name:'Product Name Example'},
+      {sku:'SKU002', name:'Another Product Name'},
+      {sku:'SKU003', name:'Third Product Here'},
+      {sku:'SKU004', name:'Sample Product Four'},
+    ];
+
+    // Keep items in three separate lists (tabs)
+    const store = {
+      products:[],
+      departments:[],
+      categories:[]
+    };
+
+    // active tab
+    let activeTab = 'products';
+
+    // months generation - 12 months starting from current month
+    const monthNames = (()=>{
+      const names = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const now = new Date();
+      const start = now.getMonth();
+      const out = [];
+      for(let i=0;i<12;i++){ out.push(names[(start+i)%12]); }
+      return out;
+    })();
+
+    /* --------- Render table head (sticky months) --------- */
+    function renderHeader(){
+      const thead = document.getElementById('tableHead');
+      let html = '<tr>';
+      html += '<th class="sticky-left chk-col"><input id="selectAll" type="checkbox"/></th>';
+      html += '<th class="sticky-left">Selected '+(activeTab==='products'?'Products':(activeTab==='departments'?'Departments':'Categories'))+'</th>';
+      monthNames.forEach(m=>{ html += `<th class="month-col">${m}</th>` });
+      html += '</tr>';
+      thead.innerHTML = html;
+
+      document.getElementById('selectAll').addEventListener('change',function(e){
+        document.querySelectorAll('.row-check').forEach(cb=>cb.checked = e.target.checked);
+      });
+    }
+
+    /* --------- Render body rows --------- */
+    function renderBody(){
+      const tbody = document.getElementById('tableBody');
+      const list = store[activeTab];
+      let html = '';
+
+      list.forEach((it, idx)=>{
+        html += `<tr class="row-item" data-index="${idx}">`;
+        html += `<td class="sticky-left chk-col"><input class="row-check" data-index="${idx}" type="checkbox"/></td>`;
+
+        // left column content
+        html += `<td class="sticky-left"><div>`;
+        if(activeTab==='products') html += `<span class="sku">${it.sku}</span>`;
+        html += `<strong>${escapeHtml(it.name)}</strong>`;
+        html += ` <span class="row-actions" onclick="removeRow(${idx})">&times;</span>`;
+        html += `</div></td>`;
+
+        // month cells with inputs
+        for(let m=0;m<12;m++){
+          const val = (it.months && it.months[m] != null) ? it.months[m] : 0;
+          html += `<td><input type="number" min="0" max="100" class="cell-input" value="${val}" onchange="updateCell(${idx},${m},this.value)"/></td>`;
         }
-    </script>
+
+        html += `</tr>`;
+      });
+
+      tbody.innerHTML = html;
+    }
+
+    function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'})[c]); }
+
+    function updateCell(row,month,value){
+      const parsed = Number(value) || 0;
+      store[activeTab][row].months[month] = parsed;
+    }
+
+    function removeRow(index){
+      if(!confirm('Remove this item?')) return;
+      store[activeTab].splice(index,1);
+      renderHeader(); renderBody();
+    }
+
+    /* Add a new item (product/department/category) */
+    document.getElementById('addRowBtn').addEventListener('click',()=>{
+      const name = prompt('Enter '+(activeTab==='products'?'Product name':'Item name')+' (for product you can also provide SKU like SKU123 - Product name)');
+      if(!name) return;
+
+      if(activeTab==='products'){
+        // Try splitting SKU and name if user provides SKU - Name
+        let sku=''; let pname = name;
+        const match = name.match(/^(\S+)\s*-\s*(.+)$/);
+        if(match){ sku = match[1]; pname = match[2]; }
+        if(!sku){ sku = 'SKU'+String(Math.floor(Math.random()*9000)+1000); }
+        store.products.push({sku:sku,name:pname,months:new Array(12).fill(0)});
+      } else {
+        store[activeTab].push({name:name,months:new Array(12).fill(0)});
+      }
+      renderHeader(); renderBody();
+    });
+
+    /* Delete selected */
+    document.getElementById('deleteSelectedBtn').addEventListener('click',()=>{
+      const checks = Array.from(document.querySelectorAll('.row-check')).filter(c=>c.checked);
+      if(checks.length===0){ alert('No rows selected'); return; }
+      if(!confirm('Delete '+checks.length+' selected rows?')) return;
+
+      // remove by indexes descending
+      const indexes = checks.map(c=>Number(c.getAttribute('data-index'))).sort((a,b)=>b-a);
+      indexes.forEach(i=>store[activeTab].splice(i,1));
+      renderHeader(); renderBody();
+    });
+
+    /* Search box: when Enter pressed, try find product in sample list, else create new product */
+    document.getElementById('searchBox').addEventListener('keydown',function(e){
+      if(e.key==='Enter'){
+        const t = this.value.trim(); if(!t) return;
+        // try find product by name or SKU
+        const found = sampleProducts.find(p=>p.sku.toLowerCase()===t.toLowerCase() || p.name.toLowerCase().includes(t.toLowerCase()));
+        if(found){ addProduct(found); this.value=''; return; }
+        // else create new product entry (if on products tab)
+        if(activeTab==='products'){
+          const skuGuess = t.split(' ')[0];
+          store.products.push({sku:skuGuess,name:t,months:new Array(12).fill(0)});
+          renderHeader(); renderBody(); this.value='';
+        } else {
+          store[activeTab].push({name:t,months:new Array(12).fill(0)}); renderHeader(); renderBody(); this.value='';
+        }
+      }
+    });
+
+    function addProduct(prod){
+      // prevent duplicates by SKU
+      if(store.products.some(p=>p.sku===prod.sku)){
+        alert('Product already added'); return;
+      }
+      store.products.push({sku:prod.sku,name:prod.name,months:new Array(12).fill(0)});
+      if(activeTab==='products'){ renderHeader(); renderBody(); }
+    }
+
+    /* Tab switching */
+    document.querySelectorAll('.tab-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTab = btn.getAttribute('data-tab');
+        renderHeader(); renderBody();
+      });
+    });
+
+    /* Simple save - just log current state */
+    function saveData(){
+      const payload = JSON.stringify(store, null, 2);
+      console.log('Saving payload', payload);
+      alert('Data logged to console (see devtools).');
+    }
+
+    // initialize with three sample products
+    sampleProducts.slice(0,3).forEach(p=>store.products.push({sku:p.sku,name:p.name,months:new Array(12).fill(0)}));
+
+    // initial render
+    renderHeader(); renderBody();
+  </script>
 </body>
 </html>
