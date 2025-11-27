@@ -1,287 +1,442 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Demand Planner - Template</title>
-  <style>
-    :root{--accent:#11213b;--muted:#f3f6f9;--card:#ffffff;--border:#e6e9ee}
-    body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:#f6f8fb;margin:24px;color:#1f2937}
-    .container{max-width:1200px;margin:0 auto}
-
-    /* Header area */
-    .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .header-left{display:flex;gap:12px;align-items:center}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo img{height:46px;border-radius:6px}
-    h1{font-size:22px;margin:0}
-
-    /* Filters row */
-    .filters{display:flex;gap:12px;padding:14px;background:var(--card);border-radius:10px;border:1px solid var(--border);align-items:center}
-    .filters input[type=text]{flex:1;padding:10px 12px;border-radius:8px;border:1px solid var(--border)}
-    .filters select{padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:white}
-
-    /* Tabs */
-    .tabs{display:flex;margin-top:16px}
-    .tab-btn{padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:white;cursor:pointer}
-    .tab-btn.active{background:linear-gradient(180deg,#fff,#f1f6ff);border:1px solid #cfe0ff;color:var(--accent)}
-
-    /* Table card */
-    .card{margin-top:12px;background:var(--card);border-radius:10px;border:1px solid var(--border);overflow:hidden}
-    .card .controls{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid var(--border)}
-    .card .controls .btn{padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:white;cursor:pointer}
-    .card .controls .btn.primary{background:var(--accent);color:white;border:0}
-
-    /* Table wrapper - horizontal scroll for months */
-    .table-wrapper{overflow:auto;max-height:520px}
-    table{border-collapse:collapse;width:max-content;min-width:100%;font-size:14px}
-    thead th{position:sticky;top:0;background:var(--accent);color:#fff;padding:12px 14px;z-index:4;border-bottom:1px solid rgba(255,255,255,0.06)}
-
-    /* Make first column sticky */
-    th.sticky-left, td.sticky-left{position:sticky;left:0;background:#fff;z-index:3;border-right:1px solid var(--border);text-align:left}
-    thead th.sticky-left{background:var(--accent);color:#fff}
-
-    td, th{padding:12px 16px;border-bottom:1px solid var(--border);text-align:center}
-    tr.row-item td{background:#fbfdff}
-
-    /* SKU badge */
-    .sku{display:inline-block;padding:4px 8px;border-radius:6px;background:#e8f0ff;color:#254e9b;font-weight:600;margin-right:10px;font-size:12px}
-
-    /* input inside cells */
-    .cell-input{width:72px;padding:6px;border-radius:6px;border:1px solid var(--border);text-align:center}
-
-    /* checkbox column */
-    .chk-col{width:56px}
-
-    /* small screens responsiveness */
-    @media (max-width:720px){.filters{flex-direction:column;align-items:stretch}.tabs{flex-wrap:wrap}}
-
-    /* Hover and controls */
-    .row-actions{color:#ef4444;cursor:pointer;padding-left:8px}
-
-    /* Footer note */
-    .note{font-size:13px;color:#6b7280;margin-top:10px}
-
-    /* Make month headers narrower so 4 show by default on medium screens (approx) */
-    .month-col{min-width:120px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hybrid Demand Management</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+h2 { 
+    color: #fff; 
+    text-align: center; 
+    margin-bottom: 30px; 
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.filter-bar { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 25px; 
+    flex-wrap: wrap; 
+    align-items: center;
+}
+#searchProduct {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+#searchProduct:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+.dropdown { 
+    position: relative; 
+    min-width: 180px;
+}
+.dropdown-btn { 
+    padding: 12px 18px; 
+    border: 2px solid #e0e0e0; 
+    cursor: pointer; 
+    background: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown-btn:after {
+    content: '▼';
+    font-size: 10px;
+    margin-left: 10px;
+    color: #667eea;
+}
+.dropdown-btn:hover { 
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+.dropdown-content { 
+    display: none; 
+    position: absolute; 
+    background: #fff; 
+    border: 2px solid #e0e0e0; 
+    width: 100%; 
+    max-height: 250px; 
+    overflow-y: auto; 
+    z-index: 100;
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.dropdown-content label { 
+    display: block; 
+    padding: 10px 15px; 
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+.dropdown-content label:hover { 
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+.dropdown-content input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+.demand-assignment { 
+    margin-bottom: 30px; 
+    display: flex; 
+    gap: 15px; 
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    border-radius: 15px;
+}
+#demandInput {
+    flex: 1;
+    max-width: 250px;
+    padding: 12px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+#demandInput:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+#applyDemandBtn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+#applyDemandBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+#applyDemandBtn:active {
+    transform: translateY(0);
+}
+#selectedItemsList { 
+    border: 2px solid #e0e0e0; 
+    padding: 20px; 
+    max-height: 400px; 
+    overflow-y: auto;
+    border-radius: 15px;
+    background: #fafafa;
+}
+#selectedItemsList:empty:before {
+    content: 'No items selected. Apply demand to see products here.';
+    color: #999;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+}
+.item { 
+    padding: 15px; 
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.item span { 
+    font-weight: 600;
+    color: #667eea;
+    font-size: 15px;
+}
+.hidden { 
+    display: none !important; 
+}
+.dropdown-content::-webkit-scrollbar,
+#selectedItemsList::-webkit-scrollbar {
+    width: 8px;
+}
+.dropdown-content::-webkit-scrollbar-track,
+#selectedItemsList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.dropdown-content::-webkit-scrollbar-thumb,
+#selectedItemsList::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+</style>
 </head>
 <body>
-  <div class="container">
 
-    <div class="header">
-      <div class="header-left">
-        <div class="logo"><img src="/mnt/data/30d424ae-ac6c-4d8e-b901-402fe829aed3.png" alt="screenshot"/></div>
-        <div>
-          <h1>Add Demand</h1>
-          <div style="color:#6b7280;font-size:13px">Search products, add them to the table and fill monthly percentages</div>
-        </div>
-      </div>
+<h2>Demand Management System</h2>
 
-      <div>
-        <button class="btn primary" onclick="saveData()">Submit</button>
-      </div>
+<div class="filter-bar">
+    <input type="text" placeholder="Search product" id="searchProduct">
+
+    <div class="dropdown" id="brandDropdown">
+        <div class="dropdown-btn">Select Brand</div>
+        <div class="dropdown-content" id="brandOptions"></div>
     </div>
 
-    <div class="filters">
-      <input id="searchBox" type="text" placeholder="Search product or type SKU and press Enter..." />
-      <select id="brandFilter"><option value="">All Brands</option></select>
-      <select id="deptFilter"><option value="">All Departments</option></select>
-      <select id="rangeFilter"><option value="">All Ranges</option></select>
-      <select id="catFilter"><option value="">All Categories</option></select>
+    <div class="dropdown hidden" id="departmentDropdown">
+        <div class="dropdown-btn">Select Department</div>
+        <div class="dropdown-content" id="departmentOptions"></div>
     </div>
 
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="products">Products</button>
-      <button class="tab-btn" data-tab="departments">Departments</button>
-      <button class="tab-btn" data-tab="categories">Categories</button>
+    <div class="dropdown hidden" id="categoryDropdown">
+        <div class="dropdown-btn">Select Category</div>
+        <div class="dropdown-content" id="categoryOptions"></div>
     </div>
 
-    <div class="card">
-      <div class="controls">
-        <button class="btn" id="addRowBtn">Add Item</button>
-        <button class="btn" id="deleteSelectedBtn">Delete Selected</button>
-        <div style="flex:1"></div>
-        <div style="font-size:13px;color:#6b7280">Showing 12 months — horizontally scroll to view more</div>
-      </div>
-
-      <div class="table-wrapper">
-        <table id="demandTable">
-          <thead id="tableHead"></thead>
-          <tbody id="tableBody"></tbody>
-        </table>
-      </div>
+    <div class="dropdown hidden" id="rangeDropdown">
+        <div class="dropdown-btn">Select Range</div>
+        <div class="dropdown-content" id="rangeOptions"></div>
     </div>
 
-    <div class="note">Tip: You can edit a cell value, use the checkbox to select rows and press "Delete Selected". The top row (month labels) stays visible while you scroll vertically.</div>
+    <!-- Month dropdown -->
+    <div class="dropdown" id="monthDropdown">
+        <div class="dropdown-btn">Select Months</div>
+        <div class="dropdown-content" id="monthOptions"></div>
+    </div>
+</div>
 
-  </div>
+<div class="demand-assignment">
+    <input type="number" placeholder="Enter Demand %" id="demandInput">
+    <button id="applyDemandBtn">Apply Demand</button>
+</div>
 
-  <script>
-    /* --------- Sample data --------- */
-    const sampleProducts = [
-      {sku:'SKU001', name:'Product Name Example'},
-      {sku:'SKU002', name:'Another Product Name'},
-      {sku:'SKU003', name:'Third Product Here'},
-      {sku:'SKU004', name:'Sample Product Four'},
-    ];
+<div id="selectedItemsList"></div>
 
-    // Keep items in three separate lists (tabs)
-    const store = {
-      products:[],
-      departments:[],
-      categories:[]
-    };
+<script>
+// Hybrid data
+const data = {
+    brands: [
+        {id: 1, name: "Brand A", departments: [
+            {id: 11, name: "Dept A1", categories: [
+                {id: 111, name: "Cat A1-1", ranges: [
+                    {id: 1111, name: "Range A1-1-1", products: [
+                        {id: 11111, name: "Prod A1-1-1-1"},
+                        {id: 11112, name: "Prod A1-1-1-2"}
+                    ]}
+                ]}
+            ]}
+        ]},
+        {id: 2, name: "Brand B", products: [
+            {id: 201, name: "Prod B1"},
+            {id: 202, name: "Prod B2"},
+            {id: 203, name: "Prod B3"}
+        ]}
+    ]
+};
 
-    // active tab
-    let activeTab = 'products';
+// Months list
+const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
-    // months generation - 12 months starting from current month
-    const monthNames = (()=>{
-      const names = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      const now = new Date();
-      const start = now.getMonth();
-      const out = [];
-      for(let i=0;i<12;i++){ out.push(names[(start+i)%12]); }
-      return out;
-    })();
+// Demand map by month
+const demandMap = {brand:{}, department:{}, category:{}, range:{}, product:{}};
 
-    /* --------- Render table head (sticky months) --------- */
-    function renderHeader(){
-      const thead = document.getElementById('tableHead');
-      let html = '<tr>';
-      html += '<th class="sticky-left chk-col"><input id="selectAll" type="checkbox"/></th>';
-      html += '<th class="sticky-left">Selected '+(activeTab==='products'?'Products':(activeTab==='departments'?'Departments':'Categories'))+'</th>';
-      monthNames.forEach(m=>{ html += `<th class="month-col">${m}</th>` });
-      html += '</tr>';
-      thead.innerHTML = html;
+// Helper: toggle dropdown
+document.querySelectorAll('.dropdown-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+        const content = btn.nextElementSibling;
+        content.style.display = content.style.display==='block' ? 'none' : 'block';
+    });
+});
+document.addEventListener('click', e=>{
+    if(!e.target.closest('.dropdown')) document.querySelectorAll('.dropdown-content').forEach(dc=>dc.style.display='none');
+});
 
-      document.getElementById('selectAll').addEventListener('change',function(e){
-        document.querySelectorAll('.row-check').forEach(cb=>cb.checked = e.target.checked);
-      });
+// Populate dropdown
+function populateDropdown(container, items, level){
+    container.innerHTML='';
+    items.forEach(i=>{
+        const hasDemand = demandMap[level][i.id] && Object.keys(demandMap[level][i.id]).length>0;
+        const label = document.createElement('label');
+        label.innerHTML = `<input type="checkbox" value="${i.id}" data-level="${level}" ${hasDemand?'checked':''}> ${i.name}`;
+        if(hasDemand){ label.style.fontWeight='bold'; label.style.color='green'; }
+        container.appendChild(label);
+    });
+}
+
+// Populate brand
+populateDropdown(document.getElementById('brandOptions'), data.brands, 'brand');
+
+// Populate months
+function populateMonths(){
+    const container = document.getElementById('monthOptions');
+    container.innerHTML='';
+    months.forEach(m=>{
+        const label = document.createElement('label');
+        label.innerHTML = `<input type="checkbox" value="${m}"> ${m}`;
+        container.appendChild(label);
+    });
+}
+populateMonths();
+
+// Get selected months
+function getSelectedMonths(){
+    return Array.from(document.querySelectorAll('#monthOptions input:checked')).map(i=>i.value);
+}
+
+// Get selected brands
+function getSelectedBrands(){ 
+    return Array.from(document.querySelectorAll('#brandOptions input:checked')).map(b=>parseInt(b.value)); 
+}
+
+// Show/hide hierarchy
+function updateHierarchyDropdowns(){
+    const selected = getSelectedBrands();
+    const hasHierarchy = selected.some(id=>data.brands.find(b=>b.id===id && b.departments));
+    document.getElementById('departmentDropdown').classList.toggle('hidden', !hasHierarchy);
+    document.getElementById('categoryDropdown').classList.toggle('hidden', !hasHierarchy);
+    document.getElementById('rangeDropdown').classList.toggle('hidden', !hasHierarchy);
+
+    if(hasHierarchy){
+        populateDepartments();
+        populateCategories();
+        populateRanges();
+    } else {
+        document.getElementById('departmentOptions').innerHTML='';
+        document.getElementById('categoryOptions').innerHTML='';
+        document.getElementById('rangeOptions').innerHTML='';
     }
+}
 
-    /* --------- Render body rows --------- */
-    function renderBody(){
-      const tbody = document.getElementById('tableBody');
-      const list = store[activeTab];
-      let html = '';
+// Populate Departments
+function populateDepartments(){
+    const selectedBrands = getSelectedBrands();
+    let depts = [];
+    data.brands.forEach(b=>{ if(selectedBrands.includes(b.id) && b.departments) depts.push(...b.departments); });
+    populateDropdown(document.getElementById('departmentOptions'), depts, 'department');
+}
 
-      list.forEach((it, idx)=>{
-        html += `<tr class="row-item" data-index="${idx}">`;
-        html += `<td class="sticky-left chk-col"><input class="row-check" data-index="${idx}" type="checkbox"/></td>`;
+// Populate Categories
+function populateCategories(){
+    const selectedDepts = Array.from(document.querySelectorAll('#departmentOptions input:checked')).map(d=>parseInt(d.value));
+    let cats = [];
+    data.brands.flatMap(b=>b.departments||[]).forEach(d=>{ if(selectedDepts.includes(d.id)) cats.push(...d.categories); });
+    populateDropdown(document.getElementById('categoryOptions'), cats, 'category');
+}
 
-        // left column content
-        html += `<td class="sticky-left"><div>`;
-        if(activeTab==='products') html += `<span class="sku">${it.sku}</span>`;
-        html += `<strong>${escapeHtml(it.name)}</strong>`;
-        html += ` <span class="row-actions" onclick="removeRow(${idx})">&times;</span>`;
-        html += `</div></td>`;
+// Populate Ranges
+function populateRanges(){
+    const selectedCats = Array.from(document.querySelectorAll('#categoryOptions input:checked')).map(c=>parseInt(c.value));
+    let ranges = [];
+    data.brands.flatMap(b=>b.departments||[]).flatMap(d=>d.categories||[]).forEach(c=>{ if(selectedCats.includes(c.id)) ranges.push(...c.ranges); });
+    populateDropdown(document.getElementById('rangeOptions'), ranges, 'range');
+}
 
-        // month cells with inputs
-        for(let m=0;m<12;m++){
-          const val = (it.months && it.months[m] != null) ? it.months[m] : 0;
-          html += `<td><input type="number" min="0" max="100" class="cell-input" value="${val}" onchange="updateCell(${idx},${m},this.value)"/></td>`;
+// Event delegation
+['brandOptions','departmentOptions','categoryOptions','rangeOptions'].forEach(id=>{
+    document.getElementById(id).addEventListener('change', e=>{
+        if(id==='brandOptions') updateHierarchyDropdowns();
+        if(id==='departmentOptions') populateCategories();
+        if(id==='categoryOptions') populateRanges();
+    });
+});
+
+// Apply demand
+document.getElementById('applyDemandBtn').addEventListener('click', ()=>{
+    const value = parseFloat(document.getElementById('demandInput').value);
+    const selectedMonths = getSelectedMonths();
+    const searchVal = document.getElementById('searchProduct').value.toLowerCase();
+    if(isNaN(value)){ alert('Enter valid demand'); return; }
+    if(selectedMonths.length===0){ alert('Select at least one month'); return; }
+
+    const selectedBrands = getSelectedBrands();
+    selectedBrands.forEach(bid=>{
+        const brand = data.brands.find(b=>b.id===bid);
+        if(brand.products){ // flat
+            brand.products.forEach(p=>{
+                if(!demandMap.product[p.id]) demandMap.product[p.id]={};
+                selectedMonths.forEach(m=>demandMap.product[p.id][m]=value);
+            });
+        } else { // hierarchical
+            brand.departments.forEach(d=>{
+                if(!demandMap.department[d.id]) demandMap.department[d.id]={};
+                selectedMonths.forEach(m=>demandMap.department[d.id][m]=value);
+                d.categories.forEach(c=>{
+                    if(!demandMap.category[c.id]) demandMap.category[c.id]={};
+                    selectedMonths.forEach(m=>demandMap.category[c.id][m]=value);
+                    c.ranges.forEach(r=>{
+                        if(!demandMap.range[r.id]) demandMap.range[r.id]={};
+                        selectedMonths.forEach(m=>demandMap.range[r.id][m]=value);
+                        r.products.forEach(p=>{
+                            if(!demandMap.product[p.id]) demandMap.product[p.id]={};
+                            selectedMonths.forEach(m=>demandMap.product[p.id][m]=value);
+                        });
+                    });
+                });
+            });
         }
-
-        html += `</tr>`;
-      });
-
-      tbody.innerHTML = html;
-    }
-
-    function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'})[c]); }
-
-    function updateCell(row,month,value){
-      const parsed = Number(value) || 0;
-      store[activeTab][row].months[month] = parsed;
-    }
-
-    function removeRow(index){
-      if(!confirm('Remove this item?')) return;
-      store[activeTab].splice(index,1);
-      renderHeader(); renderBody();
-    }
-
-    /* Add a new item (product/department/category) */
-    document.getElementById('addRowBtn').addEventListener('click',()=>{
-      const name = prompt('Enter '+(activeTab==='products'?'Product name':'Item name')+' (for product you can also provide SKU like SKU123 - Product name)');
-      if(!name) return;
-
-      if(activeTab==='products'){
-        // Try splitting SKU and name if user provides SKU - Name
-        let sku=''; let pname = name;
-        const match = name.match(/^(\S+)\s*-\s*(.+)$/);
-        if(match){ sku = match[1]; pname = match[2]; }
-        if(!sku){ sku = 'SKU'+String(Math.floor(Math.random()*9000)+1000); }
-        store.products.push({sku:sku,name:pname,months:new Array(12).fill(0)});
-      } else {
-        store[activeTab].push({name:name,months:new Array(12).fill(0)});
-      }
-      renderHeader(); renderBody();
     });
 
-    /* Delete selected */
-    document.getElementById('deleteSelectedBtn').addEventListener('click',()=>{
-      const checks = Array.from(document.querySelectorAll('.row-check')).filter(c=>c.checked);
-      if(checks.length===0){ alert('No rows selected'); return; }
-      if(!confirm('Delete '+checks.length+' selected rows?')) return;
+    if(searchVal){
+        const allProducts = data.brands.flatMap(b=>b.products||[]).concat(
+            data.brands.flatMap(b=>b.departments||[]).flatMap(d=>d.categories||[]).flatMap(c=>c.ranges||[]).flatMap(r=>r.products)
+        );
+        allProducts.filter(p=>p.name.toLowerCase().includes(searchVal)).forEach(p=>{
+            if(!demandMap.product[p.id]) demandMap.product[p.id]={};
+            selectedMonths.forEach(m=>demandMap.product[p.id][m]=value);
+        });
+    }
 
-      // remove by indexes descending
-      const indexes = checks.map(c=>Number(c.getAttribute('data-index'))).sort((a,b)=>b-a);
-      indexes.forEach(i=>store[activeTab].splice(i,1));
-      renderHeader(); renderBody();
-    });
+    renderSelected();
+    populateDropdown(document.getElementById('brandOptions'), data.brands, 'brand');
+    populateDepartments(); populateCategories(); populateRanges();
+});
 
-    /* Search box: when Enter pressed, try find product in sample list, else create new product */
-    document.getElementById('searchBox').addEventListener('keydown',function(e){
-      if(e.key==='Enter'){
-        const t = this.value.trim(); if(!t) return;
-        // try find product by name or SKU
-        const found = sampleProducts.find(p=>p.sku.toLowerCase()===t.toLowerCase() || p.name.toLowerCase().includes(t.toLowerCase()));
-        if(found){ addProduct(found); this.value=''; return; }
-        // else create new product entry (if on products tab)
-        if(activeTab==='products'){
-          const skuGuess = t.split(' ')[0];
-          store.products.push({sku:skuGuess,name:t,months:new Array(12).fill(0)});
-          renderHeader(); renderBody(); this.value='';
-        } else {
-          store[activeTab].push({name:t,months:new Array(12).fill(0)}); renderHeader(); renderBody(); this.value='';
+// Render products with month-wise demand
+function renderSelected(){
+    const allProducts = data.brands.flatMap(b=>b.products||[]).concat(
+        data.brands.flatMap(b=>b.departments||[]).flatMap(d=>d.categories||[]).flatMap(c=>c.ranges||[]).flatMap(r=>r.products)
+    );
+    const container = document.getElementById('selectedItemsList');
+    container.innerHTML='';
+    allProducts.forEach(p=>{
+        if(demandMap.product[p.id]){
+            const monthsStr = Object.entries(demandMap.product[p.id]).map(([m,v])=>`${m}: ${v}%`).join(', ');
+            const div = document.createElement('div');
+            div.className='item';
+            div.innerHTML=`<span>${p.name}</span>: ${monthsStr}`;
+            container.appendChild(div);
         }
-      }
     });
-
-    function addProduct(prod){
-      // prevent duplicates by SKU
-      if(store.products.some(p=>p.sku===prod.sku)){
-        alert('Product already added'); return;
-      }
-      store.products.push({sku:prod.sku,name:prod.name,months:new Array(12).fill(0)});
-      if(activeTab==='products'){ renderHeader(); renderBody(); }
-    }
-
-    /* Tab switching */
-    document.querySelectorAll('.tab-btn').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        activeTab = btn.getAttribute('data-tab');
-        renderHeader(); renderBody();
-      });
-    });
-
-    /* Simple save - just log current state */
-    function saveData(){
-      const payload = JSON.stringify(store, null, 2);
-      console.log('Saving payload', payload);
-      alert('Data logged to console (see devtools).');
-    }
-
-    // initialize with three sample products
-    sampleProducts.slice(0,3).forEach(p=>store.products.push({sku:p.sku,name:p.name,months:new Array(12).fill(0)}));
-
-    // initial render
-    renderHeader(); renderBody();
-  </script>
+}
+</script>
 </body>
 </html>
