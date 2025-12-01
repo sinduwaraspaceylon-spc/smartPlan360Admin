@@ -158,16 +158,16 @@
                         <input type="search" class="filter-input" id="search-input" placeholder="Search product...">
                     <div class="demand-filter-dropdowns">
                         <select class="filter-input" id="brand-filter">
-                            <option value="">All Brands</option>
+                            <option value="">Brands</option>
                         </select>
                         <select class="filter-input" id="department-filter">
-                            <option value="">All Departments</option>
+                            <option value="">Departments</option>
                         </select>
                         <select class="filter-input" id="category-filter">
-                            <option value="">All Categories</option>
+                            <option value="">Categories</option>
                         </select>
                         <select class="filter-input" id="range-filter">
-                            <option value="">All Ranges</option>
+                            <option value="">Ranges</option>
                         </select>
                     </div> <!-- close demand filter dropdown -->
                 </div> <!-- cloase demand fiter -->
@@ -193,12 +193,15 @@
                                 <div class="demand-filter-dropdowns">
                                     <select class="month-filter-input" id="brand-filter">
                                         <option value="">Select Months</option>
+                                        <option value="">12 Months</option>
+                                        <option value="">6 Months</option>
+                                        <option value="">3 Months</option>
                                     </select>
                                 </div> <!-- close demand filter dropdown -->
                                 <button class="demand-apply-btn" id="apply-demand-btn">Apply</button>
                             </div>
                             <div class="add-demand-content">
-                                <p class="select-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad qui doloribus alias temporibus aut ratione libero placeat dolorum. Similique ad unde quidem accusamus repudiandae nam minima, suscipit rerum. Quidem, eos.</p>
+                                <!-- demand applied products are showing here -->
                             </div>
                         </div>  
                     </div> <!-- Close demand-flip-container -->

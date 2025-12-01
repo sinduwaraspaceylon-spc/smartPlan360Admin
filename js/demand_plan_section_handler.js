@@ -39,9 +39,7 @@ function initDemandPlanSection() {
         if (sectionTitle) sectionTitle.textContent = "Existing Demands";
     }
 
-    /** -------------------------------------------------------
-     *  MAIN FLIP-CARD (Create Demand / Cancel)
-     * -------------------------------------------------------*/
+    // MAIN FLIP-CARD (Create Demand / Cancel)
     function initFlipCard() {
         const flipCard = document.getElementById("flipCard");
         const toggleBtn = document.getElementById("createNewDemandBtn");
@@ -90,9 +88,7 @@ function initDemandPlanSection() {
         });
     }
 
-    /** -------------------------------------------------------
-     *  ADD-DEMAND (Add → Submit + Back + Pick Flip)
-     * -------------------------------------------------------*/
+     // ADD-DEMAND (Add → Submit + Back + Pick Flip)
     function initAddDemandSection() {
 
         const addBtn = document.getElementById("add-demand-btn");
@@ -112,7 +108,7 @@ function initDemandPlanSection() {
         const back = document.getElementById("back-to-demands-btn");
         const pick = document.getElementById("pick-demand-btn");
 
-        /** ADD button acts as "Submit mode" */
+        // ADD button acts as "Submit mode" 
         btn.addEventListener("click", () => {
             demandFilters.classList.remove("hidden");
             addSection.classList.remove("hidden");
@@ -126,14 +122,14 @@ function initDemandPlanSection() {
             if (sectionTitle) sectionTitle.textContent = "Add Demand";
         });
 
-        /** PICK → Flip the inner card */
+        // PICK → Flip the inner card
         pick.addEventListener("click", () => {
             addSection.classList.add("flipped");
             pick.disabled = true;       
             back.innerHTML = `<i class="fa-solid fa-eye"></i> View`;
         });
 
-        /** BACK/VIEW → Reset inner flip */
+        // BACK/VIEW → Reset inner flip
         back.addEventListener("click", () => {
 
             if (addSection.classList.contains("flipped")) {
@@ -147,7 +143,7 @@ function initDemandPlanSection() {
         });
     }
 
-    /** Initialize all modules */
+    // Initialize all modules
     initFlipCard();
     initAddDemandSection();
 

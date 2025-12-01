@@ -1125,7 +1125,7 @@ input[type="checkbox"] {
     transform: translateY(0);
 }
 
-.select-content{
-    color: #374151;
+.add-demand-content{
+    padding: 16px;
 }
  
