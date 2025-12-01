@@ -198,7 +198,7 @@
                                 <button class="demand-apply-btn" id="apply-demand-btn">Apply</button>
                             </div>
                             <div class="add-demand-content">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad qui doloribus alias temporibus aut ratione libero placeat dolorum. Similique ad unde quidem accusamus repudiandae nam minima, suscipit rerum. Quidem, eos.</p>
+                                <p class="select-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad qui doloribus alias temporibus aut ratione libero placeat dolorum. Similique ad unde quidem accusamus repudiandae nam minima, suscipit rerum. Quidem, eos.</p>
                             </div>
                         </div>  
                     </div> <!-- Close demand-flip-container -->
