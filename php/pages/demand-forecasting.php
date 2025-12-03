@@ -152,27 +152,63 @@
                     <div class="form-title">
                         <h2 id="section-title">Existing Demands</h2>
                     </div>
-                    
-                    <!-- Filters (hidden by default, shown when adding demand) -->
+                </div> <!-- Close multy-form-header -->
+
                 <div class="demand-filter hidden" id="demand-filters">
-                        <input type="search" class="filter-input" id="search-input" placeholder="Search product...">
+                    <input type="search" class="filter-input" id="search-input" placeholder="Search product...">
                     <div class="demand-filter-dropdowns">
+                        <!-- Single Select Brand -->
                         <select class="filter-input" id="brand-filter">
-                            <option value="">Brands</option>
+                            <option value="">Select Brand</option>
                         </select>
-                        <select class="filter-input" id="department-filter">
-                            <option value="">Departments</option>
-                        </select>
-                        <select class="filter-input" id="category-filter">
-                            <option value="">Categories</option>
-                        </select>
-                        <select class="filter-input" id="range-filter">
-                            <option value="">Ranges</option>
-                        </select>
-                    </div> <!-- close demand filter dropdown -->
-                </div> <!-- cloase demand fiter -->
-            </div> <!-- Close multy-form-header -->
-                
+                        <!-- Multi-Select Department -->
+                        <div class="custom-dropdown">
+                            <button type="button" class="filter-input dropdown-toggle" id="department-toggle" disabled>
+                                <span class="dropdown-text">Departments</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu" id="department-menu">
+                                <div class="dropdown-search">
+                                    <input type="text" placeholder="Search departments..." class="dropdown-search-input">
+                                </div>
+                                <div class="dropdown-options" id="department-options">
+                                    <div class="dropdown-message">Please select a brand first</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Multi-Select Category -->
+                        <div class="custom-dropdown">
+                            <button type="button" class="filter-input dropdown-toggle" id="category-toggle" disabled>
+                                <span class="dropdown-text">Categories</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu" id="category-menu">
+                                <div class="dropdown-search">
+                                    <input type="text" placeholder="Search categories..." class="dropdown-search-input">
+                                </div>
+                                <div class="dropdown-options" id="category-options">
+                                    <div class="dropdown-message">Please select department(s) first</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Multi-Select Range -->
+                        <div class="custom-dropdown">
+                            <button type="button" class="filter-input dropdown-toggle" id="range-toggle" disabled>
+                                <span class="dropdown-text">Ranges</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu" id="range-menu">
+                                <div class="dropdown-search">
+                                    <input type="text" placeholder="Search ranges..." class="dropdown-search-input">
+                                </div>
+                                <div class="dropdown-options" id="range-options">
+                                    <div class="dropdown-message">Please select category/categories first</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- close demand filter dropdowns -->
+                </div> <!-- Close demand-filters -->
+            
                 <!-- Section body - main content area -->
                 <div class="section-body">
                     <!-- Existing Demands Section -->
@@ -283,86 +319,163 @@
 </template>
 
 <script>
-    // DOM elements
+    // DOM Elements
 const brandFilter = document.getElementById("brand-filter");
-const departmentFilter = document.getElementById("department-filter");
-const categoryFilter = document.getElementById("category-filter");
-const rangeFilter = document.getElementById("range-filter");
 
-// ----------------------------
-// Load Brands on Page Load
-// ----------------------------
-loadBrands();
+// Multi Dropdown Elements
+const deptToggle = document.getElementById("department-toggle");
+const deptMenu = document.getElementById("department-menu");
+const deptOptions = document.getElementById("department-options");
 
-function loadBrands() {
-    fetch("testing/product_handler.php?action=get_brands")
-        .then(res => res.json())
-        .then(data => {
-            brandFilter.innerHTML = `<option value="">Brands</option>`;
-            data.forEach(b => {
-                brandFilter.innerHTML += `<option value="${b.id}">${b.brand_name}</option>`;
-            });
+const catToggle = document.getElementById("category-toggle");
+const catMenu = document.getElementById("category-menu");
+const catOptions = document.getElementById("category-options");
+
+const rangeToggle = document.getElementById("range-toggle");
+const rangeMenu = document.getElementById("range-menu");
+const rangeOptions = document.getElementById("range-options");
+
+
+// ---------------------------
+// 1. LOAD BRANDS ON PAGE LOAD
+// ---------------------------
+fetch("testing/product_handler.php?action=get_brands")
+    .then(res => res.json())
+    .then(data => {
+        brandFilter.innerHTML = `<option value="">Select Brand</option>`;
+        data.forEach(b => {
+            brandFilter.innerHTML += `<option value="${b.id}">${b.brand_name}</option>`;
         });
-}
+    });
 
-// ---------------------------------------
-// Load Departments AFTER brand selected
-// ---------------------------------------
-brandFilter.addEventListener("change", function () {
-    const brandId = this.value;
 
-    departmentFilter.innerHTML = `<option value="">Departments</option>`;
-    categoryFilter.innerHTML = `<option value="">Categories</option>`;
-    rangeFilter.innerHTML = `<option value="">Ranges</option>`;
+// ---------------------------
+// 2. BRAND → LOAD DEPARTMENTS
+// ---------------------------
+brandFilter.addEventListener("change", () => {
+    const brandId = brandFilter.value;
+
+    // Reset
+    deptToggle.disabled = true;
+    catToggle.disabled = true;
+    rangeToggle.disabled = true;
+
+    deptOptions.innerHTML = "";
+    catOptions.innerHTML = `<div class="dropdown-message">Please select department(s) first</div>`;
+    rangeOptions.innerHTML = `<div class="dropdown-message">Please select category/categories first</div>`;
 
     if (!brandId) return;
 
     fetch(`testing/product_handler.php?action=get_departments_by_brand&brand_id=${brandId}`)
         .then(res => res.json())
         .then(data => {
+
+            if (data.length === 0) {
+                deptOptions.innerHTML = `<div class="dropdown-message">No departments found</div>`;
+                return;
+            }
+
+            deptToggle.disabled = false;
+            deptOptions.innerHTML = "";
+
             data.forEach(dep => {
-                departmentFilter.innerHTML += `<option value="${dep.id}">${dep.department_name}</option>`;
+                deptOptions.innerHTML += `
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="${dep.id}" class="department-checkbox">
+                        ${dep.department_name}
+                    </label>
+                `;
             });
         });
 });
 
-// ---------------------------------------
-// Load Categories AFTER department selected
-// ---------------------------------------
-departmentFilter.addEventListener("change", function () {
-    const depId = this.value;
 
-    categoryFilter.innerHTML = `<option value="">Categories</option>`;
-    rangeFilter.innerHTML = `<option value="">Ranges</option>`;
+// ---------------------------
+// 3. DEPARTMENTS → LOAD CATEGORIES
+// ---------------------------
+document.addEventListener("change", (e) => {
+    if (!e.target.classList.contains("department-checkbox")) return;
 
-    if (!depId) return;
+    const selected = [...document.querySelectorAll(".department-checkbox:checked")].map(cb => cb.value);
 
-    fetch(`testing/product_handler.php?action=get_categories_by_department&department_id=${depId}`)
+    catToggle.disabled = selected.length === 0;
+    catOptions.innerHTML = "";
+
+    if (selected.length === 0) {
+        catOptions.innerHTML = `<div class="dropdown-message">Please select department(s) first</div>`;
+        return;
+    }
+
+    fetch(`testing/product_handler.php?action=get_categories_by_department&department_ids=${selected.join(",")}`)
         .then(res => res.json())
         .then(data => {
+            if (data.length === 0) {
+                catOptions.innerHTML = `<div class="dropdown-message">No categories found</div>`;
+                return;
+            }
+
             data.forEach(cat => {
-                categoryFilter.innerHTML += `<option value="${cat.id}">${cat.category_name}</option>`;
+                catOptions.innerHTML += `
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="${cat.id}" class="category-checkbox">
+                        ${cat.category_name}
+                    </label>
+                `;
             });
         });
 });
 
-// ---------------------------------------
-// Load Ranges AFTER category selected
-// ---------------------------------------
-categoryFilter.addEventListener("change", function () {
-    const catId = this.value;
 
-    rangeFilter.innerHTML = `<option value="">Ranges</option>`;
+// ---------------------------
+// 4. CATEGORIES → LOAD RANGES
+// ---------------------------
+document.addEventListener("change", (e) => {
+    if (!e.target.classList.contains("category-checkbox")) return;
 
-    if (!catId) return;
+    const selected = [...document.querySelectorAll(".category-checkbox:checked")].map(cb => cb.value);
 
-    fetch(`testing/product_handler.php?action=get_ranges_by_category&category_id=${catId}`)
+    rangeToggle.disabled = selected.length === 0;
+    rangeOptions.innerHTML = "";
+
+    if (selected.length === 0) {
+        rangeOptions.innerHTML = `<div class="dropdown-message">Please select category/categories first</div>`;
+        return;
+    }
+
+    fetch(`testing/product_handler.php?action=get_ranges_by_category&category_ids=${selected.join(",")}`)
         .then(res => res.json())
         .then(data => {
-            data.forEach(range => {
-                rangeFilter.innerHTML += `<option value="${range.id}">${range.range_name}</option>`;
+            if (data.length === 0) {
+                rangeOptions.innerHTML = `<div class="dropdown-message">No ranges found</div>`;
+                return;
+            }
+
+            data.forEach(r => {
+                rangeOptions.innerHTML += `
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="${r.id}" class="range-checkbox">
+                        ${r.range_name}
+                    </label>
+                `;
             });
         });
+});
+
+
+// ---------------------------
+// 5. DROPDOWN OPEN/CLOSE LOGIC
+// ---------------------------
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.nextElementSibling.classList.toggle("show");
+    });
+});
+
+// Close on click outside
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".custom-dropdown")) {
+        document.querySelectorAll(".dropdown-menu").forEach(m => m.classList.remove("show"));
+    }
 });
 
 </script>
