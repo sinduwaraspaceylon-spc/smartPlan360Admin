@@ -281,3 +281,88 @@
     </select>
   </div>
 </template>
+
+<script>
+    // DOM elements
+const brandFilter = document.getElementById("brand-filter");
+const departmentFilter = document.getElementById("department-filter");
+const categoryFilter = document.getElementById("category-filter");
+const rangeFilter = document.getElementById("range-filter");
+
+// ----------------------------
+// Load Brands on Page Load
+// ----------------------------
+loadBrands();
+
+function loadBrands() {
+    fetch("testing/product_handler.php?action=get_brands")
+        .then(res => res.json())
+        .then(data => {
+            brandFilter.innerHTML = `<option value="">Brands</option>`;
+            data.forEach(b => {
+                brandFilter.innerHTML += `<option value="${b.id}">${b.brand_name}</option>`;
+            });
+        });
+}
+
+// ---------------------------------------
+// Load Departments AFTER brand selected
+// ---------------------------------------
+brandFilter.addEventListener("change", function () {
+    const brandId = this.value;
+
+    departmentFilter.innerHTML = `<option value="">Departments</option>`;
+    categoryFilter.innerHTML = `<option value="">Categories</option>`;
+    rangeFilter.innerHTML = `<option value="">Ranges</option>`;
+
+    if (!brandId) return;
+
+    fetch(`testing/product_handler.php?action=get_departments_by_brand&brand_id=${brandId}`)
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(dep => {
+                departmentFilter.innerHTML += `<option value="${dep.id}">${dep.department_name}</option>`;
+            });
+        });
+});
+
+// ---------------------------------------
+// Load Categories AFTER department selected
+// ---------------------------------------
+departmentFilter.addEventListener("change", function () {
+    const depId = this.value;
+
+    categoryFilter.innerHTML = `<option value="">Categories</option>`;
+    rangeFilter.innerHTML = `<option value="">Ranges</option>`;
+
+    if (!depId) return;
+
+    fetch(`testing/product_handler.php?action=get_categories_by_department&department_id=${depId}`)
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(cat => {
+                categoryFilter.innerHTML += `<option value="${cat.id}">${cat.category_name}</option>`;
+            });
+        });
+});
+
+// ---------------------------------------
+// Load Ranges AFTER category selected
+// ---------------------------------------
+categoryFilter.addEventListener("change", function () {
+    const catId = this.value;
+
+    rangeFilter.innerHTML = `<option value="">Ranges</option>`;
+
+    if (!catId) return;
+
+    fetch(`testing/product_handler.php?action=get_ranges_by_category&category_id=${catId}`)
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(range => {
+                rangeFilter.innerHTML += `<option value="${range.id}">${range.range_name}</option>`;
+            });
+        });
+});
+
+</script>
