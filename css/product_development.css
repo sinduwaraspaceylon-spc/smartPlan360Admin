@@ -15,6 +15,9 @@
   padding: 15px 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -128,6 +131,40 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+/* Button Tooltip container */
+.sub-header-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Button Tooltip text - hidden by default */
+.sub-header-btn::before {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background-color: var(--accent-color);
+  color: white;
+  padding: 9px 15px;
+  border-radius: 25px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Show button tooltip on hover */
+.sub-header-btn:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-12px);
+}
+
 /*--------- FORM SECTION STYLING ---------*/
 .section-holder-1 {
   background: white;
@@ -189,8 +226,35 @@
   transition: max-height 0.3s ease, overflow 0s 0s; /* ✅ Immediate overflow change when expanding */
 }
 
+/* Description for  individual forms */
+.form-des-holder {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 5px;
+}
+
+.form-description {
+  display: flex;
+  align-items: center;
+  /* gap: 8px; */
+  padding: 10px 10px;
+  background: var(--body-components);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); */
+}
+
+.form-description i {
+  font-size: 16px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
 .form-content-inner {
-  padding: 30px;
+  padding: 2px 30px;
   overflow: visible; /* ✅ ADDED - Allow tooltips to escape */
 }
 
@@ -373,16 +437,7 @@
   color: #333;
   pointer-events: none; /* so clicking on % still focuses input */
 }
-/* 
-.image-grid-four-columns {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
 
-.column-grid .image-upload-item {
-  grid-column: span 1; 
-} */
 .image-grid-container {
   grid-column: 1 / -1; /* Spans all columns in parent grid */
   max-width: auto; /* Adjust this value to your preference */
@@ -431,7 +486,7 @@
 }
 
 /* Individual button color */
-#add-btn {
+/* #add-btn {
   border: 2px solid var(--body-components);
   color: var(--body-components);
   background-color: var(--white);
@@ -480,7 +535,7 @@
 .select-group {
   display: flex;
   flex-direction: column;
-}
+} */
 
 /*--------- IMAGE SECTION STYLING ---------*/
 
@@ -498,6 +553,187 @@
 
 h4 {
   font-size: large;
+}
+
+/* --------- DESCRIPTION SECTION STYLING --------- */
+/* Modal Background Overlay */
+.descriptionModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Content Box */
+.des-modal-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease;
+  position: relative;
+}
+
+/* Modal Header */
+.des-modal-header {
+  padding: 20px 25px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.des-modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Close Button */
+.des-close {
+  color: #333;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.des-close:hover,
+.des-close:focus {
+  color: var(--error-color);
+  background-color: #f0f0f0;
+}
+
+/* Modal Body */
+.des-modal-body {
+  padding: 25px 25px 0 25px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Modal Body - Scroll Bar */
+.des-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.des-modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.des-modal-body::-webkit-scrollbar-thumb {
+  background: #393e64;
+  border-radius: 10px;
+}
+
+.des-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #4f4c77cc;
+}
+
+/* Individual Detail Item */
+.des-item {
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid var(--body-components);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Sub Title Styling */
+.des-title {
+  color: #02093d;
+}
+
+/* Field Styling */
+.des-question {
+  display: flex;
+  align-items: flex-start;
+  /* gap: 3px; */
+  margin-bottom: 12px;
+}
+
+.des-question p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* Filled Styling */
+.des-answer {
+  padding-left: 10px;
+}
+
+.des-answer p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+/* Description Print Button */
+.des-print-btn-holder {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 15px 10px;
+  border-radius: 0 0 12px 12px;
+}
+
+.des-print-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.des-print-btn i {
+  font-size: 16px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--body-components);
+}
+
+.des-print-btn:hover,
+.des-print-btn:hover i {
+  color: #333;
+  background-color: #f0f0f0;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
