@@ -23,7 +23,7 @@
             <button class="sub-header-btn copy" id="btn-copy" title="Duplicate Specs">
                 <i class="fas fa-copy"></i>
             </button>
-        </div>
+        </div>    
     </div>
     
     <!------------------------------------------------------------ Form Section ---------------------------------------------------------------------->
@@ -33,9 +33,9 @@
                 <h3 class="specifications-header">Box Specification</h3>
             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
-        <div class="form-content" id="form1">
+        <div class="form-content" id="form1"> 
             <div  class="form-des-holder">
-                <button class="form-description" id="form1-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form1-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -54,7 +54,7 @@
                         </label>
                         <input type="text" id="boxSapCode" name="boxSapCode" autocomplete="off" placeholder="Search SAP Code"/>
                         <div id="sapCodeResults" class="autocomplete-results">                                                           </div>
-                        <input type="hidden" id="formCategory" value="boxForm" />
+                         <input type="hidden" id="formCategory" value="boxForm" />
                     </div>
 
                     <!-- Item Description - BOX -->
@@ -406,7 +406,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print1" data-print="mixingDesContent" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -421,7 +421,7 @@
         </div>
         <div class="form-content" id="form2">
             <div  class="form-des-holder">
-                <button class="form-description" id="form2-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form2-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -631,7 +631,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print2" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -646,7 +646,7 @@
         </div>
         <div class="form-content" id="form3">
             <div  class="form-des-holder">
-                <button class="form-description" id="form3-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form3-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -882,7 +882,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print3" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -898,7 +898,7 @@
         </div>
         <div class="form-content" id="form4">
             <div  class="form-des-holder">
-                <button class="form-description" id="form4-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form4-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -1134,7 +1134,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print4" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -1149,7 +1149,7 @@
         </div>
         <div class="form-content" id="form5">
             <div  class="form-des-holder">
-                <button class="form-description" id="form5-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form5-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -1344,7 +1344,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print5" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -1359,7 +1359,7 @@
         </div>
         <div class="form-content" id="form6">
             <div  class="form-des-holder">
-                <button class="form-description" id="form6-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form6-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -1520,7 +1520,7 @@
                             </span>
                         </label>
                         <input type="text" id="lidHotStamp" name="lidHotStamp" />
-                    </div>
+                     </div>
                 
                     <!-- Collection Story / Limited Edition - LID -->
                     <div class="form-group">
@@ -1608,7 +1608,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print6" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -1623,7 +1623,7 @@
         </div>
         <div class="form-content" id="form7">
             <div  class="form-des-holder">
-                <button class="form-description" id="form7-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form7-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -1859,7 +1859,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print7" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -1874,7 +1874,7 @@
         </div>
         <div class="form-content" id="form8">
             <div  class="form-des-holder">
-                <button class="form-description" id="form8-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form8-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -2070,7 +2070,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print8" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -2081,11 +2081,11 @@
     <div id="form_sleeve" class="section-holder-1">
         <div class="form-holder" onclick="toggleSection(this)">
             <h3 class="specifications-header">Sleeve Specification</h3>
-            <i class="fas fa-chevron-down toggle-icon"></i>
+             <i class="fas fa-chevron-down toggle-icon"></i>
         </div>
         <div class="form-content" id="form9">
             <div  class="form-des-holder">
-                <button class="form-description" id="form9-description" title="Preview Description">
+                <button class="form-description sub-header-btn" id="form9-description" title="Preview Description">
                 <i class="fa-solid fa-eye"></i>
                 </button>
             </div>
@@ -2322,7 +2322,7 @@
                 <br>
             </div>
             <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print9" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -2360,8 +2360,8 @@
             </div>
         </div>
     </div>
-</div>
-
+</div>  
+ 
 <!-- Description Popup Section -->
 <div id="descriptionModal" class="descriptionModal">
     <div class="des-modal-content">
@@ -2370,661 +2370,14 @@
             <span class="des-close">&times;</span>
         </div>
         <div class="des-modal-body" id="modalDynamicContent">
-            <div class="des-item">
-                <h3 class="des-main-title"><u>BOX SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
+            <div class="des-item">  
 
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>                
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>INSERT SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>INSERT HOLDER SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>INSERT HOLDER PLATFORM SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>INSERT PARTITION SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>LID SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>BASE SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>PLATFORM SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>SLEEVE SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-                <br>
-
-                <h4 class="des-title"><u>DETAILS OF BOX</u></h4>
-                <div class="des-question ">
-                    <p><b>PROMOTION/PROJECT:</b></p>
-                    <span class="des-answer">
-                        <p>NEROLI JASMINE HAND AND SANITIZER (50ML)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>STANDARD SIZE:</b></b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>OPEN SIZE:</b></p>
-                    <span class="des-answer">
-                        <p>45.00 × 45.00 MM</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PACKING CONTENT:</b></p>
-                    <span class="des-answer">
-                        <p>FESTIVE</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>PRINT (OUTER):</b></p>
-                    <span class="des-answer">
-                        <p>F5C (CMYK + PANTONE)</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>LAMINATION:</b></p>
-                    <span class="des-answer">
-                        <p>THERMAL MATTE [OUTER ONLY]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>UV VARNISH:</b></p>
-                    <span class="des-answer">
-                        <p>STANDARD GLOSS SPOT UV [ALL PANELS]</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>HOT STAMP:</b></p>
-                    <span class="des-answer">
-                        <p> MATTE GOLD [ALL PANELS</p>
-                    </span>
-                </div>
-                <div class="des-question">
-                    <p><b>MATERIAL:</b></p>
-                    <span class="des-answer">
-                        <p>350GSM IVORY BOARD</p>
-                    </span>
-                </div>
-            </div>
-
-            <br> 
-
-            <div class="des-item">
-                <h3 class="des-main-title"><u>DISPATCH DATES SUMMARY</u></h4>
-                <h4 class="des-title"><u>PRODUCT INFORMATION SUMMARY</u></h4>
-                <div class="des-question">
-                    <p><b>SAP:</b></p>
-                    <span class="des-answer">
-                        <p>SP-PAK-SS-50070 - PERFUMED SOAP COLLECTION BOX</p>
-                    </span>
-                </div> 
-                
-            </div>
+            </div> 
 
             <br>
         </div>
         <div class="des-print-btn-holder">
-            <button class="des-print-btn print" id="btn-print" title="Print">
+            <button class="des-print-btn print sub-header-btn" id="btn-print" title="Print">
                 <i class="fa-solid fa-print"></i> 
             </button>
         </div>
@@ -3039,8 +2392,8 @@
 
     // Hide all form-content sections first
     document.querySelectorAll(".form-content").forEach(f => {
-        f.style.display = "none";           // hide all
-        f.classList.remove('expanded');     // remove expanded class
+        f.style.display = "none";          
+        f.classList.remove('expanded');   
     });
 
     // Remove rotation from all icons
@@ -3053,7 +2406,6 @@
     // Rotate the clicked icon
     icon.classList.add('rotate');
 }
-
 </script>
 
 <!--  Remove default title tooltip and store it in data attribute -->
@@ -3065,368 +2417,898 @@
             button.removeAttribute('title');
         }
     });
-    
-</script>
-
-
-<script>
-    // Get modal elements
-    const modal = document.getElementById('descriptionModal');
-    const btnDescription = document.getElementById('btn-description');
-    const closeBtn = document.querySelector('.des-close');
-
-    // Function to open modal
-    function openModal() {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Function to close modal
-    function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    // Open modal when button is clicked
-    btnDescription.addEventListener('click', openModal);
-
-    // Close modal when X is clicked
-    closeBtn.addEventListener('click', closeModal);
-
-    // Close modal when clicking outside of it
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-
-    // Close modal with ESC key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
-            closeModal();
-        }
-    });
 </script>
 
 <!---------------------------- Form Descriptions ---------------------->
 <script>
-// Box 
- document.getElementById('form1-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('boxSapCode')} - ${getVal('boxPckDes')}</p>
+    // Box 
+    document.getElementById('form1-description').addEventListener('click', function () {
+        const getVal = id => document.getElementById(id)?.value || '';
 
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF BOX</b></strong></div>
-        <p><strong>PROMOTION/PROJECT:</strong> ${getVal('boxPromoProject')}</p>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('boxStdWidth')} x ${getVal('boxStdHeight')} x ${getVal('boxStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('boxOpnWidth')} x ${getVal('boxOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('boxUom')}</p>
-        <p><strong>PACKING CONTENT:</strong> ${getVal('boxPacContent') || getVal('inputBoxPacContent')}</p>
-        <p><strong>OUTER & INNER PLIES INFORMATION:</strong> ${getVal('boxOutInnInformation') || getVal('inputBoxOutInnInformation')}</p>
-        <p><strong>PRINT STYLE:</strong> ${getVal('boxPrintStyle') || getVal('inputBoxPrintStyle')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('boxPrintOuter') || getVal('inputBoxPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('boxPrintInner') || getVal('inputBoxPrintInner')}</p>
-        <p><strong>LAMINATED FINISH:</strong> ${getVal('boxLamination') || getVal('inputBoxLamination')}</p>
-        <p><strong>BOX FLAPS:</strong> ${getVal('boxFlaps') || getVal('inputBoxFlaps')}</p>
-        <p><strong>UV VARNISH:</strong> ${getVal('boxUvVarnish')}</p>
-        <p><strong>HOT STAMP:</strong> ${getVal('boxHotStamp')}</p>
-        <p><strong>DUMMY/SAMPLE APPROVED DATE:</strong> ${getVal('boxDummyApprovedDate')}</p>
-        <p><strong>CUTTER:</strong> ${getVal('boxCutter') || getVal('inputBoxCutter')}</p>
-        <p><strong>ARTWORK(S):</strong> ${getVal('boxArtworks') || getVal('inputBoxArtworks')}</p>
-        <p><strong>DELIVERY LOCATION:</strong> ${getVal('boxDeliveryLocation') || getVal('inputBoxDeliveryLocation')}</p>
-    `;
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('boxStdWidth');
+        const stdH = getVal('boxStdHeight');
+        const stdB = getVal('boxStdBase');
+        const uom = getVal('boxUom');
 
-    // Insert description into modal content
-    document.getElementById('form1DesContent').innerHTML = descriptionHTML;
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
 
-    // Show modal
-    const modal = document.getElementById('form1Modal');
-    modal.style.display = 'block';
+        let openSize = "";
+        const openW = getVal('boxOpnWidth');
+        const openH = getVal('boxOpnHeight');
 
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
 
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
 
-// Insert
-document.getElementById('form2-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('insSapCode')} - ${getVal('insPckDes')}</p>
+            <p><strong>SAP:</strong> ${getVal('boxSapCode')}${
+                getVal('boxSapCode') && getVal('boxPckDes') ? " - " : ""
+            }${getVal('boxPckDes')}</p>
 
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('insStdWidth')} x ${getVal('insStdHeight')} x ${getVal('insStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('insOpnWidth')} x ${getVal('insOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('insUom')}</p>
-        <p><strong>PACKING CONTENT:</strong> ${getVal('insPacContent') || getVal('inputInsPacContent')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insPrintOuter') || getVal('inputInsPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('insPrintInner') || getVal('inputInsPrintInner')}</p>
-    `;
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF BOX</b></strong></div>
+            <p><strong>PROMOTION/PROJECT:</strong> ${getVal('boxPromoProject')}</p>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PACKING CONTENT:</strong> ${getVal('boxPacContent') || getVal('inputBoxPacContent')}</p>
+            <p><strong>OUTER & INNER PLIES INFORMATION:</strong> ${getVal('boxOutInnInformation') || getVal('inputBoxOutInnInformation')}</p>
+            <p><strong>PRINT STYLE:</strong> ${getVal('boxPrintStyle') || getVal('inputBoxPrintStyle')}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('boxPrintOuter') || getVal('inputBoxPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('boxPrintInner') || getVal('inputBoxPrintInner')}</p>
+            <p><strong>LAMINATED FINISH:</strong> ${getVal('boxLamination') || getVal('inputBoxLamination')}</p>
+            <p><strong>BOX FLAPS:</strong> ${getVal('boxFlaps') || getVal('inputBoxFlaps')}</p>
+            <p><strong>UV VARNISH:</strong> ${getVal('boxUvVarnish')}</p>
+            <p><strong>HOT STAMP:</strong> ${getVal('boxHotStamp')}</p>
+            <p><strong>DUMMY/SAMPLE APPROVED DATE:</strong> ${getVal('boxDummyApprovedDate')}</p>
+            <p><strong>CUTTER:</strong> ${getVal('boxCutter') || getVal('inputBoxCutter')}</p>
+            <p><strong>ARTWORK(S):</strong> ${getVal('boxArtworks') || getVal('inputBoxArtworks')}</p>
+            <p><strong>DELIVERY LOCATION:</strong> ${getVal('boxDeliveryLocation') || getVal('inputBoxDeliveryLocation')}</p>
+        `;
 
-    // Insert description into modal content
-    document.getElementById('form2DesContent').innerHTML = descriptionHTML;
+        // Insert description into modal
+        document.getElementById('form1DesContent').innerHTML = descriptionHTML;
 
-    // Show modal
-    const modal = document.getElementById('form2Modal');
-    modal.style.display = 'block';
+        // Show modal
+        const modal = document.getElementById('form1Modal');
+        modal.style.display = 'block';
 
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+        // Close modal button
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
 
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
+        // Close when clicking outside
+        window.onclick = (event) => {
+            if (event.target === modal) modal.style.display = 'none';
+        };
+    });
 
-// Insert Holder
-document.getElementById('form3-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('insHolSapCode')} - ${getVal('insHolPckDes')}</p>
+    // Insert
+    document.getElementById('form2-description').addEventListener('click', function() { 
+        const getVal = id => document.getElementById(id)?.value || '';
         
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT HOLDER</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('insHolStdWidth')} x ${getVal('insHolStdHeight')} x ${getVal('insHolStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('insHolOpnWidth')} x ${getVal('insHolOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('insHolUom')}</p>
-        <p><strong>PACKING CONTENT:</strong> ${getVal('insHolPacContent') || getVal('inputInsHolPacContent')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insHolPrintOuter') || getVal('inputInsHolPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('insHolPrintInner') || getVal('inputInsHolPrintInner')}</p>
-        <p><strong>UV VARNISH:</strong> ${getVal('insHolUvVarnish')}</p>
-        <p><strong>HOT STAMP:</strong> ${getVal('insHolHotStamp')}</p>
-    `;
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('insStdWidth');
+        const stdH = getVal('insStdHeight');
+        const stdB = getVal('insStdBase');
+        const uom = getVal('insUom');
 
-    // Insert description into modal content
-    document.getElementById('form3DesContent').innerHTML = descriptionHTML;
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
 
-    // Show modal
-    const modal = document.getElementById('form3Modal');
-    modal.style.display = 'block';
+        let openSize = "";
+        const openW = getVal('insOpnWidth');
+        const openH = getVal('insOpnHeight');
 
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
-
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
-
-// Insert Holder Platform
-document.getElementById('form4-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('insHolPlatSapCode')} - ${getVal('insHolPlatPckDes')}</p>
-
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT HOLDER PLATFORM</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('insHolPlatStdWidth')} x ${getVal('insHolPlatStdHeight')} x ${getVal('insHolPlatStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('insHolPlatOpnWidth')} x ${getVal('insHolPlatOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('insHolPlatUom')}</p>
-        <p><strong>PRODUCT VOLUME:</strong> ${getVal('insHolPlatProdVolume') || getVal('inputInsHolPlatProdVolume')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insHolPlatPrintOuter') || getVal('inputInsHolPlatPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('insHolPlatPrintInner') || getVal('inputInsHolPlatPrintInner')}</p>
-        <p><strong>UV VARNISH:</strong> ${getVal('insHolPlatUvVarnish')}</p>
-        <p><strong>HOT STAMP:</strong> ${getVal('insHolPlatHotStamp')}</p>
-    `;
-
-    // Insert description into modal content
-    document.getElementById('form4DesContent').innerHTML = descriptionHTML;
-
-    // Show modal
-    const modal = document.getElementById('form4Modal');
-    modal.style.display = 'block';
-
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
-
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
-
-// Insert Partition
-document.getElementById('form5-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('insPartiSapCode')} - ${getVal('insPartiPckDes')}</p>
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`;
         
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT PARTITON</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('insPartiStdWidth')} x ${getVal('insPartiStdHeight')} x ${getVal('insPartiStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('insPartiOpnWidth')} x ${getVal('insPartiOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('insPartiUom')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insPartiPrintOuter') || getVal('inputInsPartiPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('insPartiPrintInner') || getVal('inputInsPartiPrintInner')}</p>
-    `;
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('insSapCode')}${
+                getVal('insSapCode') && getVal('insPckDes') ? " - " : ""
+            }${getVal('insPckDes')}</p>
 
-    // Insert description into modal content
-    document.getElementById('form5DesContent').innerHTML = descriptionHTML;
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PACKING CONTENT:</strong> ${getVal('insPacContent') || getVal('inputInsPacContent')}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insPrintOuter') || getVal('inputInsPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('insPrintInner') || getVal('inputInsPrintInner')}</p>
+        `;
 
-    // Show modal
-    const modal = document.getElementById('form5Modal');
-    modal.style.display = 'block';
+        // Insert description into modal content
+        document.getElementById('form2DesContent').innerHTML = descriptionHTML;
 
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+        // Show modal
+        const modal = document.getElementById('form2Modal');
+        modal.style.display = 'block';
 
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
 
-// Lid
-document.getElementById('form6-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('lidSapCode')} - ${getVal('lidPckDes')}</p>
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
+
+    // Insert Holder
+    document.getElementById('form3-description').addEventListener('click', function() {
+        const getVal = id => document.getElementById(id)?.value || '';
+
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('insHolStdWidth');
+        const stdH = getVal('insHolStdHeight');
+        const stdB = getVal('insHolStdBase');
+        const uom = getVal('insHolUom');
+
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
+
+        let openSize = "";
+        const openW = getVal('insHolOpnWidth');
+        const openH = getVal('insHolOpnHeight');
+
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
+
         
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF LID</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('lidStdWidth')} x ${getVal('lidStdHeight')} x ${getVal('lidStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('lidOpnWidth')} x ${getVal('lidOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('lidUom')}</p>
-        <p><strong>PACKING CONTENT:</strong> ${getVal('lidPacContent') || getVal('inputLidPacContent')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('lidPrintOuter') || getVal('inputLidPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('lidPrintInner') || getVal('inputLidPrintInner')}</p>
-        <p><strong>UV VARNISH:</strong> ${getVal('lidUvVarnish')}</p>
-        <p><strong>HOT STAMP:</strong> ${getVal('lidHotStamp')}</p>
-        <p><strong>COLLECTION STORY / LIMITED EDITION:</strong> ${getVal('lidLimEdition')}</p>
-    `;
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('insHolSapCode')}${
+                getVal('insHolSapCode') && getVal('insHolPckDes') ? " - " : ""
+            }${getVal('insHolPckDes')}</p>
+            
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT HOLDER</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PACKING CONTENT:</strong> ${getVal('insHolPacContent') || getVal('inputInsHolPacContent')}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insHolPrintOuter') || getVal('inputInsHolPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('insHolPrintInner') || getVal('inputInsHolPrintInner')}</p>
+            <p><strong>UV VARNISH:</strong> ${getVal('insHolUvVarnish')}</p>
+            <p><strong>HOT STAMP:</strong> ${getVal('insHolHotStamp')}</p>
+        `;
 
-    // Insert description into modal content
-    document.getElementById('form6DesContent').innerHTML = descriptionHTML;
+        // Insert description into modal content
+        document.getElementById('form3DesContent').innerHTML = descriptionHTML;
 
-    // Show modal
-    const modal = document.getElementById('form6Modal');
-    modal.style.display = 'block';
+        // Show modal
+        const modal = document.getElementById('form3Modal');
+        modal.style.display = 'block';
 
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
 
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
 
-// Base
-document.getElementById('form7-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('baseSapCode')} - ${getVal('basePckDes')}</p>
+
+    // Insert Holder Platform
+    document.getElementById('form4-description').addEventListener('click', function() {
+        const getVal = id => document.getElementById(id)?.value || '';
+
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('insHolPlatStdWidth');
+        const stdH = getVal('insHolPlatStdHeight');
+        const stdB = getVal('insHolPlatStdBase');
+        const uom = getVal('insHolPlatUom');
+
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
+
+        let openSize = ""; 
+        const openW = getVal('insHolPlatOpnWidth');
+        const openH = getVal('insHolPlatOpnHeight');
+
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
         
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF BASE</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('baseStdWidth')} x ${getVal('baseStdHeight')} x ${getVal('baseStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('baseOpnWidth')} x ${getVal('baseOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('baseUom')}</p>
-        <p><strong>PACKING CONTENT:</strong> ${getVal('basePacContent') || getVal('inputBasePacContent')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('basePrintOuter') || getVal('inputBasePrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('basePrintInner') || getVal('inputBasePrintInner')}</p>
-        <p><strong>UV VARNISH:</strong> ${getVal('baseUvVarnish')}</p>
-        <p><strong>HOT STAMP:</strong> ${getVal('baseHotStamp')}</p>
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('insHolPlatSapCode')}${
+                getVal('insHolPlatSapCode') && getVal('insHolPlatPckDes') ? " - " : ""
+            }${getVal('insHolPlatPckDes')}</p>
+
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT HOLDER PLATFORM</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PRODUCT VOLUME:</strong> ${getVal('insHolPlatProdVolume') || getVal('inputInsHolPlatProdVolume')}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insHolPlatPrintOuter') || getVal('inputInsHolPlatPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('insHolPlatPrintInner') || getVal('inputInsHolPlatPrintInner')}</p>
+            <p><strong>UV VARNISH:</strong> ${getVal('insHolPlatUvVarnish')}</p>
+            <p><strong>HOT STAMP:</strong> ${getVal('insHolPlatHotStamp')}</p>
+        `;
+
+        // Insert description into modal content
+        document.getElementById('form4DesContent').innerHTML = descriptionHTML;
+
+        // Show modal
+        const modal = document.getElementById('form4Modal');
+        modal.style.display = 'block';
+
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
+
+    // Insert Partition
+    document.getElementById('form5-description').addEventListener('click', function() {
+        const getVal = id => document.getElementById(id)?.value || '';
+
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('insPartiStdWidth');
+        const stdH = getVal('insPartiStdHeight');
+        const stdB = getVal('insPartiStdBase');
+        const uom = getVal('insPartiUom');
+
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
+
+        let openSize = "";
+        const openW = getVal('insPartiOpnWidth');
+        const openH = getVal('insPartiOpnHeight');
+
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
+        
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('insPartiSapCode')}${
+                getVal('insPartiSapCode') && getVal('insPartiPckDes') ? " - " : ""
+            }${getVal('insPartiPckDes')}</p>
+            
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF INSERT PARTITON</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('insPartiPrintOuter') || getVal('inputInsPartiPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('insPartiPrintInner') || getVal('inputInsPartiPrintInner')}</p>
+        `;
+
+        // Insert description into modal content
+        document.getElementById('form5DesContent').innerHTML = descriptionHTML;
+
+        // Show modal
+        const modal = document.getElementById('form5Modal');
+        modal.style.display = 'block';
+
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
+
+    // Lid
+    document.getElementById('form6-description').addEventListener('click', function() {
+        const getVal = id => document.getElementById(id)?.value || '';
+
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('lidStdWidth');
+        const stdH = getVal('lidStdHeight');
+        const stdB = getVal('lidStdBase');
+        const uom = getVal('boxUom');
+
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
+
+        let openSize = "";
+        const openW = getVal('lidOpnWidth');
+        const openH = getVal('lidOpnHeight');
+
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
+        
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('lidSapCode')}${
+                getVal('lidSapCode') && getVal('lidPckDes') ? " - " : ""
+            }${getVal('lidPckDes')}</p>
+
+            
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF LID</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PACKING CONTENT:</strong> ${getVal('lidPacContent') || getVal('inputLidPacContent')}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('lidPrintOuter') || getVal('inputLidPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('lidPrintInner') || getVal('inputLidPrintInner')}</p>
+            <p><strong>UV VARNISH:</strong> ${getVal('lidUvVarnish')}</p>
+            <p><strong>HOT STAMP:</strong> ${getVal('lidHotStamp')}</p>
+            <p><strong>COLLECTION STORY / LIMITED EDITION:</strong> ${getVal('lidLimEdition')}</p>
+        `;
+
+        // Insert description into modal content
+        document.getElementById('form6DesContent').innerHTML = descriptionHTML;
+
+        // Show modal
+        const modal = document.getElementById('form6Modal');
+        modal.style.display = 'block';
+
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
+
+    // Base
+    document.getElementById('form7-description').addEventListener('click', function() {
+        const getVal = id => document.getElementById(id)?.value || '';
+
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('baseStdWidth');
+        const stdH = getVal('baseStdHeight');
+        const stdB = getVal('baseStdBase');
+        const uom = getVal('baseUom');
+
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
+
+        let openSize = "";
+        const openW = getVal('baseOpnWidth');
+        const openH = getVal('baseOpnHeight');
+
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
+        
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('baseSapCode')}${
+                getVal('baseSapCode') && getVal('basePckDes') ? " - " : ""
+            }${getVal('basePckDes')}</p>
+            
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF BASE</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PACKING CONTENT:</strong> ${getVal('basePacContent') || getVal('inputBasePacContent')}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('basePrintOuter') || getVal('inputBasePrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('basePrintInner') || getVal('inputBasePrintInner')}</p>
+            <p><strong>UV VARNISH:</strong> ${getVal('baseUvVarnish')}</p>
+            <p><strong>HOT STAMP:</strong> ${getVal('baseHotStamp')}</p>
+        `;
+
+        // Insert description into modal content
+        document.getElementById('form7DesContent').innerHTML = descriptionHTML;
+
+        // Show modal
+        const modal = document.getElementById('form7Modal');
+        modal.style.display = 'block';
+
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
+
+    // Platform
+    document.getElementById('form8-description').addEventListener('click', function() {
+        const getVal = id => document.getElementById(id)?.value || '';
+
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('platStdWidth');
+        const stdH = getVal('platStdHeight');
+        const stdB = getVal('platStdBase');
+        const uom = getVal('platUom');
+
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
+
+        let openSize = "";
+        const openW = getVal('platOpnWidth');
+        const openH = getVal('platOpnHeight');
+
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
+        
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('platSapCode')}${
+                getVal('platSapCode') && getVal('platPckDes') ? " - " : ""
+            }${getVal('platPckDes')}</p>
+
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF PLATFORM</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('platPrintOuter') || getVal('inputPlatPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('platPrintInner') || getVal('inputPlatPrintInner')}</p>
+        `;
+
+        // Insert description into modal content
+        document.getElementById('form8DesContent').innerHTML = descriptionHTML;
+
+        // Show modal
+        const modal = document.getElementById('form8Modal');
+        modal.style.display = 'block';
+
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
+
+    // Sleeve
+    document.getElementById('form9-description').addEventListener('click', function() {
+        const getVal = id => document.getElementById(id)?.value || '';
+
+        // SMART SIZE BUILDERS
+        let stdSize = "";
+        const stdW = getVal('slvStdWidth');
+        const stdH = getVal('slvStdHeight');
+        const stdB = getVal('slvStdBase');
+        const uom = getVal('slvUom');
+
+        if (stdW) stdSize += stdW;
+        if (stdW && stdH) stdSize += " × ";
+        if (stdH) stdSize += stdH;
+        if ((stdW || stdH) && stdB) stdSize += " × ";
+        if (stdB) stdSize += stdB;
+        // if (stdSize && uom) stdSize += ` ${uom}`;
+
+        let openSize = "";
+        const openW = getVal('slvOpnWidth');
+        const openH = getVal('slvOpnHeight');
+
+        if (openW) openSize += openW;
+        if (openW && openH) openSize += " × ";
+        if (openH) openSize += openH;
+        // if (openSize && uom) openSize += ` ${uom}`; 
+        
+        const descriptionHTML = `
+            <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
+            <p><strong>SAP:</strong> ${getVal('slveSapCode')}${
+                getVal('slveSapCode') && getVal('slvPckDes') ? " - " : ""
+            }${getVal('slvPckDes')}</p>
+
+            <br><div><strong style="text-decoration: underline;"><b>DETAILS OF SLEEVE</b></strong></div>
+            <p><strong>STANDARD SIZE:</strong> ${stdSize}</p>
+            <p><strong>OPEN SIZE:</strong> ${openSize}</p>
+            <p><strong>UNIT OF MEASURE:</strong> ${uom}</p>
+            <p><strong>PRINT TYPE OUTER:</strong> ${getVal('slvPrintOuter') || getVal('inputSlvPrintOuter')}</p>
+            <p><strong>PRINT TYPE INNER:</strong> ${getVal('slvPrintInner') || getVal('inputSlvPrintInner')}</p>
+            <p><strong>LAMINATED FINISH:</strong> ${getVal('slvLamination') || getVal('inputslvLamination')}</p>
+            <p><strong>UV VARNISH:</strong> ${getVal('slvUvVarnish')}</p>
+            <p><strong>HOT STAMP:</strong> ${getVal('slvHotStamp')}</p>
+        `;
+
+        // Insert description into modal content
+        document.getElementById('form9DesContent').innerHTML = descriptionHTML;
+
+        // Show modal
+        const modal = document.getElementById('form9Modal');
+        modal.style.display = 'block';
+
+        // Close modal on clicking 'x'
+        modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+
+        // Close modal on clicking outside the modal content
+        window.onclick = (event) => {
+            if(event.target == modal) modal.style.display = 'none';
+        }
+    });
+</script>
+
+
+<!--  UNIVERSAL PRINT HANDLER -->
+<script>
+    // Mapping buttons → corresponding summary content + title
+    const printConfig = {
+        "btn-print": {
+            title: "SECONDARY SUMMARY",
+            contentId: "modalDynamicContent"
+        },
+        "btn-print1": {
+            title: "BOX SPECIFICATION SUMMARY",
+            contentId: "form1DesContent"
+        },
+        "btn-print2": {
+            title: "INSERT SPECIFICATION SUMMARY",
+            contentId: "form2DesContent"
+        },
+        "btn-print3": {
+            title: "INSERT HOLDER SPECIFICATION SUMMARY",
+            contentId: "form3DesContent"
+        },
+        "btn-print4": {
+            title: "INSERT HOLDER PLATFORM SPECIFICATION SUMMARY",
+            contentId: "form4DesContent"
+        },
+        "btn-print5": {
+            title: "INSERT PARTITION SPECIFICATION SUMMARY",
+            contentId: "form5DesContent"
+        },
+        "btn-print6": {
+            title: "LID SPECIFICATION SUMMARY",
+            contentId: "form6DesContent"
+        },
+        "btn-print7": {
+            title: "BASE SPECIFICATION SUMMARY",
+            contentId: "form7DesContent"
+        },
+        "btn-print8": {
+            title: "PLATFORM SPECIFICATION SUMMARY",
+            contentId: "form8DesContent"
+        },
+        "btn-print9": {
+            title: "SLEEVE SPECIFICATION SUMMARY",
+            contentId: "form9DesContent"
+        } 
+    };
+
+    // Attach print events to all buttons using loop
+    Object.keys(printConfig).forEach(btnId => {
+        const { title, contentId } = printConfig[btnId];
+
+        document.getElementById(btnId).addEventListener("click", function () {
+
+            const content = document.getElementById(contentId).innerHTML;
+
+            const printWindow = window.open("", "_blank", "width=900,height=700");
+
+            printWindow.document.open();
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>${title}</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            padding: 25px;
+                            line-height: 1.6;
+                        }
+                        h2 {
+                            text-align: center;
+                            font-size: 22px;
+                            margin-bottom: 20px;
+                            border-bottom: 2px solid #000;
+                            padding-bottom: 10px;
+                        }
+                        p, div {
+                            font-size: 15px;
+                            margin: 6px 0;
+                        }
+                        strong { font-weight: 700; }
+                    </style>
+                </head>
+                <body>
+                    <h2>${title}</h2>
+                    ${content}
+                </body>
+                </html>
+            `);
+
+            printWindow.document.close();
+
+            // Delay ensures full render before printing
+            setTimeout(() => {
+                printWindow.focus();
+                printWindow.print();
+                printWindow.close();
+            }, 500);
+        });
+    });
+</script>
+
+<!--SECONDARY FULL SUMMARY  -->
+<!-- Summerise description summary -->
+<script>
+document.getElementById("btn-description").addEventListener("click", function () {
+    const getVal = id => document.getElementById(id)?.value.trim() || "";
+
+    function row(label, value) {
+        return value ? `<p><strong>${label}:</strong> ${value}</p>` : "";
+    }
+
+    function section(title, rows, centerTitle = false) {
+    const titleStyle = centerTitle
+        ? "text-align:center; font-weight:bold; text-decoration:underline;"
+        : "text-align:left; font-weight:bold; text-decoration:underline;";
+
+    return rows.trim() !== ""
+        ? `
+            <div style="${titleStyle}">${title}</div>
+            <div style="text-align:left; font-size:14px margin-top:5px">${rows}</div>
+            <br>
+        `
+        : "";
+    }
+
+    // 1. Collect all field values
+    const allValues = [
+        "boxSapCode","boxPckDes","boxPromoProject","boxStdWidth","boxStdHeight","boxStdBase","boxOpnWidth","boxOpnHeight",
+        "boxUom","boxPacContent","inputBoxPacContent","boxOutInnInformation","inputBoxOutInnInformation",
+        "boxPrintStyle","inputBoxPrintStyle","boxPrintOuter","inputBoxPrintOuter","boxPrintInner","inputBoxPrintInner",
+        "boxLamination","inputBoxLamination","boxFlaps","inputBoxFlaps","boxUvVarnish","boxHotStamp","boxDummyApprovedDate",
+        "boxCutter","inputBoxCutter","boxArtworks","inputBoxArtworks","inputBoxArtworks","boxDeliveryLocation", "inputBoxDeliveryLocation",
+        "insSapCode", "insPckDes", "insStdWidth", "insStdHeight", "insStdBase", "insOpnWidth", "insOpnHeight", "insUom", "insPacContent",
+        "inputInsPacContent", "insPrintOuter", "inputInsPrintOuter", "insPrintInner", "inputInsPrintInner", "insHolSapCode",
+        "insHolPckDes", "insHolStdWidth", "insHolStdHeight", "insHolStdBase", "insHolOpnWidth", "insHolOpnHeight", "insHolUom",
+        "insHolPacContent", "inputInsHolPacContent", "insHolPrintOuter", "inputInsHolPrintOuter", "insHolPrintInner", "inputInsHolPrintInner",
+        "insHolUvVarnish", "insHolHotStamp", "insHolPlatSapCode", "insHolPlatPckDes", "insHolPlatStdWidth", "insHolPlatStdHeight", "insHolPlatStdBase", 
+        "insHolPlatOpnWidth", "insHolPlatOpnHeight", "insHolPlatUom", "insHolPlatProdVolume", "inputInsHolPlatProdVolume", "insHolPlatPrintOuter", 
+        "inputInsHolPlatPrintOuter", "insHolPlatPrintInner", "inputInsHolPlatPrintInner", "insHolPlatUvVarnish", "insHolPlatHotStamp",
+        "insPartiSapCode", "insPartiPckDes", "insPartiStdWidth", "insPartiStdHeight", "insPartiStdBase", "insPartiOpnWidth", "insPartiOpnHeight",
+        "insPartiUom", "insPartiPrintOuter", "inputInsPartiPrintOuter", "insPartiPrintInner", "inputInsPartiPrintInner", "lidSapCode",
+        "lidPckDes", "lidStdWidth", "lidStdHeight", "lidOpnWidth", "lidOpnHeight", "lidUom", "lidPacContent", "inputLidPacContent",
+        "lidPrintOuter", "inputLidPrintOuter", "lidPrintInner", "inputLidPrintInner", "lidUvVarnish", "lidHotStamp", "lidLimEdition", 
+        "baseSapCode", "basePckDes", "baseStdWidth", "baseStdHeight", "baseStdBase", "baseOpnWidth", "baseOpnHeight", "baseUom", 
+        "basePacContent", "inputBasePacContent", "basePrintOuter", "inputBasePrintOuter", "basePrintInner", "inputBasePrintInner",
+        "baseUvVarnish", "baseHotStamp", "platSapCode", "platPckDes", "platStdWidth", "platStdHeight", "platStdBase", "platOpnWidth", 
+        "platOpnHeight", "platUom", "platPrintOuter", "inputPlatPrintOuter", "platPrintInner", "inputPlatPrintInner", "slveSapCode",
+        "slvPckDes",  "slvStdWidth", "slvStdHeight", "slvStdBase", "slvOpnWidth", "slvOpnHeight", "slvUom", "slvPrintOuter", "inputSlvPrintOuter",
+        "slvPrintInner", "inputSlvPrintInner", "slvLamination", "inputslvLamination", "slvUvVarnish", "slvHotStamp" 
+    ];
+
+    const anyFilled = allValues.some(id => getVal(id) !== "");
+
+    if (!anyFilled) {
+        alert("Please fill at least one field to preview the description.");
+        return; 
+    }
+
+    // 2. Build content
+    const boxSpec = `${row("SAP", [getVal("boxSapCode"), getVal("boxPckDes")].filter(v => v).join(" - "))}`;
+    const boxDetails = `
+        ${row("PROMOTION/PROJECT", getVal("boxPromoProject"))}
+        ${row("STANDARD SIZE (W x H x B)", [getVal("boxStdWidth"), getVal("boxStdHeight"), getVal("boxStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("boxOpnWidth"), getVal("boxOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("boxUom"))}
+        ${row("PACKING CONTENT", getVal("boxPacContent") || getVal("inputBoxPacContent"))}
+        ${row("OUTER & INNER PLIES INFORMATION", getVal("boxOutInnInformation") || getVal("inputBoxOutInnInformation"))}
+        ${row("PRINT STYLE", getVal("boxPrintStyle") || getVal("inputBoxPrintStyle"))}
+        ${row("PRINT TYPE OUTER", getVal("boxPrintOuter") || getVal("inputBoxPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("boxPrintInner") || getVal("inputBoxPrintInner"))}
+        ${row("LAMINATED FINISH", getVal("boxLamination") || getVal("inputBoxLamination"))}
+        ${row("BOX FLAPS", getVal("boxFlaps") || getVal("inputBoxFlaps"))}
+        ${row("UV VARNISH", getVal("boxUvVarnish"))}
+        ${row("HOT STAMP", getVal("boxHotStamp"))}
+        ${row("DUMMY/SAMPLE APPROVED DATE", getVal("boxDummyApprovedDate"))}
+        ${row("CUTTER", getVal("boxCutter") || getVal("inputBoxCutter"))}
+        ${row("ARTWORK(S)", getVal("boxArtworks") || getVal("inputBoxArtworks"))}
+        ${row("DELIVERY LOCATION", getVal("boxDeliveryLocation") || getVal("inputBoxDeliveryLocation"))}
     `;
 
-    // Insert description into modal content
-    document.getElementById('form7DesContent').innerHTML = descriptionHTML;
+    // 2. INSERT
+    const insertSpec = `
+        ${row("SAP", [getVal("insSapCode"), getVal("insPckDes")].filter(v => v).join(" - "))}
+    `;
 
-    // Show modal
-    const modal = document.getElementById('form7Modal');
-    modal.style.display = 'block';
+    const insertDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("insStdWidth"), getVal("insStdHeight"), getVal("insStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("insOpnWidth"), getVal("insOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("insUom"))}
+        ${row("PACKING CONTENT", getVal("insPacContent") || getVal("inputInsPacContent"))}
+        ${row("PRINT TYPE OUTER", getVal("insPrintOuter") || getVal("inputInsPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("insPrintInner") || getVal("inputInsPrintInner"))}
+    `;
 
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
+    // 3. INSERT HOLDER
+    const holderSpec = `
+        ${row("SAP", [getVal("insHolSapCode"), getVal("insHolPckDes")].filter(v => v).join(" - "))}
+    `;
 
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
+    const holderDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("insHolStdWidth"), getVal("insHolStdHeight"), getVal("insHolStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("insHolOpnWidth"), getVal("insHolOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("insHolUom"))}
+        ${row("PACKING CONTENT", getVal("insHolPacContent") || getVal("inputInsHolPacContent"))}
+        ${row("PRINT TYPE OUTER", getVal("insHolPrintOuter") || getVal("inputInsHolPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("insHolPrintInner") || getVal("inputInsHolPrintInner"))}
+        ${row("UV VARNISH", getVal("insHolUvVarnish"))}
+        ${row("HOT STAMP", getVal("insHolHotStamp"))}
+    `;
 
-// Platform
-document.getElementById('form8-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
+    // 4. INSERT HOLDER PLATFORM
+    const platSpec = `
+        ${row("SAP", [getVal("insHolPlatSapCode"), getVal("insHolPlatPckDes")].filter(v => v).join(" - "))}
+    `;
+
+    const platDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("insHolPlatStdWidth"), getVal("insHolPlatStdHeight"), getVal("insHolPlatStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("insHolPlatOpnWidth"), getVal("insHolPlatOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("insHolPlatUom"))}
+        ${row("PRODUCT VOLUME", getVal("insHolPlatProdVolume"))}
+        ${row("PRINT TYPE OUTER", getVal("insHolPlatPrintOuter") || getVal("inputInsHolPlatPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("insHolPlatPrintInner") || getVal("inputInsHolPlatPrintInner"))}
+        ${row("UV VARNISH", getVal("insHolPlatUvVarnish"))}
+        ${row("HOT STAMP", getVal("insHolPlatHotStamp"))}
+    `;
+
+    // 5. INSERT PARTITION
+    const partiSpec = `
+        ${row("SAP", [getVal("insPartiSapCode"), getVal("insPartiPckDes")].filter(v => v).join(" - "))}
+    `;
+
+    const partiDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("insPartiStdWidth"), getVal("insPartiStdHeight"), getVal("insPartiStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("insPartiOpnWidth"), getVal("insPartiOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("insPartiUom"))}
+        ${row("PRINT TYPE OUTER", getVal("insPartiPrintOuter") || getVal("inputInsPartiPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("insPartiPrintInner") || getVal("inputInsPartiPrintInner"))}
+    `;
+
+    // 6. LID
+    const lidSpec = `
+        ${row("SAP", [getVal("lidSapCode"), getVal("lidPckDes")].filter(v => v).join(" - "))}
+    `;
+
+    const lidDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("lidStdWidth"), getVal("lidStdHeight"), getVal("lidStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("lidOpnWidth"), getVal("lidOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("lidUom"))}
+        ${row("PACKING CONTENT", getVal("lidPacContent") || getVal("inputLidPacContent"))}
+        ${row("PRINT TYPE OUTER", getVal("lidPrintOuter") || getVal("inputLidPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("lidPrintInner") || getVal("inputLidPrintInner"))}
+        ${row("UV VARNISH", getVal("lidUvVarnish"))}
+        ${row("HOT STAMP", getVal("lidHotStamp"))}
+        ${row("COLLECTION STORY / LIMITED EDITION", getVal("lidLimEdition"))}
+    `;
+
+    // 7. BASE
+    const baseSpec = `
+        ${row("SAP", [getVal("baseSapCode"), getVal("basePckDes")].filter(v => v).join(" - "))}
+    `;
+
+    const baseDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("baseStdWidth"), getVal("baseStdHeight"), getVal("baseStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("baseOpnWidth"), getVal("baseOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("baseUom"))}
+        ${row("PACKING CONTENT", getVal("basePacContent") || getVal("inputBasePacContent"))}
+        ${row("PRINT TYPE OUTER", getVal("basePrintOuter") || getVal("inputBasePrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("basePrintInner") || getVal("inputBasePrintInner"))}
+        ${row("UV VARNISH", getVal("baseUvVarnish"))}
+        ${row("HOT STAMP", getVal("baseHotStamp"))}
+    `;
+
+    // 8. PLATFORM
+    const platformSpec = `
+        ${row("SAP", [getVal("platSapCode"), getVal("platPckDes")].filter(v => v).join(" - "))}
+    `;
+
+    const platformDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("platStdWidth"), getVal("platStdHeight"), getVal("platStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("platOpnWidth"), getVal("platOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("platUom"))}
+        ${row("PRINT TYPE OUTER", getVal("platPrintOuter") || getVal("inputPlatPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("platPrintInner") || getVal("inputPlatPrintInner"))}
+    `;
+
+    // 9. SLEEVE
+    const sleeveSpec = `
+        ${row("SAP", [getVal("slveSapCode"), getVal("slvPckDes")].filter(v => v).join(" - "))}
+    `;
+
+    const sleeveDetails = `
+        ${row("STANDARD SIZE (W x H x B)", [getVal("slvStdWidth"), getVal("slvStdHeight"), getVal("slvStdBase")].filter(v => v).join(" x "))}
+        ${row("OPEN SIZE (W x H)", [getVal("slvOpnWidth"), getVal("slvOpnHeight")].filter(v => v).join(" x "))}
+        ${row("UNIT OF MEASURE", getVal("slvUom"))}
+        ${row("PRINT TYPE OUTER", getVal("slvPrintOuter") || getVal("inputSlvPrintOuter"))}
+        ${row("PRINT TYPE INNER", getVal("slvPrintInner") || getVal("inputSlvPrintInner"))}
+        ${row("LAMINATED FINISH", getVal("slvLamination") || getVal("inputslvLamination"))}
+        ${row("UV VARNISH", getVal("slvUvVarnish"))}
+        ${row("HOT STAMP", getVal("slvHotStamp"))}
+    `;
+
+    // FINAL OUTPUT — auto-hide empty sections
     const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('platSapCode')} - ${getVal('platPckDes')}</p>
+        ${section("BOX PRODUCT INFORMATION SUMMARY", boxSpec, true)}
+        ${section("DETAILS OF BOX", boxDetails, false)}
 
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF PLATFORM</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('platStdWidth')} x ${getVal('platStdHeight')} x ${getVal('platStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('platOpnWidth')} x ${getVal('platOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('platUom')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('platPrintOuter') || getVal('inputPlatPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('platPrintInner') || getVal('inputPlatPrintInner')}</p>
+        ${section("INSERT PRODUCT INFORMATION SUMMARY", insertSpec, true)}
+        ${section("DETAILS OF INSERT", insertDetails, false)}
+
+        ${section("INSERT HOLDER PRODUCT INFORMATION SUMMARY", holderSpec, true)}
+        ${section("DETAILS OF INSERT HOLDER", holderDetails, false)}
+
+        ${section("INSERT HOLDER PLATFORM PRODUCT INFORMATION SUMMARY", platSpec, true)}
+        ${section("DETAILS OF INSERT HOLDER PLATFORM", platDetails, false)}
+
+        ${section("INSERT PARTITION PRODUCT INFORMATION SUMMARY", partiSpec, true)}
+        ${section("DETAILS OF INSERT PARTITION", partiDetails, false)}
+
+        ${section("LID PRODUCT INFORMATION SUMMARY", lidSpec, true)}
+        ${section("DETAILS OF LID", lidDetails, false)}
+
+        ${section("BASE PRODUCT INFORMATION SUMMARY", baseSpec, true)}
+        ${section("DETAILS OF BASE", baseDetails, false)}
+
+        ${section("PLATFORM PRODUCT INFORMATION SUMMARY", platformSpec, true)}
+        ${section("DETAILS OF PLATFORM", platformDetails, false)}
+
+        ${section("SLEEVE PRODUCT INFORMATION SUMMARY", sleeveSpec, true)}
+        ${section("DETAILS OF SLEEVE", sleeveDetails, false)}
     `;
 
-    // Insert description into modal content
-    document.getElementById('form8DesContent').innerHTML = descriptionHTML;
+    document.getElementById("modalDynamicContent").innerHTML = descriptionHTML;
 
-    // Show modal
-    const modal = document.getElementById('form8Modal');
-    modal.style.display = 'block';
+    // 4. Show modal
+    const modal = document.getElementById("descriptionModal");
+    modal.style.display = "block";
 
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
-
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
-});
-
-// Sleeve
-document.getElementById('form9-description').addEventListener('click', function() {
-    const getVal = id => document.getElementById(id)?.value || '';
-    
-    const descriptionHTML = `
-        <div><strong style="text-decoration: underline;"><b>PRODUCT INFORMATION SUMMARY</b></strong></div>
-        <p><strong>SAP:</strong> ${getVal('slveSapCode')} - ${getVal('slvPckDes')}</p>
-
-        <br><div><strong style="text-decoration: underline;"><b>DETAILS OF SLEEVE</b></strong></div>
-        <p><strong>STANDARD SIZE (W x H x B):</strong> ${getVal('slvStdWidth')} x ${getVal('slvStdHeight')} x ${getVal('slvStdBase')}</p>
-        <p><strong>OPEN SIZE (W x H):</strong> ${getVal('slvOpnWidth')} x ${getVal('slvOpnHeight')}</p>
-        <p><strong>UNIT OF MEASURE:</strong> ${getVal('slvUom')}</p>
-        <p><strong>PRINT TYPE OUTER:</strong> ${getVal('slvPrintOuter') || getVal('inputSlvPrintOuter')}</p>
-        <p><strong>PRINT TYPE INNER:</strong> ${getVal('slvPrintInner') || getVal('inputSlvPrintInner')}</p>
-        <p><strong>LAMINATED FINISH:</strong> ${getVal('slvLamination') || getVal('inputslvLamination')}</p>
-        <p><strong>UV VARNISH:</strong> ${getVal('slvUvVarnish')}</p>
-        <p><strong>HOT STAMP:</strong> ${getVal('slvHotStamp')}</p>
-    `;
-
-    // Insert description into modal content
-    document.getElementById('form9DesContent').innerHTML = descriptionHTML;
-
-    // Show modal
-    const modal = document.getElementById('form9Modal');
-    modal.style.display = 'block';
-
-    // Close modal on clicking 'x'
-    modal.querySelector('.des-close').onclick = () => modal.style.display = 'none';
-
-    // Close modal on clicking outside the modal content
-    window.onclick = (event) => {
-        if(event.target == modal) modal.style.display = 'none';
-    }
+    // Close modal
+    modal.querySelector(".des-close").onclick = () => modal.style.display = "none";
+    window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; };
 });
 </script>
 
 
-    
