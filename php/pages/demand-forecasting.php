@@ -324,21 +324,15 @@ const brandFilter = document.getElementById("brand-filter");
 
 // Multi Dropdown Elements
 const deptToggle = document.getElementById("department-toggle");
-const deptMenu = document.getElementById("department-menu");
 const deptOptions = document.getElementById("department-options");
 
 const catToggle = document.getElementById("category-toggle");
-const catMenu = document.getElementById("category-menu");
 const catOptions = document.getElementById("category-options");
 
 const rangeToggle = document.getElementById("range-toggle");
-const rangeMenu = document.getElementById("range-menu");
 const rangeOptions = document.getElementById("range-options");
 
-
-// ---------------------------
-// 1. LOAD BRANDS ON PAGE LOAD
-// ---------------------------
+// Load brands on page loads
 fetch("testing/product_handler.php?action=get_brands")
     .then(res => res.json())
     .then(data => {
@@ -349,13 +343,11 @@ fetch("testing/product_handler.php?action=get_brands")
     });
 
 
-// ---------------------------
-// 2. BRAND → LOAD DEPARTMENTS
-// ---------------------------
+// Load departments when a brand is selected
 brandFilter.addEventListener("change", () => {
     const brandId = brandFilter.value;
 
-    // Reset
+    // Reset all dropdowns
     deptToggle.disabled = true;
     catToggle.disabled = true;
     rangeToggle.disabled = true;
@@ -375,7 +367,7 @@ brandFilter.addEventListener("change", () => {
                 return;
             }
 
-            deptToggle.disabled = false;
+            deptToggle.disabled = true;
             deptOptions.innerHTML = "";
 
             data.forEach(dep => {
@@ -386,29 +378,37 @@ brandFilter.addEventListener("change", () => {
                     </label>
                 `;
             });
+
+            deptToggle.disabled = false;
         });
 });
 
 
-// ---------------------------
-// 3. DEPARTMENTS → LOAD CATEGORIES
-// ---------------------------
+// Load categories when departments are selected (POST)
 document.addEventListener("change", (e) => {
     if (!e.target.classList.contains("department-checkbox")) return;
 
-    const selected = [...document.querySelectorAll(".department-checkbox:checked")].map(cb => cb.value);
+    const selectedDepartments = [...document.querySelectorAll(".department-checkbox:checked")]
+        .map(cb => cb.value);
 
-    catToggle.disabled = selected.length === 0;
+    catToggle.disabled = selectedDepartments.length === 0;
     catOptions.innerHTML = "";
 
-    if (selected.length === 0) {
+    if (selectedDepartments.length === 0) {
         catOptions.innerHTML = `<div class="dropdown-message">Please select department(s) first</div>`;
         return;
     }
+// Prepare form data for POST request
+    const formData = new FormData();
+    selectedDepartments.forEach(id => formData.append("departments[]", id));
 
-    fetch(`testing/product_handler.php?action=get_categories_by_department&department_ids=${selected.join(",")}`)
+    fetch("testing/product_handler.php?action=get_categories_by_departments", {
+        method: "POST",
+        body: formData
+    })
         .then(res => res.json())
         .then(data => {
+
             if (data.length === 0) {
                 catOptions.innerHTML = `<div class="dropdown-message">No categories found</div>`;
                 return;
@@ -422,29 +422,36 @@ document.addEventListener("change", (e) => {
                     </label>
                 `;
             });
+
         });
 });
 
 
-// ---------------------------
-// 4. CATEGORIES → LOAD RANGES
-// ---------------------------
+// Load ranges when categories are selected (POST)
 document.addEventListener("change", (e) => {
     if (!e.target.classList.contains("category-checkbox")) return;
 
-    const selected = [...document.querySelectorAll(".category-checkbox:checked")].map(cb => cb.value);
+    const selectedCategories = [...document.querySelectorAll(".category-checkbox:checked")]
+        .map(cb => cb.value);
 
-    rangeToggle.disabled = selected.length === 0;
+    rangeToggle.disabled = selectedCategories.length === 0;
     rangeOptions.innerHTML = "";
 
-    if (selected.length === 0) {
+    if (selectedCategories.length === 0) {
         rangeOptions.innerHTML = `<div class="dropdown-message">Please select category/categories first</div>`;
         return;
     }
 
-    fetch(`testing/product_handler.php?action=get_ranges_by_category&category_ids=${selected.join(",")}`)
+    const formData = new FormData();
+    selectedCategories.forEach(id => formData.append("categories[]", id));
+
+    fetch("testing/product_handler.php?action=get_ranges_by_categories", {
+        method: "POST",
+        body: formData
+    })
         .then(res => res.json())
         .then(data => {
+
             if (data.length === 0) {
                 rangeOptions.innerHTML = `<div class="dropdown-message">No ranges found</div>`;
                 return;
@@ -458,13 +465,12 @@ document.addEventListener("change", (e) => {
                     </label>
                 `;
             });
+
         });
 });
 
 
-// ---------------------------
-// 5. DROPDOWN OPEN/CLOSE LOGIC
-// ---------------------------
+// Load dropdown open/close logic
 document.querySelectorAll(".dropdown-toggle").forEach(btn => {
     btn.addEventListener("click", () => {
         btn.nextElementSibling.classList.toggle("show");
@@ -474,7 +480,7 @@ document.querySelectorAll(".dropdown-toggle").forEach(btn => {
 // Close on click outside
 document.addEventListener("click", (e) => {
     if (!e.target.closest(".custom-dropdown")) {
-        document.querySelectorAll(".dropdown-menu").forEach(m => m.classList.remove("show"));
+        document.querySelectorAll(".dropdown-menu").forEach(menu => menu.classList.remove("show"));
     }
 });
 

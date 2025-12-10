@@ -47,7 +47,7 @@
 /* Back face - rotated 180deg so it shows when container flips */
 .flip-card-back {
     transform: rotateY(180deg);
-    overflow-y: auto;
+    /* overflow-y: auto; */
     display: flex;
     flex-direction: column;
 }
@@ -970,8 +970,8 @@ select.filter-input {
 /* Checkbox styling */
 input[type="checkbox"] {
     cursor: pointer;
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
 }
 
 /* Scrollbar styling */
@@ -1309,7 +1309,7 @@ input[type="checkbox"] {
     border: 2px solid #e2e8f0;
     border-radius: 10px;
     max-height: 320px;
-    overflow: hidden;
+    overflow: auto;
     display: none;
     z-index: 1000;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
@@ -1368,7 +1368,6 @@ input[type="checkbox"] {
 
 /* Dropdown Options Container */
 .demand-filter .dropdown-options {
-    padding: 6px;
     overflow-y: auto;
     max-height: 256px;
 }
@@ -1435,6 +1434,20 @@ input[type="checkbox"] {
     font-style: italic;
     font-size: 13px;
     line-height: 1.6;
+}
+
+.demand-filter .dropdown-option,
+.demand-filter .dropdown-item {
+    padding: 8px;
+    cursor: pointer;
+    gap: 5px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    transition: all 0.2s ease;
+    user-select: none;
+    border-radius: 6px;
+    margin-bottom: 1px;
 }
 
 /* Loading State */
