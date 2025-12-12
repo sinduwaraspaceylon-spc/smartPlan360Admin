@@ -930,77 +930,97 @@
                         <input type="text" id="insHolPlatPckDes" name="insHolPlatPckDes" required placeholder="Fetched item description"/>
                     </div>
 
-                    <!-- Standard Size - INSERT HOLDER PLATFORM -->
-                    <div class="form-group">
-                        <label class="Label-tags label-with-tooltip" for="insHolPlatStandardSize">
-                            <span>Standard Size</span>
-                            <span class="tooltip">
-                                <i class="fa-etch fa-regular fa-circle-question"></i>
-                                <span class="tooltiptext">Add Tooltip</span>
-                            </span>
-                        </label>
-                        <div class="size_standard_row">
-                            <div>
-                                <input type="number" id="insHolPlatStdWidth" name="insHolPlatStdWidth" placeholder="(W)" />
-                                <span>X</span>
-                                <input type="number" id="insHolPlatStdHeight" name="insHolPlatStdHeight"  placeholder="(H)" />
-                                <span>X</span>
-                                <input type="number" id="insHolPlatStdBase" name="insHolPlatStdBase" placeholder="(B)" />
+                    <!-- Sizers Add View Button -->
+                    <button class="view-btn" onclick="openPopup()">
+                        <i class="fa-solid fa-plus"></i> Add Sizers
+                    </button>
+
+                    <!-- Popup Overlay -->
+                    <div class="popup-overlay" id="popupOverlay" onclick="closePopupOnOutside(event)">
+                        <div class="popup-container" onclick="event.stopPropagation()">
+                            <!-- Popup Header -->
+                            <div class="popup-header">
+                                <h2>Insert Holder Platform Details</h2>
+                                <button class="close-btn" onclick="closePopup()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <!-- Popup Body -->
+                            <div class="popup-body">
+                                <!-- Standard Size - INSERT HOLDER PLATFORM -->
+                                <div class="form-group">
+                                    <label class="Label-tags label-with-tooltip" for="insHolPlatStandardSize">
+                                        <span>Standard Size</span>
+                                        <span class="tooltip">
+                                            <i class="fa-etch fa-regular fa-circle-question"></i>
+                                            <span class="tooltiptext">Add Tooltip</span>
+                                        </span>
+                                    </label>
+                                    <div class="size_standard_row">
+                                        <div>
+                                            <input type="number" id="insHolPlatStdWidth" name="insHolPlatStdWidth" placeholder="(W)" />
+                                            <span>X</span>
+                                            <input type="number" id="insHolPlatStdHeight" name="insHolPlatStdHeight"  placeholder="(H)" />
+                                            <span>X</span>
+                                            <input type="number" id="insHolPlatStdBase" name="insHolPlatStdBase" placeholder="(B)" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Open Size - INSERT HOLDER PLATFORM-->
+                                <div class="form-group">
+                                    <label class="Label-tags label-with-tooltip" for="insHolPlatOpenSize">
+                                        <span>Open Size</span>
+                                        <span class="tooltip">
+                                            <i class="fa-etch fa-regular fa-circle-question"></i>
+                                            <span class="tooltiptext">Add Tooltip</span>
+                                        </span>
+                                    </label>
+                                    <div class="size_standard_row">
+                                        <div>
+                                            <input type="number" id="insHolPlatOpnWidth" name="insHolPlatOpnWidth" placeholder="(W)" />
+                                            <span>X</span>
+                                            <input type="number" id="insHolPlatOpnHeight" name="insHolPlatOpnHeight" placeholder="(H)" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Unit of Measure - INSERT HOLDER PLATFORM -->
+                                <div class="form-group">
+                                    <label class="Label-tags label-with-tooltip" for="insHolPlatUom">
+                                        <span>Unit of Measure</span>
+                                        <span class="tooltip">
+                                            <i class="fa-etch fa-regular fa-circle-question"></i>
+                                            <span class="tooltiptext">Add Tooltip</span>
+                                        </span>
+                                    </label>
+                                    <select id="insHolPlatUom" class="insHolPlatUom">
+                                        <option value="" disabled selected>Unit</option>
+                                        <option value="mm">mm</option>
+                                        <option value="cm">cm</option>
+                                        <option value="inches">inches</option>
+                                        <option value="m">m</option>
+                                        <option value="yards">yards</option>
+                                    </select>
+                                </div>
+
+                                <!-- Product Volume - INSERT HOLDER PLATFORM -->
+                                <div class="form-group">
+                                    <label class="Label-tags label-with-tooltip" for="insHolPlatProdVolume">
+                                        <span>Product Volume</span>
+                                        <span class="tooltip">
+                                            <i class="fa-etch fa-regular fa-circle-question"></i>
+                                            <span class="tooltiptext">Add Tooltip</span>
+                                        </span>
+                                    </label>
+                                    <select id="insHolPlatProdVolume" class="insHolPlatProdVolume" onchange="toggleSizerVolumeInput(this)">
+                                        <option value="">--SELECT--</option>
+                                        <option value="create_new">Create New</option>
+                                    </select>
+                                    <input type="text" id="inputInsHolPlatProdVolume" class="inputInsHolPlatProdVolume" placeholder="Enter new volume" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Open Size - INSERT HOLDER PLATFORM-->
-                    <div class="form-group">
-                        <label class="Label-tags label-with-tooltip" for="insHolPlatOpenSize">
-                            <span>Open Size</span>
-                            <span class="tooltip">
-                                <i class="fa-etch fa-regular fa-circle-question"></i>
-                                <span class="tooltiptext">Add Tooltip</span>
-                            </span>
-                        </label>
-                        <div class="size_standard_row">
-                            <div>
-                                <input type="number" id="insHolPlatOpnWidth" name="insHolPlatOpnWidth" placeholder="(W)" />
-                                <span>X</span>
-                                <input type="number" id="insHolPlatOpnHeight" name="insHolPlatOpnHeight" placeholder="(H)" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Unit of Measure - INSERT HOLDER PLATFORM -->
-                    <div class="form-group">
-                        <label class="Label-tags label-with-tooltip" for="insHolPlatUom">
-                            <span>Unit of Measure</span>
-                            <span class="tooltip">
-                                <i class="fa-etch fa-regular fa-circle-question"></i>
-                                <span class="tooltiptext">Add Tooltip</span>
-                            </span>
-                        </label>
-                        <select id="insHolPlatUom" class="insHolPlatUom">
-                            <option value="" disabled selected>Unit</option>
-                            <option value="mm">mm</option>
-                            <option value="cm">cm</option>
-                            <option value="inches">inches</option>
-                            <option value="m">m</option>
-                            <option value="yards">yards</option>
-                        </select>
-                    </div>
-
-                    <!-- Product Volume - INSERT HOLDER PLATFORM -->
-                    <div class="form-group">
-                        <label class="Label-tags label-with-tooltip" for="insHolPlatProdVolume">
-                            <span>Product Volume</span>
-                            <span class="tooltip">
-                                <i class="fa-etch fa-regular fa-circle-question"></i>
-                                <span class="tooltiptext">Add Tooltip</span>
-                            </span>
-                        </label>
-                        <select id="insHolPlatProdVolume" class="insHolPlatProdVolume" onchange="toggleSizerVolumeInput(this)">
-                            <option value="">--SELECT--</option>
-                            <option value="create_new">Create New</option>
-                        </select>
-                        <input type="text" id="inputInsHolPlatProdVolume" class="inputInsHolPlatProdVolume" placeholder="Enter new volume" />
                     </div>
 
                     <!-- Print (Outer) - INSERT HOLDER PLATFORM -->
@@ -2405,7 +2425,7 @@
 
     // Rotate the clicked icon
     icon.classList.add('rotate');
-}
+    }
 </script>
 
 <!--  Remove default title tooltip and store it in data attribute -->
@@ -3312,3 +3332,40 @@ document.getElementById("btn-description").addEventListener("click", function ()
 </script>
 
 
+<script>
+    // Open Popup
+    function openPopup() {
+        document.getElementById('popupOverlay').classList.add('active');
+    }
+
+    // Close Popup
+    function closePopup() {
+        document.getElementById('popupOverlay').classList.remove('active');
+    }
+
+    // Close popup when clicking outside
+    function closePopupOnOutside(event) {
+        if (event.target.id === 'popupOverlay') {
+            closePopup();
+        }
+    }
+
+    // Toggle volume input
+    function toggleSizerVolumeInput(select) {
+        const input = document.getElementById('inputInsHolPlatProdVolume');
+        if (select.value === 'create_new') {
+            input.classList.add('active');
+            input.focus();
+        } else {
+            input.classList.remove('active');
+            input.value = '';
+        }
+    }
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closePopup();
+        }
+    });
+</script>
