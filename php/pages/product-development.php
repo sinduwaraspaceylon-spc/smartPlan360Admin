@@ -275,6 +275,7 @@
                 </div>
             </div>
         </div>
+>>>>>>> main
     </div>
 
      <div class="section-holder-1">
@@ -360,7 +361,6 @@
             </div>
         </div>
     </div>
-
     <div class="section-holder-1">
         <div class="from-holder" onclick="toggleSection(this)">
             <h3>Sleeve Specification</h3>
@@ -385,4 +385,4 @@
             // Rotate the icon
             icon.classList.toggle('rotate');
         }
-    </script>
+</script>

@@ -260,12 +260,11 @@ async function loadContent(page, title) {
       initSharedFilterSidebar();
     }
 
-    // demand form rorate option loader
     if (
       page === "demand-forecasting" &&
-      typeof toggleDemandForm === "function"
+      typeof initDemandPlanSection === "function"
     ) {
-      toggleDemandForm();
+      initDemandPlanSection();
     }
 
     // demand filter handler
@@ -286,6 +285,10 @@ async function loadContent(page, title) {
       typeof loadChartData === "function"
     ) {
       loadChartData();
+    }
+
+    if((page === "order-picking") && typeof initEvents === "function"){
+      initEvents();
     }
   } catch (err) {
     if (DOM.contentArea) {

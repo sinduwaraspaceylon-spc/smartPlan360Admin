@@ -9,10 +9,10 @@
     </div>
 
     <!-- Filter Sidebar Overlay -->
-    <div class="filter-sidebar-overlay" id="filterSidebarOverlay"></div>
+    <!-- <div class="filter-sidebar-overlay" id="filterSidebarOverlay"></div> -->
 
     <!-- Forecast report filter sidebar -->
-    <aside class="filter-sidebar" id="filterSidebar">
+    <!-- <aside class="filter-sidebar" id="filterSidebar">
         <div class="filter-sidebar-header">
             <h2>Filter by</h2>
             <button class="filter-close-btn" id="filterCloseBtn">
@@ -20,17 +20,17 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-        </div>
+        </div> -->
 
-        <div class="filter-sidebar-content">
+        <!-- <div class="filter-sidebar-content"> -->
            <!-- sidebar content display here -->
-        </div>
+        <!-- </div>
             <div class="filter-sidebar-actions">
                 <button class="filter-apply-btn" id="filterApplyBtn">Apply</button>
                 <button class="filter-reset-btn" id="filterResetBtn">Reset</button>
             </div>
         </div>
-    </aside>
+    </aside> -->
 
     <!-- Page Sections -->
     <div class="page-section-holder" id="forecast-report">
@@ -103,296 +103,330 @@
   </div>
 
 <!-- Demand plan section -->
-<div class="page-section-holder" id="forecast-report">
+<div class="page-section-holder" id="forcast-chart">
     <div class="section-header">
-        <h3 id="add-demand-report-title">Demand Plan</h3>
+        <h3 id="report-title">Demand Plan</h3>
         
-        <!-- Add Demand / Cancel Button -->
-        <button class="download-btn" id="addDemandBtn" onclick="toggleDemandForm()">
-            <svg id="btnIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Create new demand button -->
+        <button class="download-btn" id="createNewDemandBtn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
             </svg>
-            <span id="btnText">Add Demand</span>
+            Create Demand
         </button>
     </div>
-    
-    <div class="demand-card-container">
-        <div class="demand-card" id="demandCard">
-            <!-- Front side - Demand Report -->
-            <div class="demand-card-face demand-card-front">
-                <div class="table-holder" id="forecast-report-section">
-                    <!-- Your existing demand report table/content goes here -->
-                </div>
-            </div>
-            
-            <!-- Back side - Add Demand Form -->
-            <div class="demand-card-face demand-card-back">
 
-            <!-- Option buttons (Add/Delete/Edit) -->
-    <div class="filter-actions">
-        <button type="button" class="btn-action" id="addBtn">
-            <i class="fa-solid fa-plus"></i> Add
-        </button>
-        <button type="button" class="btn-action" id="editBtn">
-            <i class="fa-solid fa-pencil"></i> Edit
-        </button>
-        <button type="button" class="btn-action" id="deleteBtn">
-            <i class="fa-solid fa-xmark"></i> Delete
-        </button>
-    </div>
-<!-- Dual Purpose Section -->
-<div class="dual-purpose-section">
-    <!-- Existing Forms Section (Default View) -->
-    <div id="existingFormsSection" class="existing-forms-section">
-        <div class="section-header">
-            <h4>Existing Demands</h4>
-            <div class="forms-info">
-                <span id="formCount">0 demands</span>
-            </div>
+    <!-- Flip card section -->
+    <div class="flip-card-holder" id="flipCard">
+        <!-- Front Side -->
+        <div class="flip-card-front">
+            <h1>Demand Plan</h1>
         </div>
         
-        <div id="formsGrid" class="forms-grid">
-            <div class="no-forms">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="12" y1="18" x2="12" y2="12"></line>
-                    <line x1="9" y1="15" x2="15" y2="15"></line>
-                </svg>
-                <p>No existing demands found</p>
-            </div>
-        </div>
-        
-        <!-- Loading indicator for forms -->
-        <div id="formsLoading" class="loading-indicator" style="display: none;">
-            <div class="spinner"></div>
-            <p>Loading demands...</p>
-        </div>
-    </div>
-
-    <!-- Product Display Section (Hidden by default, shown when Add is clicked) -->
-    <div id="productDisplaySection" class="products-display-section" style="display: none;">
-        <div class="section-header">
-            
-            <!-- Filter Section -->
-                <div class="filter-section">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="demandSearch">Search Products</label>
-                            <input type="text" id="demandSearch" name="search" placeholder="Search By Code or Name..." autocomplete="off">
-                            <!-- Search Results Dropdown -->
-                        <div id="searchResults" class="search-results"></div>
-                    </div>
-
-                    <!-- Option dropdowns -->
-                    <div class="form-group">
-                        <label for="department">Department</label>
-                            <div class="custom-multiselect">
-                                <div class="multiselect-header" id="departmentHeader">
-                                <span class="multiselect-text">Select Departments...</span>
-                                <span class="multiselect-arrow">▼</span>
-                            </div>
-                        <div class="multiselect-dropdown" id="departmentCheckboxes">
-                    <!-- Checkboxes will be loaded here -->
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="category">Category</label>
-            <div class="custom-multiselect">
-                <div class="multiselect-header" id="categoryHeader">
-                    <span class="multiselect-text">Select Categories...</span>
-                    <span class="multiselect-arrow">▼</span>
-                </div>
-                <div class="multiselect-dropdown" id="categoryCheckboxes">
-                    <div class="no-selection">Please select at least one department</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            <h4>Available Products</h4>
-            <div class="header-actions">
-                <button type="button" class="btn-back" id="backToFormsBtn">
-                    <span>←</span> Back to Demands
+        <!-- Back Side -->
+        <div class="flip-card-back">
+            <!-- Action buttons -->
+            <div class="action-btn-holder">
+                <button class="action-btn active" id="add-demand-btn">
+                    <i class="fa-solid fa-plus"></i>Add
                 </button>
-                <div class="products-info">
-                    <span id="productCount">0 products</span>
-                </div>
+                <button class="action-btn">
+                    <i class="fa-solid fa-gear"></i>Edit
+                </button>
+                <button class="action-btn">
+                    <i class="fa-solid fa-trash"></i>Delete
+                </button>
+                <button class="action-btn hidden" id="pick-demand-btn">
+                    <i class="fa-solid fa-hand"></i></i>Pick
+                </button>
+                <button class="close-add-demand hidden" id="back-to-demands-btn">
+                    <i class="fa-solid fa-arrow-left"></i>Back to Existing Demands
+                </button>
             </div>
-        </div>
-        
-        <div id="productsGrid" class="products-grid">
-            <div class="no-products">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 7h-9"></path>
-                    <path d="M14 17H5"></path>
-                    <circle cx="17" cy="17" r="3"></circle>
-                    <circle cx="7" cy="7" r="3"></circle>
-                </svg>
-                <p>No products selected. Please select products from filters above</p>
-            </div>
-        </div>
-        
-        <!-- Loading indicator for products -->
-        <div id="productsLoading" class="loading-indicator" style="display: none;">
-            <div class="spinner"></div>
-            <p>Loading products...</p>
-        </div>
-    </div>
-</div>
-    <!-- filter templates -->
+            
+            <!-- Multi section holder -->
+            <div class="multy-section-holder">
+                <!-- Form header with title and filters -->
+                <div class="multy-form-header">
+                    <div class="form-title">
+                        <h2 id="section-title">Existing Demands</h2>
+                    </div>
+                </div> <!-- Close multy-form-header -->
 
-    <!-- forecast table filters -->
-     <template id="forecastFiltersTemplate">
-  <div class="filter-group">
-    <label for="yearFilter">Year</label>
-    <select id="yearFilter" class="filter-select">
-      <option value="">All Years</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="periodFilter">Time Period</label>
-    <select id="periodFilter" class="filter-select">
-      <option value="6">6 Months</option>
-      <option value="12">12 Months</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="statusFilter">Status</label>
-    <select id="statusFilter" class="filter-select">
-      <option value="">All Status</option>
-      <option value="exceeded">Exceeded</option>
-      <option value="on track">On Track</option>
-      <option value="below target">Below Target</option>
-      <option value="critical">Critical</option>
-    </select>
-  </div>
-</template>
-
-<!-- demand table filters -->
-<template id="demandFiltersTemplate">
-  <div class="filter-group">
-    <label for="demandRankFilter">Rank</label>
-    <select id="demandRankFilter" class="filter-select">
-      <option value="top">Product</option>
-      <option value="low">Range</option>
-      <option value="top">Category</option>
-      <option value="low">Department</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="yearFilter">Year</label>
-    <select id="yearFilter" class="filter-select">
-      <option value="">All Years</option>
-      <option value="2024">2024</option>
-      <option value="2025">2025</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="monthFilter">Month</label>
-    <select id="monthFilter" class="filter-select">
-      <option value="">All Months</option>
-      <option value="1">January</option>
-      <option value="2">February</option>
-      <option value="3">March</option>
-      <option value="4">April</option>
-      <option value="5">May</option>
-      <option value="6">June</option>
-      <option value="7">July</option>
-      <option value="8">August</option>
-      <option value="9">September</option>
-      <option value="10">October</option>
-      <option value="11">November</option>
-      <option value="12">December</option>
-    </select>
-  </div>
-</template>
+                <div class="demand-filter hidden" id="demand-filters">
+                    <input type="search" class="filter-input" id="search-input" placeholder="Search product...">
+                    <div class="demand-filter-dropdowns">
+                        <!-- Single Select Brand -->
+                        <select class="filter-input" id="brand-filter">
+                            <option value="">Select Brand</option>
+                        </select>
+                        <!-- Multi-Select Department -->
+                        <div class="custom-dropdown">
+                            <button type="button" class="filter-input dropdown-toggle" id="department-toggle" disabled>
+                                <span class="dropdown-text">Departments</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu" id="department-menu">
+                                <div class="dropdown-search">
+                                    <input type="text" placeholder="Search departments..." class="dropdown-search-input">
+                                </div>
+                                <div class="dropdown-options" id="department-options">
+                                    <div class="dropdown-message">Please select a brand first</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Multi-Select Category -->
+                        <div class="custom-dropdown">
+                            <button type="button" class="filter-input dropdown-toggle" id="category-toggle" disabled>
+                                <span class="dropdown-text">Categories</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu" id="category-menu">
+                                <div class="dropdown-search">
+                                    <input type="text" placeholder="Search categories..." class="dropdown-search-input">
+                                </div>
+                                <div class="dropdown-options" id="category-options">
+                                    <div class="dropdown-message">Please select department(s) first</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Multi-Select Range -->
+                        <div class="custom-dropdown">
+                            <button type="button" class="filter-input dropdown-toggle" id="range-toggle" disabled>
+                                <span class="dropdown-text">Ranges</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu" id="range-menu">
+                                <div class="dropdown-search">
+                                    <input type="text" placeholder="Search ranges..." class="dropdown-search-input">
+                                </div>
+                                <div class="dropdown-options" id="range-options">
+                                    <div class="dropdown-message">Please select category/categories first</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- close demand filter dropdowns -->
+                </div> <!-- Close demand-filters -->
+            
+                <!-- Section body - main content area -->
+                <div class="section-body">
+                    <!-- Existing Demands Section -->
+                    <div class="container" id="existing-demands-section">
+                        <div class="item-list" id="existing-demands-list">
+                            <!-- Existing demand cards will be populated here dynamically -->
+                        </div>
+                    </div>
+                    
+                    <!-- Add Demand Section -->
+                    <div class="demand-flip-container hidden" id="demand-flip-section">
+                        <div class="add-demand-flip-front">
+                            <p>Select demand options to add</p>
+                        </div>
+                        <div class="add-demand-flip-back">
+                            <div class="demand-apply-section">
+                                <input type="number" placeholder="Enter Demand %" id="demandInput">
+                                <div class="demand-filter-dropdowns">
+                                    <select class="month-filter-input" id="brand-filter">
+                                        <option value="">Select Months</option>
+                                        <option value="">12 Months</option>
+                                        <option value="">6 Months</option>
+                                        <option value="">3 Months</option>
+                                    </select>
+                                </div> <!-- close demand filter dropdown -->
+                                <button class="demand-apply-btn" id="apply-demand-btn">Apply</button>
+                            </div>
+                            <div class="add-demand-content">
+                                <!-- demand applied products are showing here -->
+                            </div>
+                        </div>  
+                    </div> <!-- Close demand-flip-container -->
+                </div> <!-- Close section-body -->
+            </div> <!-- Close multy-section-holder -->
+        </div> <!-- Close flip-card-back -->
+    </div> <!-- Close flip-card-holder -->
+</div> <!-- Close page-section-holder -->
 
 <script>
-    // Get elements
-const addBtn = document.getElementById('addBtn');
-const editBtn = document.getElementById('editBtn');
-const deleteBtn = document.getElementById('deleteBtn');
-const backToFormsBtn = document.getElementById('backToFormsBtn');
-const existingFormsSection = document.getElementById('existingFormsSection');
-const productDisplaySection = document.getElementById('productDisplaySection');
+    // DOM Elements
+const brandFilter = document.getElementById("brand-filter");
 
-// Add button - Switch to product display
-addBtn.addEventListener('click', function() {
-    existingFormsSection.style.display = 'none';
-    productDisplaySection.style.display = 'block';
-    console.log('Switched to product display view');
-    
-    // You can load products here
-    // loadProducts();
+// Multi Dropdown Elements
+const deptToggle = document.getElementById("department-toggle");
+const deptOptions = document.getElementById("department-options");
+
+const catToggle = document.getElementById("category-toggle");
+const catOptions = document.getElementById("category-options");
+
+const rangeToggle = document.getElementById("range-toggle");
+const rangeOptions = document.getElementById("range-options");
+
+// Load brands on page loads
+fetch("testing/product_handler.php?action=get_brands")
+    .then(res => res.json())
+    .then(data => {
+        brandFilter.innerHTML = `<option value="">Select Brand</option>`;
+        data.forEach(b => {
+            brandFilter.innerHTML += `<option value="${b.id}">${b.brand_name}</option>`;
+        });
+    });
+
+
+// Load departments when a brand is selected
+brandFilter.addEventListener("change", () => {
+    const brandId = brandFilter.value;
+
+    // Reset all dropdowns
+    deptToggle.disabled = true;
+    catToggle.disabled = true;
+    rangeToggle.disabled = true;
+
+    deptOptions.innerHTML = "";
+    catOptions.innerHTML = `<div class="dropdown-message">Please select department(s) first</div>`;
+    rangeOptions.innerHTML = `<div class="dropdown-message">Please select category/categories first</div>`;
+
+    if (!brandId) return;
+
+    fetch(`testing/product_handler.php?action=get_departments_by_brand&brand_id=${brandId}`)
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.length === 0) {
+                deptOptions.innerHTML = `<div class="dropdown-message">No departments found</div>`;
+                return;
+            }
+
+            deptToggle.disabled = true;
+            deptOptions.innerHTML = "";
+
+            data.forEach(dep => {
+                deptOptions.innerHTML += `
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="${dep.id}" class="department-checkbox">
+                        ${dep.department_name}
+                    </label>
+                `;
+            });
+
+            deptToggle.disabled = false;
+        });
 });
 
-// Back button - Return to existing forms
-backToFormsBtn.addEventListener('click', function() {
-    productDisplaySection.style.display = 'none';
-    existingFormsSection.style.display = 'block';
-    console.log('Switched back to forms view');
+
+// Load categories when departments are selected (POST)
+document.addEventListener("change", (e) => {
+    if (!e.target.classList.contains("department-checkbox")) return;
+
+    const selectedDepartments = [...document.querySelectorAll(".department-checkbox:checked")]
+        .map(cb => cb.value);
+
+    catToggle.disabled = selectedDepartments.length === 0;
+    catOptions.innerHTML = "";
+
+    if (selectedDepartments.length === 0) {
+        catOptions.innerHTML = `<div class="dropdown-message">Please select department(s) first</div>`;
+        return;
+    }
+// Prepare form data for POST request
+    const formData = new FormData();
+    selectedDepartments.forEach(id => formData.append("departments[]", id));
+
+    fetch("testing/product_handler.php?action=get_categories_by_departments", {
+        method: "POST",
+        body: formData
+    })
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.length === 0) {
+                catOptions.innerHTML = `<div class="dropdown-message">No categories found</div>`;
+                return;
+            }
+
+            data.forEach(cat => {
+                catOptions.innerHTML += `
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="${cat.id}" class="category-checkbox">
+                        ${cat.category_name}
+                    </label>
+                `;
+            });
+
+        });
 });
 
-// Edit button - Load selected form for editing
-editBtn.addEventListener('click', function() {
-    console.log('Edit button clicked');
-    // Add your edit logic here
-    // For example: check if a form is selected, then load it
+
+// Load ranges when categories are selected (POST)
+document.addEventListener("change", (e) => {
+    if (!e.target.classList.contains("category-checkbox")) return;
+
+    const selectedCategories = [...document.querySelectorAll(".category-checkbox:checked")]
+        .map(cb => cb.value);
+
+    rangeToggle.disabled = selectedCategories.length === 0;
+    rangeOptions.innerHTML = "";
+
+    if (selectedCategories.length === 0) {
+        rangeOptions.innerHTML = `<div class="dropdown-message">Please select category/categories first</div>`;
+        return;
+    }
+
+    const formData = new FormData();
+    selectedCategories.forEach(id => formData.append("categories[]", id));
+
+    fetch("testing/product_handler.php?action=get_ranges_by_categories", {
+        method: "POST",
+        body: formData
+    })
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.length === 0) {
+                rangeOptions.innerHTML = `<div class="dropdown-message">No ranges found</div>`;
+                return;
+            }
+
+            data.forEach(r => {
+                rangeOptions.innerHTML += `
+                    <label class="dropdown-item">
+                        <input type="checkbox" value="${r.id}" class="range-checkbox">
+                        ${r.range_name}
+                    </label>
+                `;
+            });
+
+        });
 });
 
-// Delete button - Delete selected form
-deleteBtn.addEventListener('click', function() {
-    console.log('Delete button clicked');
-    // Add your delete logic here
-    // For example: confirm deletion and remove the form
+
+// Load dropdown open/close logic
+document.querySelectorAll(".dropdown-toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.nextElementSibling.classList.toggle("show");
+    });
 });
 
-// Function to load existing forms (call this on page load)
-function loadExistingForms() {
-    const formsGrid = document.getElementById('formsGrid');
-    const formsLoading = document.getElementById('formsLoading');
-    const formCount = document.getElementById('formCount');
-    
-    // Show loading
-    formsLoading.style.display = 'flex';
-    
-    // Simulate loading forms (replace with your actual AJAX call)
-    setTimeout(() => {
-        // Example: Replace this with your actual data
-        const forms = [
-            { id: 1, title: 'Form 1', date: '2025-01-15', items: 5 },
-            { id: 2, title: 'Form 2', date: '2025-01-10', items: 3 }
-        ];
-        
-        if (forms.length > 0) {
-            formsGrid.innerHTML = forms.map(form => `
-                <div class="form-card" data-form-id="${form.id}">
-                    <div class="form-card-header">
-                        <h5 class="form-card-title">${form.title}</h5>
-                        <span class="form-card-date">${form.date}</span>
-                    </div>
-                    <div class="form-card-info">Items: ${form.items}</div>
-                </div>
-            `).join('');
-            
-            formCount.textContent = `${forms.length} form${forms.length !== 1 ? 's' : ''}`;
-        }
-        
-        // Hide loading
-        formsLoading.style.display = 'none';
-    }, 1000);
-}
-
-// Load forms on page load
-document.addEventListener('DOMContentLoaded', function() {
-    loadExistingForms();
+// Close on click outside
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".custom-dropdown")) {
+        document.querySelectorAll(".dropdown-menu").forEach(menu => menu.classList.remove("show"));
+    }
 });
+
+// Filter Sidebar Toggle Button
+    document.getElementById("filterToggleBtnInline")?.addEventListener("click", () => {
+  filterSidebar.open({
+    title: "Demand Filters",
+    templateId: "forecastFiltersTemplate",
+
+    onApply() {
+      console.log("apply filters");
+    },
+
+    onReset() {
+      console.log("reset filters");
+    }
+  });
+});
+
 </script>

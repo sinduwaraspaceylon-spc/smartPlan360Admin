@@ -1,0 +1,187 @@
+/* ----------------------------------------
+   PAGE SECTION HOLDER – EXPANDS WITH CONTENT
+-----------------------------------------*/
+.page-section-holder {
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    width: 100%;
+    height: auto;          /* IMPORTANT */
+    overflow: visible;     /* Prevents clipping */
+}
+
+/* ----------------------------------------
+   FLIP CARD HOLDER – AUTO HEIGHT
+-----------------------------------------*/
+.flip-card-holder {
+    position: relative;
+    width: 100%;
+    height: auto;          /* Auto height */
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    margin-top: 20px;
+}
+
+.flip-card-holder.flipped {
+    transform: rotateY(180deg);
+}
+
+/* ----------------------------------------
+   FRONT & BACK SIDES
+-----------------------------------------*/
+.flip-card-front,
+.flip-card-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.flip-card-front {
+    background: #ffffff;
+    min-height: 200px;
+    padding: 20px;
+}
+
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    background: #fff;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    height: auto;          /* Expand with content */
+    overflow: visible;     /* No clipping */
+}
+
+/* ----------------------------------------
+   WHEN FLIPPED → BACK LAYER AUTO HEIGHT FIX
+-----------------------------------------*/
+.flip-card-holder.flipped .flip-card-back {
+    position: relative;
+    inset: unset;
+}
+
+/* ----------------------------------------
+   MULTY SECTION HOLDER
+-----------------------------------------*/
+.multy-section-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    flex: auto;
+    height: auto;
+    min-height: 0;
+}
+
+/* ----------------------------------------
+   SECTION BODY – INTERNAL SCROLL ONLY IF NEEDED
+-----------------------------------------*/
+.section-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    flex: auto;
+    height: auto;
+    min-height: 0;
+
+    overflow-y: auto;      /* Internal scroll */
+    overflow-x: hidden;
+    padding-right: 8px;
+}
+
+/* ----------------------------------------
+   ITEM LIST + CARDS
+-----------------------------------------*/
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.item-card {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.item-info h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.item-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ----------------------------------------
+   BUTTONS
+-----------------------------------------*/
+.download-btn,
+.action-btn,
+.item-btn,
+.back-btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    background: #4b5cff;
+    color: #fff;
+    transition: 0.25s;
+}
+
+.action-btn.active {
+    background: #1f32ff;
+}
+
+.back-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: rgba(0,0,0,0.1);
+}
+
+/* ----------------------------------------
+   TABS
+-----------------------------------------*/
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab {
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #ebebeb;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tab.active {
+    background: #4b5cff;
+    color: white;
+}

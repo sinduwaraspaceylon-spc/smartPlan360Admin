@@ -36,7 +36,7 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="nav-link" data-page="demand-forecasting" data-title="Demand Forecasting">
+                <a href="#" class="nav-link" data-page="demand-forecasting" data-title="Dermand Forecasting">
                   <i class="fas fa-chart-line"></i>Demand Forecasting
                 </a>
               </li>
@@ -55,11 +55,11 @@
 
           <!-- Reports -->
           <div class="nav-section">
-            <h2 class="nav-title">Reports</h2>
+            <h2 class="nav-title">Picking Workbench</h2>
             <ul>
               <li>
-                <a href="#" class="nav-link" data-page="inventory-reports" data-title="Inventory Reports">
-                  <i class="fas fa-boxes"></i> Inventory Reports
+                <a href="#" class="nav-link" data-page="order-picking" data-title="Order Picking">
+                  <i class="fas fa-boxes"></i> Order Picking
                 </a>
               </li>
               <li>
@@ -96,11 +96,14 @@
 
       <!-- Back to top -->
       <button id="backToTopBtn" class="back-to-top"><i class="fa-solid fa-circle-arrow-up"></i></button>
+      <!-- Filter template loader -->
+       <div id="filter-templates-container" style="display:none"></div>
       
       <!-- Main Content -->
       <main class="main-content">
       <!-- Header -->
         <?php include "components/admin_header.php"?>
+        <?php include "components/filter_sidebar.php"?>
 
         <div class="content" id="content-loading">
           <!-- Dynamic Content Area -->
@@ -111,14 +114,32 @@
       </main>
     </div>
 
+    <!-- JavaScript Files-------------------------------------------------------------->
+
+    <!-- Admin frontend js -->
     <script src="js/admin_frontend.js"></script>
+    <!-- Dynamic content js -->
     <script src="js/dynamic_content.js"></script>
+    <!-- filter sidebar js -->
+    <script src="js/filter-sidebar.js"></script>
+    <!-- Charts js -->
     <script src="js/charts.js"></script>
-    <!-- <script src="js/demand_plan_section_handler.js"></script> -->
+    <!-- Demand plan section handler js -->
+    <script src="js/demand_plan_section_handler.js"></script>
+    <!-- Department chart handler js -->
     <script src="js/department_chart_handler.js"></script>
-    
-    <!-- still testing.. -->
-    <script src="sidebar_test/sidebar_handler.js"></script>
-    <script src="js/optimize.js"></script>
+    <!-- <script src="js/optimize.js"></script> -->
+
+    <!-- Filter template loader testing -->
+    <script>
+      fetch("components/filter_templates.html")
+        .then(res => res.text())
+        .then(html => {
+        document
+        .getElementById("filter-templates-container")
+        .innerHTML = html;
+      });
+  </script>
+
 </body>
 </html>

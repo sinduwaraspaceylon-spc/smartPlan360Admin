@@ -182,6 +182,10 @@ forecast-table-container {
   box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
 }
 
+.download-btn.cancel-mode{
+  background: var(--error-color);
+}
+
 .download-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
@@ -330,12 +334,6 @@ forecast-table-container {
 
 .filter-close-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-}
-
-.filter-close-btn svg {
-  width: 24px;
-  height: 24px;
-  stroke: white;
 }
 
 .filter-sidebar-content {
