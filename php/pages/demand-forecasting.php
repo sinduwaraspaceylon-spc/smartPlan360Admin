@@ -413,4 +413,20 @@ document.addEventListener("click", (e) => {
     }
 });
 
+// Filter Sidebar Toggle Button
+    document.getElementById("filterToggleBtnInline")?.addEventListener("click", () => {
+  filterSidebar.open({
+    title: "Demand Filters",
+    templateId: "forecastFiltersTemplate",
+
+    onApply() {
+      console.log("apply filters");
+    },
+
+    onReset() {
+      console.log("reset filters");
+    }
+  });
+});
+
 </script>

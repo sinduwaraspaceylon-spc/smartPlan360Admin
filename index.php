@@ -96,6 +96,8 @@
 
       <!-- Back to top -->
       <button id="backToTopBtn" class="back-to-top"><i class="fa-solid fa-circle-arrow-up"></i></button>
+      <!-- Filter template loader -->
+       <div id="filter-templates-container" style="display:none"></div>
       
       <!-- Main Content -->
       <main class="main-content">
@@ -126,9 +128,18 @@
     <script src="js/demand_plan_section_handler.js"></script>
     <!-- Department chart handler js -->
     <script src="js/department_chart_handler.js"></script>
-    
-    <!-- still testing.. -->
-    <!-- <script src="sidebar_test/sidebar_handler.js"></script> -->
     <!-- <script src="js/optimize.js"></script> -->
+
+    <!-- Filter template loader testing -->
+    <script>
+      fetch("components/filter_templates.html")
+        .then(res => res.text())
+        .then(html => {
+        document
+        .getElementById("filter-templates-container")
+        .innerHTML = html;
+      });
+  </script>
+
 </body>
 </html>

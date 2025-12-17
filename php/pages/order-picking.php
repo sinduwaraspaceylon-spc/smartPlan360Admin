@@ -14,13 +14,13 @@
                 <span>Filters</span>
             </button>
         </div>
-<div>
+    <div>
 
 <script>
     document.getElementById("orderFilterToggleBtnInline")?.addEventListener("click", () => {
   filterSidebar.open({
     title: "Picklist Filters",
-    templateId: "forecastFiltersTemplate",
+    templateId: "orderPickingFilters",
 
     onApply() {
       console.log("apply filters");

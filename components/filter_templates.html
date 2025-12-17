@@ -68,3 +68,23 @@
     </select>
   </div>
 </template>
+
+<!-- Order Picking Filters -->
+ <template id="orderPickingFilters">
+  <div class="filter-group">
+    <label for="sortFilter">Sort</label>
+    <select id="sortFilter" class="filter-select">
+      <option value="new">Newest</option>
+      <option value="old">Oldest</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="statusFilter">Status</label>
+    <select id="statusFilter" class="filter-select">
+      <option value="">All Status</option>
+      <option value="pending">pending</option>
+      <option value="ok">Ok</option>
+    </select>
+  </div>
+ </template>
