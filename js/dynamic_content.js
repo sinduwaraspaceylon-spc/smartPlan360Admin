@@ -286,6 +286,10 @@ async function loadContent(page, title) {
     ) {
       loadChartData();
     }
+
+    if((page === "order-picking") && typeof initEvents === "function"){
+      initEvents();
+    }
   } catch (err) {
     if (DOM.contentArea) {
       DOM.contentArea.innerHTML = `

@@ -9,10 +9,10 @@
     </div>
 
     <!-- Filter Sidebar Overlay -->
-    <div class="filter-sidebar-overlay" id="filterSidebarOverlay"></div>
+    <!-- <div class="filter-sidebar-overlay" id="filterSidebarOverlay"></div> -->
 
     <!-- Forecast report filter sidebar -->
-    <aside class="filter-sidebar" id="filterSidebar">
+    <!-- <aside class="filter-sidebar" id="filterSidebar">
         <div class="filter-sidebar-header">
             <h2>Filter by</h2>
             <button class="filter-close-btn" id="filterCloseBtn">
@@ -20,17 +20,17 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-        </div>
+        </div> -->
 
-        <div class="filter-sidebar-content">
+        <!-- <div class="filter-sidebar-content"> -->
            <!-- sidebar content display here -->
-        </div>
+        <!-- </div>
             <div class="filter-sidebar-actions">
                 <button class="filter-apply-btn" id="filterApplyBtn">Apply</button>
                 <button class="filter-reset-btn" id="filterResetBtn">Reset</button>
             </div>
         </div>
-    </aside>
+    </aside> -->
 
     <!-- Page Sections -->
     <div class="page-section-holder" id="forecast-report">
@@ -246,77 +246,6 @@
         </div> <!-- Close flip-card-back -->
     </div> <!-- Close flip-card-holder -->
 </div> <!-- Close page-section-holder -->
-
-    <!-- filter templates -->
-    <!-- forecast table filters -->
-     <template id="forecastFiltersTemplate">
-  <div class="filter-group">
-    <label for="yearFilter">Year</label>
-    <select id="yearFilter" class="filter-select">
-      <option value="">All Years</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="periodFilter">Time Period</label>
-    <select id="periodFilter" class="filter-select">
-      <option value="6">6 Months</option>
-      <option value="12">12 Months</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="statusFilter">Status</label>
-    <select id="statusFilter" class="filter-select">
-      <option value="">All Status</option>
-      <option value="exceeded">Exceeded</option>
-      <option value="on track">On Track</option>
-      <option value="below target">Below Target</option>
-      <option value="critical">Critical</option>
-    </select>
-  </div>
-</template>
-
-<!-- demand table filters -->
-<template id="demandFiltersTemplate">
-  <div class="filter-group">
-    <label for="demandRankFilter">Rank</label>
-    <select id="demandRankFilter" class="filter-select">
-      <option value="top">Product</option>
-      <option value="low">Range</option>
-      <option value="top">Category</option>
-      <option value="low">Department</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="yearFilter">Year</label>
-    <select id="yearFilter" class="filter-select">
-      <option value="">All Years</option>
-      <option value="2024">2024</option>
-      <option value="2025">2025</option>
-    </select>
-  </div>
-
-  <div class="filter-group">
-    <label for="monthFilter">Month</label>
-    <select id="monthFilter" class="filter-select">
-      <option value="">All Months</option>
-      <option value="1">January</option>
-      <option value="2">February</option>
-      <option value="3">March</option>
-      <option value="4">April</option>
-      <option value="5">May</option>
-      <option value="6">June</option>
-      <option value="7">July</option>
-      <option value="8">August</option>
-      <option value="9">September</option>
-      <option value="10">October</option>
-      <option value="11">November</option>
-      <option value="12">December</option>
-    </select>
-  </div>
-</template>
 
 <script>
     // DOM Elements

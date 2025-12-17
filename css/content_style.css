@@ -336,12 +336,6 @@ forecast-table-container {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.filter-close-btn svg {
-  width: 24px;
-  height: 24px;
-  stroke: white;
-}
-
 .filter-sidebar-content {
   padding: 25px;
 }
